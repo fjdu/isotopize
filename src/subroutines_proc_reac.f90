@@ -56,7 +56,7 @@ subroutine Name2Ele (SpeciesName, SpeciesEle)
 end subroutine Name2Ele
 
 
-integer function MatchEle(SpeciesName, nlen, i1, i2)
+function MatchEle(SpeciesName, nlen, i1, i2)
   use CMDT
   implicit none
   character(len=*) SpeciesName
@@ -80,7 +80,7 @@ integer function MatchEle(SpeciesName, nlen, i1, i2)
 end function MatchEle
 
 
-integer function getThisEleCount(SpeciesName, nlen, i1, i2)
+function getThisEleCount(SpeciesName, nlen, i1, i2)
   use CMDT
   implicit none
   character(len=*) SpeciesName
@@ -104,7 +104,7 @@ integer function getThisEleCount(SpeciesName, nlen, i1, i2)
 end function getThisEleCount
 
 
-logical function MatchStr(Str1, Str2, len2)
+function MatchStr(Str1, Str2, len2)
 ! Determine if Str2 is a substring of Str1.
 ! The match point must be the leading position.
   implicit none
@@ -127,7 +127,7 @@ logical function MatchStr(Str1, Str2, len2)
 end function MatchStr
 
 
-logical function IsDigit(ch)
+function IsDigit(ch)
   logical IsDigit
   character ch
   if (LGE(ch, '0') .AND. LLE(ch, '9')) then
@@ -153,7 +153,7 @@ subroutine Ele2Elements(SpeciesEle, SpeElements)
 end subroutine Ele2Elements
 
 
-logical function IsEquiv(SpeciesEle1, SpeciesEle2)
+function IsEquiv(SpeciesEle1, SpeciesEle2)
   use CMDT
   implicit none
   integer i, nLenTmp
@@ -310,7 +310,7 @@ end subroutine DeutIns
 
 
 
-logical function IsEquivSide(Side1, Side2, n1, n2)
+function IsEquivSide(Side1, Side2, n1, n2)
   use CMDT
   implicit none
   logical IsEquivSide
@@ -521,7 +521,7 @@ function ele2str (EleSpe)
 end function ele2str
 
 
-integer function getHAprCt (EleSpeciesA)
+function getHAprCt (EleSpeciesA)
   implicit none
   integer i, getHAprCt
   TYPE(EleSpecies) EleSpeciesA
@@ -550,7 +550,7 @@ subroutine getHGroup (EleSpeciesA, HydrGroup)
 end subroutine getHGroup
 
 
-integer function binomcoeff (n, m)
+function binomcoeff (n, m)
   implicit none
   integer binomcoeff, n, m, i
   binomcoeff = 1
@@ -563,7 +563,7 @@ integer function binomcoeff (n, m)
 end function binomcoeff
 
 
-integer function getNextColex (x)
+function getNextColex (x)
 ! Gosper's hack.
   implicit none
   integer getNextColex, x, s, r
@@ -583,7 +583,7 @@ subroutine intExchange(x, y)
 end subroutine intExchange
 
 
-integer function getAltAB(x, A, B)
+function getAltAB(x, A, B)
   implicit none
   integer getAltAB, x, A, B
   getAltAB = A - x + B

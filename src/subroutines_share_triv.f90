@@ -39,7 +39,7 @@
 
 
 !  Get a file unit to output.
-      logical function getFileUnit (fU)
+      function getFileUnit (fU)
       implicit none
       integer fU
       logical uExist, uOpened, getFileUnit
@@ -63,7 +63,7 @@
 
 
 !  Check if a file unit is opened.
-      logical function FileUnitOpened (fU)
+      function FileUnitOpened (fU)
       implicit none
       integer fU
       logical FileUnitOpened
@@ -73,7 +73,7 @@
 
 
 
-      integer function getIdxSpecies (SpeciesName)
+      function getIdxSpecies (SpeciesName)
       use CMDT
       implicit none
       integer getIdxSpecies
@@ -172,7 +172,7 @@
 
 
 !  Return TRUE if the character in in the range [0-9A-Za-z_]
-      logical function IsWordChar (ch)
+      function IsWordChar (ch)
       implicit none
       character ch
       logical IsWordChar

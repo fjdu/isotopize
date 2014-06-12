@@ -145,7 +145,7 @@ SUBROUTINE CombineLongpoly (p)
 END SUBROUTINE CombineLongpoly
 
 
-logical function IsEqualMon (m1, m2)
+function IsEqualMon (m1, m2)
 ! Assuming m1 and m2 are already sorted.
   implicit none
   integer i
@@ -382,7 +382,7 @@ SUBROUTINE SwapMoment (m1, m2)
 END SUBROUTINE SwapMoment
 
 
-logical function IsEqualMonDeriv (m1, m2)
+function IsEqualMonDeriv (m1, m2)
   implicit none
   integer i
   type (monomial) m1, m2
@@ -402,7 +402,7 @@ logical function IsEqualMonDeriv (m1, m2)
 END function IsEqualMonDeriv
 
 
-logical function IsEqualVec (v1, v2, n)
+function IsEqualVec (v1, v2, n)
   implicit none
   integer i, n
   integer, dimension(:) :: v1, v2
@@ -418,7 +418,7 @@ logical function IsEqualVec (v1, v2, n)
 END function IsEqualVec
 
 
-logical function IsEqualDeriv (D1, D2)
+function IsEqualDeriv (D1, D2)
   implicit none
   integer, dimension(dimvecDeriv) :: D1, D2
   logical :: IsEqualDeriv
@@ -427,7 +427,7 @@ logical function IsEqualDeriv (D1, D2)
 END function IsEqualDeriv
 
 
-TYPE (polymoment) function polyMon2Moment (p)
+function polyMon2Moment (p)
   implicit none
   integer i, j, i1
   type (polynomial) p
@@ -593,7 +593,7 @@ SUBROUTINE vec2strbasic (v, n, StrNameVec, StrOut)
 end SUBROUTINE vec2strbasic
 
 
-integer function getFstGasSpe (n)
+function getFstGasSpe (n)
   implicit none
   integer n, getFstGasSpe
   do getFstGasSpe=1, nnzMM(n)
@@ -606,7 +606,7 @@ integer function getFstGasSpe (n)
 end function getFstGasSpe
 
 
-integer function getFstDetSpe1 (n)
+function getFstDetSpe1 (n)
   use CMDT
   implicit none
   integer n, getFstDetSpe1
@@ -621,7 +621,7 @@ integer function getFstDetSpe1 (n)
 end function getFstDetSpe1
 
 
-integer function getFstDetSpe2 (n, y, NEQ)
+function getFstDetSpe2 (n, y, NEQ)
   use CMDT
   implicit none
   integer n, getFstDetSpe2
@@ -640,7 +640,7 @@ end function getFstDetSpe2
 
 
 
-integer function getFstDetSpe (n, y, NEQ)
+function getFstDetSpe (n, y, NEQ)
   use CMDT
   implicit none
   integer n, getFstDetSpe
@@ -659,7 +659,7 @@ end function getFstDetSpe
 
 
 
-double precision function GetMinComp (n, y, NEQ)
+function GetMinComp (n, y, NEQ)
   use CMDT
   implicit none
   integer n, i
@@ -688,7 +688,7 @@ function getdau(v, n, ndrop)
 end function getdau
 
 
-integer function getdauDrop(n, ndrop)
+function getdauDrop(n, ndrop)
   implicit none
   integer n, ndrop, n1, i
   integer, dimension(dimvecDeriv) :: v
@@ -706,7 +706,7 @@ integer function getdauDrop(n, ndrop)
 end function getdauDrop
 
 
-double precision function getMMProd (n, y, NEQ)
+function getMMProd (n, y, NEQ)
   implicit none
   integer i, n, NEQ
   double precision getMMProd
@@ -815,7 +815,7 @@ end function getMomValue
 
 
 
-double precision function derivDet (ni, nj, y, NEQ) ! nj should be
+function derivDet (ni, nj, y, NEQ) ! nj should be
   use CMDT    ! single.
   IMPLICIT NONE
   integer i, i1, ni, nj, NEQ
@@ -833,7 +833,7 @@ double precision function derivDet (ni, nj, y, NEQ) ! nj should be
 end function derivDet
 
 
-double precision function getVecProd (v, n, y, NEQ)
+function getVecProd (v, n, y, NEQ)
   use CMDT ! The elements of v should be no larger  than
   IMPLICIT NONE   ! nSpecies.
   integer i, i1, n, NEQ
@@ -852,7 +852,7 @@ double precision function getVecProd (v, n, y, NEQ)
 end function getVecProd
 
 
-logical function getSparse(ni, nj, y, NEQ)
+function getSparse(ni, nj, y, NEQ)
   use CMDT
   IMPLICIT NONE
   logical getSparse
@@ -872,7 +872,7 @@ end function getSparse
 
 
 
-recursive logical function IfContain(ni, nj) result (Contain)
+recursive function IfContain(ni, nj) result (Contain)
   use CMDT
   IMPLICIT NONE
   logical Contain
@@ -899,7 +899,7 @@ recursive logical function IfContain(ni, nj) result (Contain)
 end function IfContain
 
 
-double precision function getMaxYMM (n, y, NEQ)
+function getMaxYMM (n, y, NEQ)
   use CMDT
   IMPLICIT NONE
   integer, intent(in) :: n, NEQ

@@ -11,7 +11,8 @@ lflags_fast = -O3
 lflags_profiling = $(lflags_fast) -pg
 
 OBJS = common_MC_MO.o common_MC_MO_TP.o subroutines_share_triv.o main.o \
-       subroutines_share_proc.o subroutines_mo.o subroutines_proc_reac.o opkd*.o
+       subroutines_share_proc.o subroutines_proc_reac.o \
+       opkdmain.o opkda1.o opkda2.o
 
 LIBS = -lm -lcfitsio
 
@@ -49,14 +50,34 @@ $(exe_alt):  $(OBJS)
 	$(cpl) $(lflags) -o $(exe_alt) $(OBJS) $(LIBS)
 	echo -e '\a'
 
-main.o: main.f90 configure.o disk.o sub_trivials.o montecarlo.o ray_tracing.o hitran.o lamda.o cdms.o ray_propagating.o
+main.o: main.f90 common_MC_MO.o common_MC_MO_TP.o subroutines_share_triv.o \
+       subroutines_share_proc.o subroutines_proc_reac.o \
+       opkdmain.o opkda1.o opkda2.o
 	$(cpl) $(cflags) main.f90
 
-disk.o: disk.f90 chemistry.o heating_cooling.o load_Visser_CO_selfshielding.o data_struct.o grid.o montecarlo.o data_dump.o load_Draine_dusts.o ray_propagating.o vertical_structure.o
-	$(cpl) $(cflags) disk.f90
+common_MC_MO.o: common_MC_MO.f90
+	$(cpl) $(cflags) common_MC_MO.f90
 
-vertical_structure.o: vertical_structure.f90 data_struct.o sub_trivials.o grid.o
-	$(cpl) $(cflags) vertical_structure.f90
+common_MC_MO_TP.o: common_MC_MO_TP.f90
+	$(cpl) $(cflags) common_MC_MO_TP.f90
+
+subroutines_share_triv.o: subroutines_share_triv.f90
+	$(cpl) $(cflags) subroutines_share_triv.f90
+
+subroutines_share_proc.o: subroutines_share_proc.f90
+	$(cpl) $(cflags) subroutines_share_proc.f90
+
+subroutines_proc_reac.o: subroutines_proc_reac.f90
+	$(cpl) $(cflags) subroutines_proc_reac.f90
+
+opkdmain.o: opkdmain.f opkda1.o opkda2.o
+	$(cpl) $(cflags) opkdmain.f
+
+opkda1.o: opkda1.f
+	$(cpl) $(cflags) opkda1.f
+
+opkda2.o: opkda2.f
+	$(cpl) $(cflags) opkda2.f
 
 sync:
 	#rsync -acvz *.f90 fdu@shire.astro.lsa.umich.edu:~/now/src/
@@ -65,4 +86,4 @@ syncall:
 	#rsync -acvz *.f90 fdu@shire.astro.lsa.umich.edu:~/now/src/
 	#rsync -acvz makefile fdu@shire.astro.lsa.umich.edu:~/now/src/
 clean:
-	#rm ./*.mod ./*.o
+	rm ./*.mod ./*.o

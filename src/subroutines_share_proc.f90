@@ -265,7 +265,7 @@
 
 
 
-      logical function getPhyPar (t)
+      function getPhyPar (t)
       ! Input
       !         t:  time. The unit should be in year.
       ! Output
@@ -303,7 +303,7 @@
       end function getPhyPar
 
 
-      logical function ExternalAction (t, y, NEQ)
+      function ExternalAction (t, y, NEQ)
       ! Some external actions which modify the system status
       ! Input
       !         t:  time. The unit should be in year.

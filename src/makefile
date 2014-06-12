@@ -85,5 +85,6 @@ sync:
 syncall:
 	#rsync -acvz *.f90 fdu@shire.astro.lsa.umich.edu:~/now/src/
 	#rsync -acvz makefile fdu@shire.astro.lsa.umich.edu:~/now/src/
+
 clean:
 	rm ./*.mod ./*.o

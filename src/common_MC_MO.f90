@@ -86,6 +86,11 @@
       double precision, dimension(:, :), allocatable :: &
         dblABC, ratesDissRecom
       double precision, dimension(:), allocatable :: &
+        T_min, T_max
+      character(len=1), dimension(:), allocatable :: cquality, stype
+      character(len=2), dimension(:), allocatable :: ctype
+      !
+      double precision, dimension(:), allocatable :: &
         massSpecies, rates, propensities, mobilitySpecies
       double precision, dimension(:), allocatable :: t_Save
       

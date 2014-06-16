@@ -178,9 +178,10 @@
       nRealProducts = 0
 
       write (FMTstring, FMT=&
-        '("(", I1, "A", I2, ", ", I1, "E", I1, ".", I1, ", 12X, ", &
-        & "I", I1, ")")') &
-        nParticipants, constLenNameSpecies, 3, 9, 2, 3
+        '("(", I1, "A", I2, ", ", I1, "F", I1, ".", I1, ",", I1, "F", I1, ".0", &
+        & ",I", I1, ",X,A", I1, ",X,A", I1, ",X,A", I1")")') &
+        nParticipants, constLenNameSpecies, 3, 9, 0, 2, 6, 3, 1, 2, 1
+      write(*,*) 'Reading with format: ', FMTstring
 
       rewind (UNIT=fU, IOSTAT=ios)
 
@@ -194,7 +195,8 @@
             (strtmp(1:1) .EQ. ' ')) &
           cycle
         read (UNIT=strtmp, FMT=FMTstring, IOSTAT=ios) &
-          strReactants(:,i), strProducts(:,i), dblABC(:,i), typeReac(i)
+          strReactants(:,i), strProducts(:,i), dblABC(:,i), &
+          T_min(i), T_max(i), typeReac(i), cquality(i), ctype(i), stype(i)
         do j=1, nReactants
           do k=1, constLenNameSpecies
             if (strReactants(j, i)(k:k) .NE. ' ') then
@@ -202,6 +204,27 @@
               exit
             end if
           end do
+          if (trim(strReactants(j, i)) .EQ. 'PHOTON') then
+            nRealReactants(i) = nRealReactants(i) - 1
+          end if
+          if (trim(strReactants(j, i)) .EQ. 'CRPHOT') then
+            nRealReactants(i) = nRealReactants(i) - 1
+          end if
+          if (trim(strReactants(j, i)) .EQ. 'CRP') then
+            nRealReactants(i) = nRealReactants(i) - 1
+          end if
+          if (trim(strReactants(j, i)) .EQ. 'C-RAY') then
+            nRealReactants(i) = nRealReactants(i) - 1
+          end if
+          if (trim(strReactants(j, i)) .EQ. 'TEMP') then
+            nRealReactants(i) = nRealReactants(i) - 1
+          end if
+          if (trim(strReactants(j, i)) .EQ. 'LYAPHOTON') then
+            nRealReactants(i) = nRealReactants(i) - 1
+          end if
+          if (trim(strReactants(j, i)) .EQ. 'XRAY') then
+            nRealReactants(i) = nRealReactants(i) - 1
+          end if
         end do
         do j=1, nProducts
           do k=1, constLenNameSpecies
@@ -210,6 +233,9 @@
               exit
             end if
           end do
+          if (trim(strProducts(j, i)) .EQ. 'PHOTON') then
+            nRealProducts(i) = nRealProducts(i) - 1
+          end if
         end do
         i = i + 1
       end do

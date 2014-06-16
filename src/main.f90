@@ -13,6 +13,7 @@
       character strTMP*128, strTMP1*128
       character FMTstr*128, FMTstryHistory*128, FMTstrPhyPar*128
       character(LEN=constLenNameSpecies) nameSpecies_tmp
+      character(LEN=9) strtmp2
       logical IsWordChar
 
       integer i, j, k, h, i1, i2, i3, nNumMMTmp
@@ -130,7 +131,12 @@
          nRealProducts(nReactions), &
          reactions(nParticipants, nReactions), &
          dblABC(3, nReactions), &
+         T_min(nReactions), &
+         T_max(nReactions), &
          typeReac(nReactions), &
+         ctype(nReactions), &
+         stype(nReactions), &
+         cquality(nReactions), &
          rates(nReactions), STAT=statALLOC)
 
       CALL ReadReactions (fU, nLineAll, commentChar)
@@ -209,7 +215,7 @@
 
       write (*,*) 'Working on the reactions...'
       fDeuterated = &
-        trim(getFilePreName(fReactions))//'_Deuterated.dat'
+        trim(getFilePreName(fReactions))//'_isotopized.dat'
       if (.NOT. getFileUnit(fU)) then
         write (*,*) 'Cannot allocate an output file unit!'
         stop
@@ -219,7 +225,7 @@
       write (fU, '(A)') &
         '!23456789ABC123456789ABC123456789ABC123456789ABC&
         &123456789ABC123456789ABC123456789ABC123456789123456789&
-        &12345678912345612345612312123     w  j  i  t'
+        &12345678912345612345612312123      w  j  i  t'
       nGrReactions = 0
       nReac_AsReactants = 0
       nReac_AsProducts = 0
@@ -287,26 +293,36 @@
         end do
         if ((abs(nElementReac(1) - nElementReac(2) &
                - nElementProd(1) + nElementProd(2)) + &
-          sum(abs(nElementReac(5:nElement) - &
-          nElementProd(5:nElement)))) .NE. 0) then
+          sum(abs(nElementReac(6:nElement) - &
+                  nElementProd(6:nElement)))) .NE. 0) then
+          ! Start from H, hence Grain is not taken into account for the elemental conservation.
           write (*, '(2A, I6, A, 2X, 2A12, " -> ", 5A12)') &
-            'Elements not conserved [discarded]: ', &
+            'Elements not conserved: ', &
             char(27)//'[41m', i, char(27)//'[0m', & !]]
             strReactants(1:nReactants, i), strProducts(1:nProducts, i)
-          nRealReactants(i) = 0
-          nRealProducts(i) = 0
+          write(*, '(24I3)') nElementReac(1:24)
+          write(*, '(24I3)') nElementProd(1:24)
+          write(*, '(A, 2I6)') 'nRealReac, nRealProd:', nRealReactants(i), nRealProducts(i)
+          !nRealReactants(i) = 0
+          !nRealProducts(i) = 0
         end if
         do j=1, i-1
           if ((sum(abs(reactions(:, j)-reactions(:, i))) .EQ. 0) &
               .AND. (typeReac(j) .EQ. typeReac(i))) then
-            write (*,'(2A, 2I4, A)') &
+            write (*,'(2A, 2I6, A)') &
               'Duplicate reaction pair: ', &
               char(27)//'[45m', i, j, char(27)//'[0m'
           end if
         end do
-        write (fU, '(7A12, ES9.2, F9.2, F9.1, 12X, I3)') &
+        !
+        call double2str(strtmp2, dblABC(3, i), 9, 1)
+        !
+        write (fU, '(7A12, ES9.2, F9.2, A9, 2I6, I3, X,A1,X,A2,X,A1)') &
           strReactants(:, i), strProducts(:, i), &
-          dblABC(1:3, i), typeReac(i)
+          dblABC(1:2, i), &
+          strtmp2, &
+          int(T_min(i)), int(T_max(i)), typeReac(i), &
+          cquality(i), ctype(i), stype(i)
         !if (sum(nElementReac(idxNew+1:nElement)) .GE. noDMaxMetal) cycle
         !flag = .FALSE.
         !do j=idxNew+1, nElement

@@ -1,3 +1,12 @@
+## Usage
+
+Compile the Fortran code with make, which will create an executable named isotopize, then run
+```
+    isotopize config_new.dat
+```
+
+##Format of the config file
+```fortran
 &PhysicalParameters
   elementOld = 'C' ! Element to be isotopized.
   elementNew = 'X' ! Symbol to be used for the isotope.
@@ -8,5 +17,5 @@
 /
 &Paths
   path = "./"  ! Folder containing the input network.
-  fReactions = "rreacs_herb0308_modi.dat"  ! Network file.
+  fReactions = "rate12_umist_reformatted.dat"  ! Network file.
 /

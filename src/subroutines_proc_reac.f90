@@ -380,7 +380,8 @@ end subroutine SortStrList
 subroutine DeutReac (iReac, nDeut, fU)
   use CMDT
   implicit none
-  integer i, j, i1, j1, iReac, nDeut, &
+  character(len=9) strtmp
+  integer i, j, i1, j1, k, iReac, nDeut, &
     nDeutThis, nDeutedLeft, nDeutedRight, fU
   integer TotalWeight, nSplittedLeft, nSplittedRight, nSplitted_tmp
   character(len=lenStrSideMax), dimension(nDeutSideMax) :: &
@@ -432,10 +433,25 @@ subroutine DeutReac (iReac, nDeut, fU)
             WeightsRight(j1) = 0
           end if
         end do
-        write (fU, '(7A12, ES9.2, F9.2, F9.1, 12X, I3, 7X, "!", 4I3)') &
+        do k=nRealReactants(iReac)+1, nReactants
+          if (len_trim(strReactants(k, iReac)) .gt. 0) then
+            StrSplittedLeft(k) = strReactants(k, iReac)
+          end if
+        end do
+        do k=nRealProducts(iReac)+1, nProducts
+          if (len_trim(strProducts(k, iReac)) .gt. 0) then
+            StrSplittedRight(k) = strProducts(k, iReac)
+          end if
+        end do
+        call double2str(strtmp, dblABC(3, iReac), 9, 1)
+        write (fU, &
+          '(7A12, ES9.2, F9.2, A9, 2I6, I3, X,A1,X,A2,X,A1, " !", 4I3)') &
           StrSplittedLeft, StrSplittedRight, &
           dblABC(1, iReac) * dble(WeightsRight(j))/dble(TotalWeight), &
-          dblABC(2:3, iReac), typeReac(iReac), &
+          dblABC(2, iReac), &
+          strtmp, &
+          int(T_min(iReac)), int(T_max(iReac)), typeReac(iReac), &
+          cquality(iReac), ctype(iReac), stype(iReac), &
           WeightsRight(j), j, i, nDeutThis
       end do
     end do
@@ -808,5 +824,18 @@ subroutine sort_sub_group(eS, i1, i2)
   end do
 end subroutine sort_sub_group
 
+
+pure subroutine double2str(str, x, nW, nP)
+  double precision, intent(in) :: x
+  integer, intent(in) :: nW, nP
+  character(len=*), intent(out) :: str
+  character(len=16) :: fmtstr
+  write(fmtstr, '("(F", I2, ".", I2, ")")') nW, nP
+  write(str, fmtstr) x
+  if (str(1:1) .eq. '*') then
+    write(fmtstr, '("(ES", I2, ".", I2, ")")') nW, nP
+    write(str, fmtstr) x
+  end if
+end subroutine double2str
 
 END MODULE

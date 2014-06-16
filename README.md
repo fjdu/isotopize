@@ -13,9 +13,10 @@ attached to the original file name.
 
 To convert the herbst format to the format understandable by my code, I have to
 
-1. Delete all lines beginning with ```#```, or replace ```#``` with ```!```.  The won't appear in the output file anyway.
+1. Delete all the lines beginning with ```#```, or replace ```#``` with ```!```.  The won't appear in the output file anyway.
 1. Shift the columns so that they follow the format shown below.  If an entry is unapplicable, fill with blank space.
 1. Replace ```E``` with ```E-```.  Take care of the spaces and make sure the file is still correctly aligned.
+1. Replace ```GRAIN``` with ```Grain```.
 
 All the above can be done within ```vi```, or with a ```python``` script.
 

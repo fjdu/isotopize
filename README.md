@@ -1,9 +1,13 @@
 ## Usage
 
-Compile the Fortran code with make, which will create an executable named isotopize, then run
+Compile the Fortran code with ```make``` in the ```src``` directory, which will
+create an executable named ```isotopize```, then run
 ```
-    src/isotopize config_new.dat
+    isotopize config_new.dat
 ```
+
+The converted file will be produced in the same directory with "isotopized"
+attached to the original file name.
 
 ##Format of the config file
 

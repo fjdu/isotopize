@@ -1,0 +1,12 @@
+&PhysicalParameters
+  elementOld = 'C'
+  elementNew = 'X'
+  nDeutDegree = 1
+  nOtherDeutMax = 20
+  noDMaxMetal = 20
+  noDEleAbundance = 0D0
+/
+&Paths
+  path = "./"
+  fReactions = "rate12_umist_reformatted.dat"
+/

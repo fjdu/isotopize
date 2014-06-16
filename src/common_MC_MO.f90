@@ -17,28 +17,32 @@
       ! 2011-02-03 Thu 12:26:49
       ! Split +- into + and -.
       ! Possible issues of backward compatibility.
-      integer, parameter :: nElement = 20
+      integer, parameter :: nElement = 24
       character(LEN=8), dimension(nElement) :: &
         nameElements = &
           (/'+       ', '-       ', 'E       ', 'g       ', &
             'Grain   ', 'H       ', 'D       ', 'He      ', &
             'C       ', 'N       ', 'O       ', 'Si      ', &
             'S       ', 'Fe      ', 'Na      ', 'Mg      ', &
-            'Cl      ', 'P       ', 'F       ', '@       '/)
+            'Cl      ', 'P       ', 'F       ', '@       ', &
+            'X       ', 'Y       ', 'Z       ', 'Q       '  &
+            /)
       double precision, dimension(nElement), parameter :: &
         ElementMassNumber = &
           (/0D0       , 0D0       , 5.45D-4   , 0D0       , &
             0D0       , 1D0       , 2D0       , 4D0       , &
             12D0      , 14D0      , 16D0      , 28D0      , &
             32D0      , 56D0      , 23D0      , 24D0      , &
-            35.5D0    , 31D0      , 19D0      , 0D0/)
+            35.5D0    , 31D0      , 19D0      , 18D0      , &
+            13D0      , 0D0       , 0D0       , 0D0/)
       double precision, dimension(nElement), parameter :: &
         ElementTypicalAbundance = &
           (/0D0       , 0D0       , 5D-8      , 0D0       , &
             3D-12     , 1D0       , 2D-5      , 1.4D-1    , &
             7.3D-5    , 2.14D-5   , 1.76D-4   , 3.0D-9    , &
             2.0D-8    , 3.0D-9    , 3.0D-9    , 3.0D-9    , &
-            3.0D-9    , 3.0D-9    , 2.0D-8    , 0D0/)
+            3.0D-9    , 3.0D-9    , 2.0D-8    , 6.4D-7    , &
+            0.0D0     , 0.0D0     , 0.0D0     , 0D0/)
 
 
       integer, parameter :: constLenNameSpecies = 12, &

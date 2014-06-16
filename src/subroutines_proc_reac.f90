@@ -2,11 +2,20 @@
 
 MODULE CMReac
 
+use CMDT
+
 implicit none
 
 integer, parameter :: nItemInASpecies = 32, nMaxGrp = 32, &
-  idxH = 6, idxD = 7, nDeutSideMax = 32, lenStrSideMax = 64, &
-  idxDumb = 20, eleCountMax = 2
+  nDeutSideMax = 32, lenStrSideMax = 64, &
+  idxSep = 20, eleCountMax = 2, &
+  idxH=6, idxD=7
+
+character(len=constLenNameSpecies) elementOld, elementNew
+
+! idxOld = 6, idxNew = 7
+integer idxOld, idxNew
+
 integer nOtherDeutMax, noDMaxMetal
 integer nDeutDegree
 double precision noDEleAbundance
@@ -270,8 +279,8 @@ subroutine DeutGroups (HydrGroup, nDeu, vecDeutGroup, nDeutGroup)
       vecDeutGroup(nDeutGroup)%nItem = HydrGroup%nItem
       vecDeutGroup(nDeutGroup)%nEle = 2
       vecDeutGroup(nDeutGroup)%nWeight = 1
-      vecDeutGroup(nDeutGroup)%EleList(1) = idxH
-      vecDeutGroup(nDeutGroup)%EleList(2) = idxD
+      vecDeutGroup(nDeutGroup)%EleList(1) = idxOld
+      vecDeutGroup(nDeutGroup)%EleList(2) = idxNew
       do j=1, HydrGroup%nItem
         vecDeutGroup(nDeutGroup)%ArrCt(j, 2) = ArrCt(j)
         vecDeutGroup(nDeutGroup)%ArrCt(j, 1) = &
@@ -291,17 +300,17 @@ subroutine DeutIns (DeutGroup, SpeciesEle, SpeciesEleD)
   i1 = 0
   i2 = 0
   do i=1, SpeciesEle%nItem
-    if (SpeciesEle%vecIdEle(i) .NE. idxH) then
+    if (SpeciesEle%vecIdEle(i) .NE. idxOld) then
       i1 = i1 + 1
       SpeciesEleD%vecIdEle(i1) = SpeciesEle%vecIdEle(i)
       SpeciesEleD%vecCtEle(i1) = SpeciesEle%vecCtEle(i)
     else
       i2 = i2 + 1
       i1 = i1 + 1
-      SpeciesEleD%vecIdEle(i1) = idxH
+      SpeciesEleD%vecIdEle(i1) = idxOld
       SpeciesEleD%vecCtEle(i1) = DeutGroup%ArrCt(i2,1)
       i1 = i1 + 1
-      SpeciesEleD%vecIdEle(i1) = idxD
+      SpeciesEleD%vecIdEle(i1) = idxNew
       SpeciesEleD%vecCtEle(i1) = DeutGroup%ArrCt(i2,2)
     end if
   end do
@@ -319,6 +328,8 @@ function IsEquivSide(Side1, Side2, n1, n2)
     Side1, Side2
   character(len=constLenNameSpecies), dimension(:), allocatable :: &
     Side1_sorted, Side2_sorted
+  type (EleSpecies) Sp1, Sp2
+  !
   IsEquivSide = .TRUE.
   if (n1 .NE. n2) then
     IsEquivSide = .FALSE.
@@ -332,6 +343,16 @@ function IsEquivSide(Side1, Side2, n1, n2)
         exit
       end if
     end do
+    if (.not. IsEquivSide) then
+      do i=1, n1
+        call Name2Ele(Side1(i), Sp1)
+        call Name2Ele(Side2(i), Sp2)
+        IsEquivSide = isEquivMirror(Sp1, Sp2)
+        if (.not. IsEquivSide) then
+          return
+        end if
+      end do
+    end if
   end if
 end function IsEquivSide
 
@@ -397,7 +418,9 @@ subroutine DeutReac (iReac, nDeut, fU)
       end do
       if (flag_same) cycle
       do j=1, nDeutedRight
+        !
         if (WeightsRight(j) .LE. 0) cycle
+        !
         StrSplittedRight=""
         call SplitSideStr(StrDeutedRight(j), StrSplittedRight, nSplittedRight)
         do j1=j+1, nDeutedRight
@@ -444,7 +467,7 @@ subroutine DeutSide (SpeciesGroup, &
       deallocate(vecDeutGroup(i)%ArrCt)
     allocate(vecDeutGroup(i)%ArrCt(HydrGroup%nItem, 2))
   end do
-  HydrGroup%EleList(1) = idxH
+  HydrGroup%EleList(1) = idxOld
   call getHGroup (SpeciesEleBig, HydrGroup)
   call DeutGroups (HydrGroup, nDeutThis, vecDeutGroup, nDeutedSide)
   do i=1, nDeutedSide
@@ -464,7 +487,7 @@ subroutine makeBigSpecies (SpeciesGroup, nGroupSize, SpeciesEleBig)
   !Combine the EleSpecies structures of all the species in a group together.
   do i=2, nGroupSize
     SpeciesEleBig%nItem = SpeciesEleBig%nItem + 1
-    SpeciesEleBig%vecIdEle(SpeciesEleBig%nItem) = idxDumb
+    SpeciesEleBig%vecIdEle(SpeciesEleBig%nItem) = idxSep
     SpeciesEleBig%vecCtEle(SpeciesEleBig%nItem) = 1
     SpeciesEleBig%vecIdEle(SpeciesEleBig%nItem+1 : &
       SpeciesEleBig%nItem+SpeciesEleAll(SpeciesGroup(i))%nItem) = &
@@ -489,7 +512,7 @@ subroutine SplitSideStr (SideStr, StrSplitted, nSpeSplitted)
   nSpeSplitted = 1
   j = 1
   do i = 1, len_trim(SideStr)
-    if (SideStr(i:i) .NE. nameElements(idxDumb)) then
+    if (SideStr(i:i) .NE. nameElements(idxSep)) then
       StrSplitted(nSpeSplitted)(j:j) = SideStr(i:i)
       j = j + 1
     else
@@ -527,7 +550,7 @@ function getHAprCt (EleSpeciesA)
   TYPE(EleSpecies) EleSpeciesA
   getHAprCt = 0
   do i=1, EleSpeciesA%nItem
-    if (EleSpeciesA%vecIdEle(i) .EQ. idxH) then
+    if (EleSpeciesA%vecIdEle(i) .EQ. idxOld) then
       getHAprCt = getHAprCt + 1
     end if
   end do
@@ -542,7 +565,7 @@ subroutine getHGroup (EleSpeciesA, HydrGroup)
   type (EleGroup) HydrGroup
   i1 = 0
   do i=1, EleSpeciesA%nItem
-    if (EleSpeciesA%vecIdEle(i) .EQ. idxH) then
+    if (EleSpeciesA%vecIdEle(i) .EQ. idxOld) then
       i1 = i1 + 1
       HydrGroup%ArrCt(i1,1)  =  EleSpeciesA%vecCtEle(i)
     end if
@@ -590,6 +613,200 @@ function getAltAB(x, A, B)
   !getAltAB = IEOR(A, IEOR(B, x))
 end function getAltAB
 
+
+function isEquivMirror(Sp1, Sp2) result(eq)
+  logical eq
+  type(EleSpecies), intent(in) :: Sp1, Sp2
+  type(EleSpecies) St
+  integer i, j
+  !
+  eq = isEquivSimple(Sp1, Sp2)
+  if (eq) then
+    return
+  end if
+  !
+  do j=1, 3
+    St = mirror_eleSpecies(Sp1, j)
+    eq = isEquivSimple(St, Sp2)
+    if (eq) then
+      return
+    end if
+  end do
+end function isEquivMirror
+
+
+
+function isEquivSimple(Sp1, Sp2) result(eq)
+  logical eq
+  type(EleSpecies), intent(in) :: Sp1, Sp2
+  integer i
+  eq = .true.
+  if (Sp1%nItem .ne. Sp2%nItem) then
+    eq = .false.
+    return
+  end if
+  !
+  do i=1, Sp1%nItem
+    if ((Sp1%vecIdEle(i) .ne. Sp2%vecIdEle(i)) .or. &
+        (Sp1%vecCtEle(i) .ne. Sp2%vecCtEle(i))) then
+      eq = .false.
+      return
+    end if
+  end do
+end function isEquivSimple
+
+
+function mirror_eleSpecies(eS, cases) result(m)
+  type(EleSpecies) m
+  type(EleSpecies), intent(in) :: eS
+  integer, intent(in) :: cases
+  integer i, n1, n2
+  !
+  select case(cases)
+    case(1)
+      ! Transform CH3OCH3 into H3COH3C
+      m = simple_mirror(eS)
+    case(2)
+      ! Transform CH3OCH2D into CH2DOCH3
+      !   First transform into DH2COH3C
+      !
+      m = simple_mirror(eS)
+      !
+      if (m%nItem .eq. 1) then
+        return
+      end if
+      !
+      call identify_head_H_group(m, n1, n2)
+      if ((n1 .gt. 0) .and. (n2 .gt. 0)) then
+        call sort_sub_group(m, n1, n2)
+      end if
+      !
+      call identify_tail_H_group(m, n1, n2)
+      if ((n1 .gt. 0) .or. (n2 .gt. 0)) then
+        call sort_sub_group(m, n2, n1)
+      end if
+      !
+    case(3)
+      ! Transform H3COCH2D into CH3OCH2D
+      !
+      m = eS
+      !
+      if (m%nItem .eq. 1) then
+        return
+      end if
+      !
+      call identify_head_H_group(m, n1, n2)
+      if ((n1 .gt. 0) .and. (n2 .gt. 0)) then
+        call sort_sub_group(m, n1, n2)
+      end if
+      !
+      call identify_tail_H_group(m, n1, n2)
+      if ((n1 .gt. 0) .or. (n2 .gt. 0)) then
+        call sort_sub_group(m, n2, n1)
+      end if
+      !
+  end select
+end function mirror_eleSpecies
+
+
+function simple_mirror(eS) result(m)
+  type(EleSpecies) m
+  type(EleSpecies), intent(in) :: eS
+  integer i, i1, i2
+  if (eS%vecIdEle(1) .lt. idxH) then
+    i1 = 2
+  else
+    i1 = 1
+  end if
+  if (eS%vecIdEle(eS%nItem) .lt. idxH) then
+    i2 = eS%nItem - 1
+  else
+    i2 = eS%nItem
+  end if
+  !
+  m%nItem = eS%nItem
+  !
+  do i=1, i1-1
+    m%vecIdEle(i) = eS%vecIdEle(i)
+    m%vecCtEle(i) = eS%vecCtEle(i)
+  end do
+  do i=i2+1, eS%nItem
+    m%vecIdEle(i) = eS%vecIdEle(i)
+    m%vecCtEle(i) = eS%vecCtEle(i)
+  end do
+  do i=i1, i2
+    m%vecIdEle(i) = eS%vecIdEle(i2-i+1)
+    m%vecCtEle(i) = eS%vecCtEle(i2-i+1)
+  end do
+end function simple_mirror
+
+
+subroutine identify_head_H_group(eS, n1, n2)
+  type(EleSpecies), intent(in) :: eS
+  integer, intent(out) :: n1, n2
+  integer i
+  n1 = 0; n2 = 0
+  do i=1, eS%nItem
+    if (eS%vecIdEle(i) .ge. idxH) then
+      n1 = i
+      exit
+    end if
+  end do
+  do i=n1+1, eS%nItem
+    if ((eS%vecIdEle(i) .ne. idxH) .and. (es%vecIdEle(i) .ne. idxD)) then
+      n2 = i
+      exit
+    end if
+  end do
+  if ((es%vecIdEle(n1) .ne. idxH) .and. (es%vecIdEle(n1) .ne. idxD)) then
+    n2 = n2 - 1
+  end if
+end subroutine identify_head_H_group
+
+
+subroutine identify_tail_H_group(eS, n1, n2)
+  type(EleSpecies), intent(in) :: eS
+  integer, intent(out) :: n1, n2
+  integer i
+  n1 = 0; n2 = 0
+  do i=eS%nItem, 1, -1
+    if (eS%vecIdEle(i) .ge. idxH) then
+      n1 = i
+      exit
+    end if
+  end do
+  do i=n1-1, 1, -1
+    if ((eS%vecIdEle(i) .ne. idxH) .and. (es%vecIdEle(i) .ne. idxD)) then
+      n2 = i
+      exit
+    end if
+  end do
+  if ((es%vecIdEle(n1) .ne. idxH) .and. (es%vecIdEle(n1) .ne. idxD)) then
+    n2 = n2 + 1
+  end if
+end subroutine identify_tail_H_group
+
+
+subroutine sort_sub_group(eS, i1, i2)
+  type(EleSpecies), intent(inout) :: eS
+  integer, intent(in) :: i1, i2
+  integer i, j, ia, ib
+  do i=i1, i2
+    if (es%vecIdEle(i) .eq. idxD) then
+      cycle
+    end if
+    do j=i1, i-1
+      if ((eS%vecIdEle(j) .eq. idxH) .or. (eS%vecIdEle(j) .eq. idxD)) then
+        ia = eS%vecIdEle(j)
+        ib = eS%vecCtEle(j)
+        eS%vecIdEle(j) = es%vecIdEle(i)
+        eS%vecCtEle(j) = es%vecCtEle(i)
+        eS%vecIdEle(i) = ia
+        eS%vecCtEle(i) = ib
+      end if
+    end do
+  end do
+end subroutine sort_sub_group
 
 
 END MODULE

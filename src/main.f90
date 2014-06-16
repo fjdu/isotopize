@@ -1,28 +1,3 @@
-! Runs fluently on 2010-08-09
-!
-! 2010-09-06:
-!   Adapted for gas-grain.
-!   Corrected a severe error:
-!     !polyReac(i)%vecMon(2)%vecExp(1:nRealReactants(i)) = 1
-!     ->  polyReac(i)%vecMon(2)%vecExp(1:nRealProducts(i)) = 1
-!   This error does not show up previously, because previously all
-!     the reactions have relatively small number of products.
-!   Treat the gas species the same way as grain species.
-!
-! XXX Start final revision again on 2010-10-26
-!
-! 2011-01-17 Mon 17:44:28
-!
-! Its previous filename is moment_rate06_Drop.f90, copied from
-!   chemical_modeling/moment_eq_20101026
-! Modification for changing physical conditions.
-!
-! 2011-01-20 Thu 22:17:47
-! This one is only used for analysis.
-!
-!gfortran common_MC_MO.o common_MC_MO_TP.o subroutines_share_triv.o makedeut_20120321.o subroutines_share_proc.o subroutines_mo.o subroutines_proc_reac_20120321.o opkd*.o -fbounds-check -o makedeut_20120321
-!cp src/makedeut ./
-!./makedeut config_moment_withTime.dat
       program makedeut
       use CMDT
       use CMTP
@@ -48,8 +23,6 @@
 
       real ProgStartTime, ProgCurrentTime
 
-      double precision, dimension(:), allocatable :: &
-        initialElementalAb, finalElementalAb
       integer, dimension(:), allocatable :: &
         nElementReac, nElementProd
 
@@ -86,8 +59,6 @@
       CALL GET_COMMAND_ARGUMENT(1, strTMP, i, ios)
       if (i .EQ. 0) strTMP = 'config.dat'
 
-      ! This initialization imports, and only imports all the configuration
-      ! parameters.
       write (*, '(/A)') 'Initializing...'
       CALL initialize (strTMP)
 
@@ -109,6 +80,29 @@
             end if
           end if
         end do
+      end if
+
+      idxOld = -1
+      idxNew = -1
+      do i=1, nElement
+        if (nameElements(i) .eq. adjustl(elementOld)) then
+          idxOld = i
+        end if
+        if (nameElements(i) .eq. adjustl(elementNew)) then
+          idxNew = i
+        end if
+      end do
+      if (idxOld .eq. -1) then
+        write(*, '(A, A12, A)') 'Error: ', elementOld, ' is unknown!'
+        stop
+      end if
+      if (idxNew .eq. -1) then
+        idxNew = idxSep + 1
+        if (idxNew .gt. nElement) then
+          write(*, '(A)') 'The length of the elements list is too small!'
+          stop
+        end if
+        nameElements(idxNew) = adjustl(elementNew)
       end if
 
 ! Import all the reactions
@@ -147,9 +141,6 @@
       allocate &
         (SpeciesElements(nElement, nSpecies), &
          massSpecies(nSpecies), &
-         mobilitySpecies(nSpecies), &
-         initialElementalAb(nElement), &
-         finalElementalAb(nElement), &
          nElementReac(nElement), &
          nElementProd(nElement), &
          nReac_AsReactants(nSpecies), &
@@ -158,11 +149,7 @@
          idxReac_AsProducts(nReactions, nSpecies), &
          idxGrSpecies(nSpecies), &
          idxGrReactions(nReactions), &
-         nChangeSpe(nSpecies), &
-         idxChangeSpe(16, nSpecies), &
-         IsStoSpecies(nSpecies), &
          IsGas(nSpecies), &
-         IsEndProd(nSpecies), &
          SpeciesEleAll(nSpecies), &
          SpeciesEleD(nSpecies), STAT=statALLOC)
 
@@ -190,7 +177,7 @@
         !    deallocate(vecDeutGroup(j)%ArrCt)
         !  allocate(vecDeutGroup(j)%ArrCt(HydrGroup%nItem, 2))
         !end do
-        !HydrGroup%EleList(1) = idxH
+        !HydrGroup%EleList(1) = idxOld
         !call getHGroup (SpeciesEleAll(i), HydrGroup)
         !call DeutGroups (HydrGroup, 2, vecDeutGroup, nDeutGroup)
         !do j=1, nDeutGroup
@@ -320,22 +307,23 @@
         write (fU, '(7A12, ES9.2, F9.2, F9.1, 12X, I3)') &
           strReactants(:, i), strProducts(:, i), &
           dblABC(1:3, i), typeReac(i)
-        if (sum(nElementReac(idxD+1:nElement)) .GE. noDMaxMetal) cycle
-        flag = .FALSE.
-        do j=idxD+1, nElement
-          if (nElementReac(j) .GT. 0) then
-            if (ElementTypicalAbundance(j) .LT. noDEleAbundance) then
-              flag = .TRUE.
-              exit
-            end if
-          end if
-        end do
-        if (flag) cycle
-        if (sum(nElementReac(idxD+1:nElement)) .LE. nOtherDeutMax) then
-          call DeutReac (i, nDeutDegree, fU)
-        else
-          call DeutReac (i, 1, fU)
-        end if
+        !if (sum(nElementReac(idxNew+1:nElement)) .GE. noDMaxMetal) cycle
+        !flag = .FALSE.
+        !do j=idxNew+1, nElement
+        !  if (nElementReac(j) .GT. 0) then
+        !    if (ElementTypicalAbundance(j) .LT. noDEleAbundance) then
+        !      flag = .TRUE.
+        !      exit
+        !    end if
+        !  end if
+        !end do
+        !if (flag) cycle
+        !if (sum(nElementReac(idxNew+1:nElement)) .LE. nOtherDeutMax) then
+        !  call DeutReac (i, nDeutDegree, fU)
+        !else
+        !  call DeutReac (i, 1, fU)
+        !end if
+        call DeutReac (i, nDeutDegree, fU)
       end do
       close (UNIT=fU, IOSTAT=ios, ERR=999, STATUS='KEEP')
       CALL openFileSequentialRead &
@@ -383,7 +371,9 @@
         GrainRadius, GrainDensity, SitesDensity, &
         nSpecies_Est, nIteration, timeUnit, sto_threshold, &
         rateThreshold, nOrderLim, nDeutDegree, &
-        nOtherDeutMax, noDMaxMetal, noDEleAbundance
+        nOtherDeutMax, noDMaxMetal, noDEleAbundance, &
+        elementOld, elementNew
+        !idxNew, idxOld
 
       namelist /ODEParameters/ &
         ATOL, RTOL, nIteration
@@ -403,7 +393,7 @@
 
       CALL openFileSequentialRead (fU, fileInitialize, 999)
       read (UNIT=fU, IOSTAT=ios, NML=PhysicalParameters)
-      read (UNIT=fU, IOSTAT=ios, NML=ODEParameters)
+      !read (UNIT=fU, IOSTAT=ios, NML=ODEParameters)
       read (UNIT=fU, IOSTAT=ios, NML=Paths)
       close (UNIT=fU, IOSTAT=ios, STATUS='KEEP')
 

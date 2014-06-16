@@ -14,8 +14,8 @@ attached to the original file name.
 To convert the herbst format to the format understandable by my code, I have to
 
 1. Delete all lines beginning with ```#```, or replace ```#``` with ```!```.  The won't appear in the output file anyway.
-1. Shift the columns so that they follow the following format:
-1. Replace ```E ``` with ```E-```.  Note the space, otherwise the file will become unaligned.
+1. Shift the columns so that they follow the format shown below.  If an entry is unapplicable, fill with blank space.
+1. Replace ```E``` with ```E-```.  Take care of the spaces and make sure the file is still correctly aligned.
 
 All the above can be done within ```vi```, or with a ```python``` script.
 
@@ -24,6 +24,7 @@ To convert the isotopized file back to the original format, follow the reverse o
 ##Format of the input network file
 
 ```fortran
+!         R1          R2          R3          P1          P2          P3          P4        A        B        C    T1    T2 iT q cT s
 !23456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789123456789123456789123456123456123121231212
 ```
 

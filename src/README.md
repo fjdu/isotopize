@@ -6,6 +6,7 @@ Compile the Fortran code with make, which will create an executable named isotop
 ```
 
 ##Format of the config file
+
 ```fortran
 &PhysicalParameters
   elementOld = 'C' ! Element to be isotopized.

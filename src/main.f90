@@ -208,7 +208,7 @@
         do j=1, i-1
           if (IsEquiv(SpeciesEleAll(i), SpeciesEleAll(j))) then
             write (*,*) nameSpecies(i), ' and ', nameSpecies(j), &
-              'are probably equivalent.'
+              'might be equivalent.'
           end if
         end do
       end do
@@ -353,7 +353,7 @@
         'Number of surface reactions: ', nGrReactions, &
         'Max number of reactants: ', maxval(nRealReactants), &
         'Max number of products: ', maxval(nRealProducts), &
-        'Number of D-reactions: ', nLineData
+        'Number of isotopized reactions: ', nLineData
       deallocate (nElementReac, nElementProd, STAT=statALLOC)
 
 

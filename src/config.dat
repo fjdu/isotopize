@@ -1,5 +1,5 @@
 &PhysicalParameters
-  elementOld = 'C' ! Element to be isotopized.
+  elementOld = 'O' ! Element to be isotopized.
   elementNew = 'X' ! Symbol to be used for the isotope.
   nDeutDegree = 1  ! Degree of isotopization.
   nOtherDeutMax = 20 ! Can be ignored as far as it is an integer not too small.

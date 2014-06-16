@@ -314,7 +314,7 @@
           end if
         end do
         !
-        call double2str(strtmp2, dblABC(3, i), 9, 1)
+        call double2str(strtmp2, dblABC(3, i), 9, 2)
         !
         write (fU, '(7A12, ES9.2, F9.2, A9, 2I6, I3, X,A1,X,A2,X,A1)') &
           strReactants(:, i), strProducts(:, i), &

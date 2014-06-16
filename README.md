@@ -1,3 +1,11 @@
+## Download
+
+Go to any directory you want, then
+```
+    git clone https://github.com/fjdu/isotopize isotopize
+```
+and all the files will be downloaded to a subdirectory named ```isotopize```.
+
 ## Usage
 
 Compile the Fortran code with ```make``` in the ```src``` directory, which will
@@ -6,7 +14,7 @@ create an executable named ```isotopize```, then run
     isotopize config_new.dat
 ```
 
-The converted file will be produced in the same directory with "isotopized"
+The converted file will be put in the same directory with "isotopized"
 attached to the original file name.
 
 ## File format conversion
@@ -28,6 +36,8 @@ To convert the isotopized file back to the original format, follow the reverse o
 !         R1          R2          R3          P1          P2          P3          P4        A        B        C    T1    T2 iT q cT s
 !23456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789123456789123456789123456123456123121231212
 ```
+
+See also example .dat files in the ```src``` directory.
 
 ##Format of the config file
 

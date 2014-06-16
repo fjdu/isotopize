@@ -15,10 +15,17 @@ To convert the herbst format to the format understandable by my code, I have to
 
 1. Delete all lines beginning with ```#```, or replace ```#``` with ```!```.  The won't appear in the output file anyway.
 1. Shift the columns so that they follow the following format:
-    ```!23456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789123456789123456789123456123456123121231212```
 1. Replace ```E ``` with ```E-```.  Note the space, otherwise the file will become unaligned.
 
+All the above can be done within ```vi```, or with a ```python``` script.
+
 To convert the isotopized file back to the original format, follow the reverse of the above procedure.
+
+##Format of the input network file
+
+```fortran
+    !23456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789123456789123456789123456123456123121231212
+```
 
 ##Format of the config file
 
@@ -35,3 +42,4 @@ To convert the isotopized file back to the original format, follow the reverse o
   path = "./"  ! Folder containing the input network.
   fReactions = "rate12_umist_reformatted.dat"  ! Network file.
 /
+```

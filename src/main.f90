@@ -71,7 +71,6 @@
         end if
         CALL openFileSequentialWrite &
           (fUOutLog, trim(path)//trim(fOutLog), 9999999)
-        CALL XSETUN(fUOutLog)
       else
         do i=16, 2, -1
           if (ISATTY(unit=i)) then
@@ -391,9 +390,6 @@
         elementOld, elementNew
         !idxNew, idxOld
 
-      namelist /ODEParameters/ &
-        ATOL, RTOL, nIteration
-
       namelist /Paths/ &
         path, fReactions, fMobility, fDissRecom, &
         fInitialCondition, &
@@ -409,7 +405,6 @@
 
       CALL openFileSequentialRead (fU, fileInitialize, 999)
       read (UNIT=fU, IOSTAT=ios, NML=PhysicalParameters)
-      !read (UNIT=fU, IOSTAT=ios, NML=ODEParameters)
       read (UNIT=fU, IOSTAT=ios, NML=Paths)
       close (UNIT=fU, IOSTAT=ios, STATUS='KEEP')
 

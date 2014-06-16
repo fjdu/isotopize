@@ -11,8 +11,7 @@ lflags_fast = -O3
 lflags_profiling = $(lflags_fast) -pg
 
 OBJS = common_MC_MO.o common_MC_MO_TP.o subroutines_share_triv.o main.o \
-       subroutines_share_proc.o subroutines_proc_reac.o \
-       opkdmain.o opkda1.o opkda2.o
+       subroutines_share_proc.o subroutines_proc_reac.o
 
 LIBS = -lm -lcfitsio
 
@@ -51,8 +50,7 @@ $(exe_alt):  $(OBJS)
 	echo -e '\a'
 
 main.o: main.f90 common_MC_MO.o common_MC_MO_TP.o subroutines_share_triv.o \
-       subroutines_share_proc.o subroutines_proc_reac.o \
-       opkdmain.o opkda1.o opkda2.o
+       subroutines_share_proc.o subroutines_proc_reac.o
 	$(cpl) $(cflags) main.f90
 
 common_MC_MO.o: common_MC_MO.f90
@@ -69,15 +67,6 @@ subroutines_share_proc.o: subroutines_share_proc.f90
 
 subroutines_proc_reac.o: subroutines_proc_reac.f90
 	$(cpl) $(cflags) subroutines_proc_reac.f90
-
-opkdmain.o: opkdmain.f opkda1.o opkda2.o
-	$(cpl) $(cflags) opkdmain.f
-
-opkda1.o: opkda1.f
-	$(cpl) $(cflags) opkda1.f
-
-opkda2.o: opkda2.f
-	$(cpl) $(cflags) opkda2.f
 
 sync:
 	#rsync -acvz *.f90 fdu@shire.astro.lsa.umich.edu:~/now/src/

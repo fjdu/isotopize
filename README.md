@@ -2,7 +2,7 @@
 
 Compile the Fortran code with make, which will create an executable named isotopize, then run
 ```
-    isotopize config_new.dat
+    src/isotopize config_new.dat
 ```
 
 ##Format of the config file

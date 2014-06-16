@@ -11,8 +11,10 @@ and all the files will be downloaded to a subdirectory named ```isotopize```.
 Compile the Fortran code with ```make``` in the ```src``` directory, which will
 create an executable named ```isotopize```, then run
 ```
-    isotopize config_new.dat
+    isotopize config.dat
 ```
+
+See below for the format of the file ```config.dat```.
 
 The converted file will be put in the same directory with "isotopized"
 attached to the original file name.
@@ -52,6 +54,6 @@ See also example .dat files in the ```src``` directory.
 /
 &Paths
   path = "./"  ! Folder containing the input network.
-  fReactions = "rate12_umist_reformatted.dat"  ! Network file.
+  fReactions = "rate12_umist_reformatted.dat"  ! Input network file.
 /
 ```

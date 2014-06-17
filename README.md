@@ -47,14 +47,21 @@ See also example .dat files in the ```src``` directory.
 ```fortran
 &PhysicalParameters
   elementOld = 'C' ! Element to be isotopized.
-  elementNew = 'X' ! Symbol to be used for the isotope.
+  elementNew = 'Y' ! Symbol to be used for the isotope.
   nDeutDegree = 1  ! Degree of isotopization.
   nOtherDeutMax = 20 ! Can be ignored as far as it is an integer not too small.
   noDMaxMetal = 20  ! ...
   noDEleAbundance = 0D0  ! Set to zero.
+  !
+  inputFormat = 'Herbst'
+  commentChar = '#'
+  inputGrainEleName = '(gr)'  ! Symbol for grain surface species in your input file.
+  inputGrainName = 'GRAIN'  ! Symbol for grain itself as a species in your input file.
+  outputFormat = 'Herbst'
+  outputGrainEleName = '(gr)'
 /
 &Paths
   path = "./"  ! Folder containing the input network.
-  fReactions = "rate12_umist_reformatted.dat"  ! Input network file.
+  fReactions = "rreacs_herb0308_isotopized.dat"  ! Input network file.
 /
 ```

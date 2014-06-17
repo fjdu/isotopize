@@ -398,6 +398,7 @@ subroutine DeutReac (iReac, nDeut, fU)
   character(len=constLenNameSpecies), dimension(nProducts) :: &
     StrSplitted_tmp
   logical flag_same
+  !
 
   do nDeutThis=1, nDeut
     call DeutSide(Reactions(1:nRealReactants(iReac), iReac), &

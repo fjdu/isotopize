@@ -6742,13 +6742,13 @@
  6741 Na(gr)       C-RAY        Na                                                    1.01E+03     23.00  1.50E+15  22
  6742 Na(gr)       PHOTON       Na                                                    3.14E-10      0.00      0.00 -23
  6743 O            GRAIN        O(gr)        GRAIN                                    3.14E-10     16.00      1.00  20
- 6744 X            GRAIN        Xg           GRAIN                                    3.14E-10     16.00      1.00  20
+ 6744 X            GRAIN        X(gr)        GRAIN                                    3.14E-10     16.00      1.00  20
  6745 O(gr)        TEMP         O                                                     8.00E+02     16.00  1.50E+15  21
- 6746 Xg           TEMP         X                                                     8.00E+02     16.00  1.50E+15  21
+ 6746 X(gr)        TEMP         X                                                     8.00E+02     16.00  1.50E+15  21
  6747 O(gr)        C-RAY        O                                                     8.00E+02     16.00  1.50E+15  22
- 6748 Xg           C-RAY        X                                                     8.00E+02     16.00  1.50E+15  22
+ 6748 X(gr)        C-RAY        X                                                     8.00E+02     16.00  1.50E+15  22
  6749 O(gr)        PHOTON       O                                                     3.14E-10      0.00      0.00 -23
- 6750 Xg           PHOTON       X                                                     3.14E-10      0.00      0.00 -23
+ 6750 X(gr)        PHOTON       X                                                     3.14E-10      0.00      0.00 -23
  6751 P            GRAIN        P(gr)        GRAIN                                    3.14E-10     15.00      1.00  20
  6752 P(gr)        TEMP         P                                                     4.93E+03     15.00  1.50E+15  21
  6753 P(gr)        C-RAY        P                                                     4.93E+03     15.00  1.50E+15  22
@@ -6778,25 +6778,25 @@
  6777 CH(gr)       C-RAY        CH                                                    6.45E+02     13.00  1.50E+15  22
  6778 CH(gr)       PHOTON       CH                                                    3.14E-10      0.00      0.00 -23
  6779 ClO          GRAIN        ClO(gr)      GRAIN                                    3.14E-10     33.00      1.00  20
- 6780 ClX          GRAIN        ClXg         GRAIN                                    3.14E-10     33.00      1.00  20
+ 6780 ClX          GRAIN        ClX(gr)      GRAIN                                    3.14E-10     33.00      1.00  20
  6781 ClO(gr)      TEMP         ClO                                                   1.01E+03     33.00  1.50E+15  21
- 6782 ClXg         TEMP         ClX                                                   1.01E+03     33.00  1.50E+15  21
+ 6782 ClX(gr)      TEMP         ClX                                                   1.01E+03     33.00  1.50E+15  21
  6783 ClO(gr)      C-RAY        ClO                                                   1.01E+03     33.00  1.50E+15  22
- 6784 ClXg         C-RAY        ClX                                                   1.01E+03     33.00  1.50E+15  22
+ 6784 ClX(gr)      C-RAY        ClX                                                   1.01E+03     33.00  1.50E+15  22
  6785 ClO(gr)      PHOTON       ClO                                                   3.14E-10      0.00      0.00 -23
- 6786 ClXg         PHOTON       ClX                                                   3.14E-10      0.00      0.00 -23
+ 6786 ClX(gr)      PHOTON       ClX                                                   3.14E-10      0.00      0.00 -23
  6787 CN           GRAIN        CN(gr)       GRAIN                                    3.14E-10     26.00      1.00  20
  6788 CN(gr)       TEMP         CN                                                    1.60E+03     26.00  1.50E+15  21
  6789 CN(gr)       C-RAY        CN                                                    1.60E+03     26.00  1.50E+15  22
  6790 CN(gr)       PHOTON       CN                                                    3.14E-10      0.00      0.00 -23
  6791 CO           GRAIN        CO(gr)       GRAIN                                    3.14E-10     28.00      1.00  20
- 6792 CX           GRAIN        CXg          GRAIN                                    3.14E-10     28.00      1.00  20
+ 6792 CX           GRAIN        CX(gr)       GRAIN                                    3.14E-10     28.00      1.00  20
  6793 CO(gr)       TEMP         CO                                                    8.55E+02     28.00  1.50E+15  21
- 6794 CXg          TEMP         CX                                                    8.55E+02     28.00  1.50E+15  21
+ 6794 CX(gr)       TEMP         CX                                                    8.55E+02     28.00  1.50E+15  21
  6795 CO(gr)       C-RAY        CO                                                    9.80E-16      0.00      0.00  22
- 6796 CXg          C-RAY        CX                                                    9.80E-16      0.00      0.00  22
+ 6796 CX(gr)       C-RAY        CX                                                    9.80E-16      0.00      0.00  22
  6797 CO(gr)       PHOTON       CO                                                    3.14E-10      0.00      0.00 -23
- 6798 CXg          PHOTON       CX                                                    3.14E-10      0.00      0.00 -23
+ 6798 CX(gr)       PHOTON       CX                                                    3.14E-10      0.00      0.00 -23
  6799 CP           GRAIN        CP(gr)       GRAIN                                    3.14E-10     27.00      1.00  20
  6800 CP(gr)       TEMP         CP                                                    6.27E+03     27.00  1.50E+15  21
  6801 CP(gr)       C-RAY        CP                                                    6.27E+03     27.00  1.50E+15  22
@@ -6834,33 +6834,33 @@
  6833 NH(gr)       C-RAY        NH                                                    6.04E+02     15.00  1.50E+15  22
  6834 NH(gr)       PHOTON       NH                                                    3.14E-10      0.00      0.00 -23
  6835 NO           GRAIN        NO(gr)       GRAIN                                    3.14E-10     30.00      1.00  20
- 6836 NX           GRAIN        NXg          GRAIN                                    3.14E-10     30.00      1.00  20
+ 6836 NX           GRAIN        NX(gr)       GRAIN                                    3.14E-10     30.00      1.00  20
  6837 NO(gr)       TEMP         NO                                                    1.18E+03     30.00  1.50E+15  21
- 6838 NXg          TEMP         NX                                                    1.18E+03     30.00  1.50E+15  21
+ 6838 NX(gr)       TEMP         NX                                                    1.18E+03     30.00  1.50E+15  21
  6839 NO(gr)       C-RAY        NO                                                    1.18E+03     30.00  1.50E+15  22
- 6840 NXg          C-RAY        NX                                                    1.18E+03     30.00  1.50E+15  22
+ 6840 NX(gr)       C-RAY        NX                                                    1.18E+03     30.00  1.50E+15  22
  6841 NO(gr)       PHOTON       NO                                                    3.14E-10      0.00      0.00 -23
- 6842 NXg          PHOTON       NX                                                    3.14E-10      0.00      0.00 -23
+ 6842 NX(gr)       PHOTON       NX                                                    3.14E-10      0.00      0.00 -23
  6843 NS           GRAIN        NS(gr)       GRAIN                                    3.14E-10     46.00      1.00  20
  6844 NS(gr)       TEMP         NS                                                    3.34E+03     46.00  1.50E+15  21
  6845 NS(gr)       C-RAY        NS                                                    3.34E+03     46.00  1.50E+15  22
  6846 NS(gr)       PHOTON       NS                                                    3.14E-10      0.00      0.00 -23
  6847 O2           GRAIN        O2(gr)       GRAIN                                    3.14E-10     32.00      1.00  20
- 6848 OX           GRAIN        OXg          GRAIN                                    3.14E-10     32.00      1.00  20
+ 6848 OX           GRAIN        OX(gr)       GRAIN                                    3.14E-10     32.00      1.00  20
  6849 O2(gr)       TEMP         O2                                                    1.21E+03     32.00  1.50E+15  21
- 6850 OXg          TEMP         OX                                                    1.21E+03     32.00  1.50E+15  21
+ 6850 OX(gr)       TEMP         OX                                                    1.21E+03     32.00  1.50E+15  21
  6851 O2(gr)       C-RAY        O2                                                    1.21E+03     32.00  1.50E+15  22
- 6852 OXg          C-RAY        OX                                                    1.21E+03     32.00  1.50E+15  22
+ 6852 OX(gr)       C-RAY        OX                                                    1.21E+03     32.00  1.50E+15  22
  6853 O2(gr)       PHOTON       O2                                                    3.14E-10      0.00      0.00 -23
- 6854 OXg          PHOTON       OX                                                    3.14E-10      0.00      0.00 -23
+ 6854 OX(gr)       PHOTON       OX                                                    3.14E-10      0.00      0.00 -23
  6855 OH           GRAIN        OH(gr)       GRAIN                                    3.14E-10     17.00      1.00  20
- 6856 XH           GRAIN        XHg          GRAIN                                    3.14E-10     17.00      1.00  20
+ 6856 XH           GRAIN        XH(gr)       GRAIN                                    3.14E-10     17.00      1.00  20
  6857 OH(gr)       TEMP         OH                                                    1.26E+03     17.00  1.50E+15  21
- 6858 XHg          TEMP         XH                                                    1.26E+03     17.00  1.50E+15  21
+ 6858 XH(gr)       TEMP         XH                                                    1.26E+03     17.00  1.50E+15  21
  6859 OH(gr)       C-RAY        OH                                                    1.26E+03     17.00  1.50E+15  22
- 6860 XHg          C-RAY        XH                                                    1.26E+03     17.00  1.50E+15  22
+ 6860 XH(gr)       C-RAY        XH                                                    1.26E+03     17.00  1.50E+15  22
  6861 OH(gr)       PHOTON       OH                                                    3.14E-10      0.00      0.00 -23
- 6862 XHg          PHOTON       XH                                                    3.14E-10      0.00      0.00 -23
+ 6862 XH(gr)       PHOTON       XH                                                    3.14E-10      0.00      0.00 -23
  6863 PH           GRAIN        PH(gr)       GRAIN                                    3.14E-10     16.00      1.00  20
  6864 PH(gr)       TEMP         PH                                                    5.35E+03     16.00  1.50E+15  21
  6865 PH(gr)       C-RAY        PH                                                    5.35E+03     16.00  1.50E+15  22
@@ -6870,13 +6870,13 @@
  6869 PN(gr)       C-RAY        PN                                                    6.27E+03     29.00  1.50E+15  22
  6870 PN(gr)       PHOTON       PN                                                    3.14E-10      0.00      0.00 -23
  6871 PO           GRAIN        PO(gr)       GRAIN                                    3.14E-10     31.00      1.00  20
- 6872 PX           GRAIN        PXg          GRAIN                                    3.14E-10     31.00      1.00  20
+ 6872 PX           GRAIN        PX(gr)       GRAIN                                    3.14E-10     31.00      1.00  20
  6873 PO(gr)       TEMP         PO                                                    6.27E+03     31.00  1.50E+15  21
- 6874 PXg          TEMP         PX                                                    6.27E+03     31.00  1.50E+15  21
+ 6874 PX(gr)       TEMP         PX                                                    6.27E+03     31.00  1.50E+15  21
  6875 PO(gr)       C-RAY        PO                                                    6.27E+03     31.00  1.50E+15  22
- 6876 PXg          C-RAY        PX                                                    6.27E+03     31.00  1.50E+15  22
+ 6876 PX(gr)       C-RAY        PX                                                    6.27E+03     31.00  1.50E+15  22
  6877 PO(gr)       PHOTON       PO                                                    3.14E-10      0.00      0.00 -23
- 6878 PXg          PHOTON       PX                                                    3.14E-10      0.00      0.00 -23
+ 6878 PX(gr)       PHOTON       PX                                                    3.14E-10      0.00      0.00 -23
  6879 S2           GRAIN        S2(gr)       GRAIN                                    3.14E-10     64.00      1.00  20
  6880 S2(gr)       TEMP         S2                                                    3.34E+03     64.00  1.50E+15  21
  6881 S2(gr)       C-RAY        S2                                                    3.34E+03     64.00  1.50E+15  22
@@ -6894,25 +6894,25 @@
  6893 SiN(gr)      C-RAY        SiN                                                   1.01E+03     42.00  1.50E+15  22
  6894 SiN(gr)      PHOTON       SiN                                                   3.14E-10      0.00      0.00 -23
  6895 SiO          GRAIN        SiO(gr)      GRAIN                                    3.14E-10     44.00      1.00  20
- 6896 SiX          GRAIN        SiXg         GRAIN                                    3.14E-10     44.00      1.00  20
+ 6896 SiX          GRAIN        SiX(gr)      GRAIN                                    3.14E-10     44.00      1.00  20
  6897 SiO(gr)      TEMP         SiO                                                   1.01E+03     44.00  1.50E+15  21
- 6898 SiXg         TEMP         SiX                                                   1.01E+03     44.00  1.50E+15  21
+ 6898 SiX(gr)      TEMP         SiX                                                   1.01E+03     44.00  1.50E+15  21
  6899 SiO(gr)      C-RAY        SiO                                                   1.01E+03     44.00  1.50E+15  22
- 6900 SiXg         C-RAY        SiX                                                   1.01E+03     44.00  1.50E+15  22
+ 6900 SiX(gr)      C-RAY        SiX                                                   1.01E+03     44.00  1.50E+15  22
  6901 SiO(gr)      PHOTON       SiO                                                   3.14E-10      0.00      0.00 -23
- 6902 SiXg         PHOTON       SiX                                                   3.14E-10      0.00      0.00 -23
+ 6902 SiX(gr)      PHOTON       SiX                                                   3.14E-10      0.00      0.00 -23
  6903 SiS          GRAIN        SiS(gr)      GRAIN                                    3.14E-10     60.00      1.00  20
  6904 SiS(gr)      TEMP         SiS                                                   1.01E+03     60.00  1.50E+15  21
  6905 SiS(gr)      C-RAY        SiS                                                   1.01E+03     60.00  1.50E+15  22
  6906 SiS(gr)      PHOTON       SiS                                                   3.14E-10      0.00      0.00 -23
  6907 SO           GRAIN        SO(gr)       GRAIN                                    3.14E-10     48.00      1.00  20
- 6908 SX           GRAIN        SXg          GRAIN                                    3.14E-10     48.00      1.00  20
+ 6908 SX           GRAIN        SX(gr)       GRAIN                                    3.14E-10     48.00      1.00  20
  6909 SO(gr)       TEMP         SO                                                    3.34E+03     48.00  1.50E+15  21
- 6910 SXg          TEMP         SX                                                    3.34E+03     48.00  1.50E+15  21
+ 6910 SX(gr)       TEMP         SX                                                    3.34E+03     48.00  1.50E+15  21
  6911 SO(gr)       C-RAY        SO                                                    3.34E+03     48.00  1.50E+15  22
- 6912 SXg          C-RAY        SX                                                    3.34E+03     48.00  1.50E+15  22
+ 6912 SX(gr)       C-RAY        SX                                                    3.34E+03     48.00  1.50E+15  22
  6913 SO(gr)       PHOTON       SO                                                    3.14E-10      0.00      0.00 -23
- 6914 SXg          PHOTON       SX                                                    3.14E-10      0.00      0.00 -23
+ 6914 SX(gr)       PHOTON       SX                                                    3.14E-10      0.00      0.00 -23
  6915 C2H          GRAIN        C2H(gr)      GRAIN                                    3.14E-10     25.00      1.00  20
  6916 C2H(gr)      TEMP         C2H                                                   1.43E+03     25.00  1.50E+15  21
  6917 C2H(gr)      C-RAY        C2H                                                   1.43E+03     25.00  1.50E+15  22
@@ -6930,13 +6930,13 @@
  6929 C3(gr)       C-RAY        C3                                                    3.36E+03     36.00  1.50E+15  22
  6930 C3(gr)       PHOTON       C3                                                    3.14E-10      0.00      0.00 -23
  6931 CCO          GRAIN        CCO(gr)      GRAIN                                    3.14E-10     40.00      1.00  20
- 6932 CCX          GRAIN        CCXg         GRAIN                                    3.14E-10     40.00      1.00  20
+ 6932 CCX          GRAIN        CCX(gr)      GRAIN                                    3.14E-10     40.00      1.00  20
  6933 CCO(gr)      TEMP         CCO                                                   3.37E+03     40.00  1.50E+15  21
- 6934 CCXg         TEMP         CCX                                                   3.37E+03     40.00  1.50E+15  21
+ 6934 CCX(gr)      TEMP         CCX                                                   3.37E+03     40.00  1.50E+15  21
  6935 CCO(gr)      C-RAY        CCO                                                   3.37E+03     40.00  1.50E+15  22
- 6936 CCXg         C-RAY        CCX                                                   3.37E+03     40.00  1.50E+15  22
+ 6936 CCX(gr)      C-RAY        CCX                                                   3.37E+03     40.00  1.50E+15  22
  6937 CCO(gr)      PHOTON       CCO                                                   3.14E-10      0.00      0.00 -23
- 6938 CCXg         PHOTON       CCX                                                   3.14E-10      0.00      0.00 -23
+ 6938 CCX(gr)      PHOTON       CCX                                                   3.14E-10      0.00      0.00 -23
  6939 CCP          GRAIN        CCP(gr)      GRAIN                                    3.14E-10     39.00      1.00  20
  6940 CCP(gr)      TEMP         CCP                                                   6.96E+03     39.00  1.50E+15  21
  6941 CCP(gr)      C-RAY        CCP                                                   6.96E+03     39.00  1.50E+15  22
@@ -6946,23 +6946,23 @@
  6945 CH2(gr)      C-RAY        CH2                                                   9.56E+02     14.00  1.50E+15  22
  6946 CH2(gr)      PHOTON       CH2                                                   3.14E-10      0.00      0.00 -23
  6947 CO2          GRAIN        CO2(gr)      GRAIN                                    3.14E-10     44.00      1.00  20
- 6948 COX          GRAIN        COXg         GRAIN                                    3.14E-10     44.00      1.00  20
+ 6948 COX          GRAIN        COX(gr)      GRAIN                                    3.14E-10     44.00      1.00  20
  6949 CO2(gr)      TEMP         CO2                                                   2.86E+03     44.00  1.50E+15  21
- 6950 COXg         TEMP         COX                                                   2.86E+03     44.00  1.50E+15  21
+ 6950 COX(gr)      TEMP         COX                                                   2.86E+03     44.00  1.50E+15  21
  6951 CO2(gr)      C-RAY        CO2                                                   2.86E+03     44.00  1.50E+15  22
- 6952 COXg         C-RAY        COX                                                   2.86E+03     44.00  1.50E+15  22
+ 6952 COX(gr)      C-RAY        COX                                                   2.86E+03     44.00  1.50E+15  22
  6953 CO2(gr)      PHOTON       CO2                                                   3.14E-10      0.00      0.00 -23
- 6954 COXg         PHOTON       COX                                                   3.14E-10      0.00      0.00 -23
+ 6954 COX(gr)      PHOTON       COX                                                   3.14E-10      0.00      0.00 -23
  6955 H2O          GRAIN        H2O(gr)      GRAIN                                    3.14E-10     18.00      1.00  20
- 6956 H2X          GRAIN        H2Xg         GRAIN                                    3.14E-10     18.00      1.00  20
+ 6956 H2X          GRAIN        H2X(gr)      GRAIN                                    3.14E-10     18.00      1.00  20
  6957 H2O(gr)      TEMP         H2O                                                   4.82E+03     18.00  1.50E+15  21
- 6958 H2Xg         TEMP         H2X                                                   4.82E+03     18.00  1.50E+15  21
+ 6958 H2X(gr)      TEMP         H2X                                                   4.82E+03     18.00  1.50E+15  21
  6959 H2O(gr)      C-RAY        H2O                                                   4.82E+03     18.00  1.50E+15  22
- 6960 H2Xg         C-RAY        H2X                                                   4.82E+03     18.00  1.50E+15  22
+ 6960 H2X(gr)      C-RAY        H2X                                                   4.82E+03     18.00  1.50E+15  22
  6961 H2O(gr)      PHOTON       H2O                                                   0.00E+00      0.00      0.00 -23
- 6962 H2Xg         PHOTON       H2X                                                   0.00E+00      0.00      0.00 -23
+ 6962 H2X(gr)      PHOTON       H2X                                                   0.00E+00      0.00      0.00 -23
  6963 H2O(gr)      PHOTON       OH           H                                        0.00E+00      0.00      0.00 -23
- 6964 H2Xg         PHOTON       XH           H                                        0.00E+00      0.00      0.00 -23
+ 6964 H2X(gr)      PHOTON       XH           H                                        0.00E+00      0.00      0.00 -23
  6965 H2S          GRAIN        H2S(gr)      GRAIN                                    3.14E-10     34.00      1.00  20
  6966 H2S(gr)      TEMP         H2S                                                   3.66E+03     34.00  1.50E+15  21
  6967 H2S(gr)      C-RAY        H2S                                                   3.66E+03     34.00  1.50E+15  22
@@ -6972,13 +6972,13 @@
  6971 HCN(gr)      C-RAY        HCN                                                   2.05E+03     27.00  1.50E+15  22
  6972 HCN(gr)      PHOTON       HCN                                                   3.14E-10      0.00      0.00 -23
  6973 HCO          GRAIN        HCO(gr)      GRAIN                                    3.14E-10     29.00      1.00  20
- 6974 HCX          GRAIN        HCXg         GRAIN                                    3.14E-10     29.00      1.00  20
+ 6974 HCX          GRAIN        HCX(gr)      GRAIN                                    3.14E-10     29.00      1.00  20
  6975 HCO(gr)      TEMP         HCO                                                   1.48E+03     29.00  1.50E+15  21
- 6976 HCXg         TEMP         HCX                                                   1.48E+03     29.00  1.50E+15  21
+ 6976 HCX(gr)      TEMP         HCX                                                   1.48E+03     29.00  1.50E+15  21
  6977 HCO(gr)      C-RAY        HCO                                                   1.48E+03     29.00  1.50E+15  22
- 6978 HCXg         C-RAY        HCX                                                   1.48E+03     29.00  1.50E+15  22
+ 6978 HCX(gr)      C-RAY        HCX                                                   1.48E+03     29.00  1.50E+15  22
  6979 HCO(gr)      PHOTON       HCO                                                   3.14E-10      0.00      0.00 -23
- 6980 HCXg         PHOTON       HCX                                                   3.14E-10      0.00      0.00 -23
+ 6980 HCX(gr)      PHOTON       HCX                                                   3.14E-10      0.00      0.00 -23
  6981 HCP          GRAIN        HCP(gr)      GRAIN                                    3.14E-10     28.00      1.00  20
  6982 HCP(gr)      TEMP         HCP                                                   6.68E+03     28.00  1.50E+15  21
  6983 HCP(gr)      C-RAY        HCP                                                   6.68E+03     28.00  1.50E+15  22
@@ -7016,81 +7016,81 @@
  7015 NC12N(gr)    C-RAY        NC12N                                                 1.01E+03     40.00  1.50E+15  22
  7016 NC12N(gr)    PHOTON       NC12N                                                 3.14E-10      0.00      0.00 -23
  7017 HNO          GRAIN        HNO(gr)      GRAIN                                    3.14E-10     31.00      1.00  20
- 7018 HNX          GRAIN        HNXg         GRAIN                                    3.14E-10     31.00      1.00  20
+ 7018 HNX          GRAIN        HNX(gr)      GRAIN                                    3.14E-10     31.00      1.00  20
  7019 HNO(gr)      TEMP         HNO                                                   1.48E+03     31.00  1.50E+15  21
- 7020 HNXg         TEMP         HNX                                                   1.48E+03     31.00  1.50E+15  21
+ 7020 HNX(gr)      TEMP         HNX                                                   1.48E+03     31.00  1.50E+15  21
  7021 HNO(gr)      C-RAY        HNO                                                   1.48E+03     31.00  1.50E+15  22
- 7022 HNXg         C-RAY        HNX                                                   1.48E+03     31.00  1.50E+15  22
+ 7022 HNX(gr)      C-RAY        HNX                                                   1.48E+03     31.00  1.50E+15  22
  7023 HNO(gr)      PHOTON       HNO                                                   3.14E-10      0.00      0.00 -23
- 7024 HNXg         PHOTON       HNX                                                   3.14E-10      0.00      0.00 -23
+ 7024 HNX(gr)      PHOTON       HNX                                                   3.14E-10      0.00      0.00 -23
  7025 HNSi         GRAIN        HNSi(gr)     GRAIN                                    3.14E-10     43.00      1.00  20
  7026 HNSi(gr)     TEMP         HNSi                                                  1.01E+03     43.00  1.50E+15  21
  7027 HNSi(gr)     C-RAY        HNSi                                                  1.01E+03     43.00  1.50E+15  22
  7028 HNSi(gr)     PHOTON       HNSi                                                  3.14E-10      0.00      0.00 -23
  7029 HPO          GRAIN        HPO(gr)      GRAIN                                    3.14E-10     32.00      1.00  20
- 7030 HPX          GRAIN        HPXg         GRAIN                                    3.14E-10     32.00      1.00  20
+ 7030 HPX          GRAIN        HPX(gr)      GRAIN                                    3.14E-10     32.00      1.00  20
  7031 HPO(gr)      TEMP         HPO                                                   6.68E+03     32.00  1.50E+15  21
- 7032 HPXg         TEMP         HPX                                                   6.68E+03     32.00  1.50E+15  21
+ 7032 HPX(gr)      TEMP         HPX                                                   6.68E+03     32.00  1.50E+15  21
  7033 HPO(gr)      C-RAY        HPO                                                   6.68E+03     32.00  1.50E+15  22
- 7034 HPXg         C-RAY        HPX                                                   6.68E+03     32.00  1.50E+15  22
+ 7034 HPX(gr)      C-RAY        HPX                                                   6.68E+03     32.00  1.50E+15  22
  7035 HPO(gr)      PHOTON       HPO                                                   3.14E-10      0.00      0.00 -23
- 7036 HPXg         PHOTON       HPX                                                   3.14E-10      0.00      0.00 -23
+ 7036 HPX(gr)      PHOTON       HPX                                                   3.14E-10      0.00      0.00 -23
  7037 HS2          GRAIN        HS2(gr)      GRAIN                                    3.14E-10     65.00      1.00  20
  7038 HS2(gr)      TEMP         HS2                                                   3.76E+03     65.00  1.50E+15  21
  7039 HS2(gr)      C-RAY        HS2                                                   3.76E+03     65.00  1.50E+15  22
  7040 HS2(gr)      PHOTON       HS2                                                   3.14E-10      0.00      0.00 -23
  7041 N2O          GRAIN        N2O(gr)      GRAIN                                    3.14E-10     44.00      1.00  20
- 7042 N2X          GRAIN        N2Xg         GRAIN                                    3.14E-10     44.00      1.00  20
+ 7042 N2X          GRAIN        N2X(gr)      GRAIN                                    3.14E-10     44.00      1.00  20
  7043 N2O(gr)      TEMP         N2O                                                   3.34E+03     44.00  1.50E+15  21
- 7044 N2Xg         TEMP         N2X                                                   3.34E+03     44.00  1.50E+15  21
+ 7044 N2X(gr)      TEMP         N2X                                                   3.34E+03     44.00  1.50E+15  21
  7045 N2O(gr)      C-RAY        N2O                                                   3.34E+03     44.00  1.50E+15  22
- 7046 N2Xg         C-RAY        N2X                                                   3.34E+03     44.00  1.50E+15  22
+ 7046 N2X(gr)      C-RAY        N2X                                                   3.34E+03     44.00  1.50E+15  22
  7047 N2O(gr)      PHOTON       N2O                                                   3.14E-10      0.00      0.00 -23
- 7048 N2Xg         PHOTON       N2X                                                   3.14E-10      0.00      0.00 -23
+ 7048 N2X(gr)      PHOTON       N2X                                                   3.14E-10      0.00      0.00 -23
  7049 NaOH         GRAIN        NaOH(gr)     GRAIN                                    3.14E-10     40.00      1.00  20
- 7050 NaXH         GRAIN        NaXHg        GRAIN                                    3.14E-10     40.00      1.00  20
+ 7050 NaXH         GRAIN        NaXH(gr)     GRAIN                                    3.14E-10     40.00      1.00  20
  7051 NaOH(gr)     TEMP         NaOH                                                  1.01E+03     40.00  1.50E+15  21
- 7052 NaXHg        TEMP         NaXH                                                  1.01E+03     40.00  1.50E+15  21
+ 7052 NaXH(gr)     TEMP         NaXH                                                  1.01E+03     40.00  1.50E+15  21
  7053 NaOH(gr)     C-RAY        NaOH                                                  1.01E+03     40.00  1.50E+15  22
- 7054 NaXHg        C-RAY        NaXH                                                  1.01E+03     40.00  1.50E+15  22
+ 7054 NaXH(gr)     C-RAY        NaXH                                                  1.01E+03     40.00  1.50E+15  22
  7055 NaOH(gr)     PHOTON       NaOH                                                  3.14E-10      0.00      0.00 -23
- 7056 NaXHg        PHOTON       NaXH                                                  3.14E-10      0.00      0.00 -23
+ 7056 NaXH(gr)     PHOTON       NaXH                                                  3.14E-10      0.00      0.00 -23
  7057 NH2          GRAIN        NH2(gr)      GRAIN                                    3.14E-10     16.00      1.00  20
  7058 NH2(gr)      TEMP         NH2                                                   8.56E+02     16.00  1.50E+15  21
  7059 NH2(gr)      C-RAY        NH2                                                   8.56E+02     16.00  1.50E+15  22
  7060 NH2(gr)      PHOTON       NH2                                                   3.14E-10      0.00      0.00 -23
  7061 NO2          GRAIN        NO2(gr)      GRAIN                                    3.14E-10     46.00      1.00  20
- 7062 NOX          GRAIN        NOXg         GRAIN                                    3.14E-10     46.00      1.00  20
+ 7062 NOX          GRAIN        NOX(gr)      GRAIN                                    3.14E-10     46.00      1.00  20
  7063 NO2(gr)      TEMP         NO2                                                   3.34E+03     46.00  1.50E+15  21
- 7064 NOXg         TEMP         NOX                                                   3.34E+03     46.00  1.50E+15  21
+ 7064 NOX(gr)      TEMP         NOX                                                   3.34E+03     46.00  1.50E+15  21
  7065 NO2(gr)      C-RAY        NO2                                                   3.34E+03     46.00  1.50E+15  22
- 7066 NOXg         C-RAY        NOX                                                   3.34E+03     46.00  1.50E+15  22
+ 7066 NOX(gr)      C-RAY        NOX                                                   3.34E+03     46.00  1.50E+15  22
  7067 NO2(gr)      PHOTON       NO2                                                   3.14E-10      0.00      0.00 -23
- 7068 NOXg         PHOTON       NOX                                                   3.14E-10      0.00      0.00 -23
+ 7068 NOX(gr)      PHOTON       NOX                                                   3.14E-10      0.00      0.00 -23
  7069 O2H          GRAIN        O2H(gr)      GRAIN                                    3.14E-10     33.00      1.00  20
- 7070 OXH          GRAIN        OXHg         GRAIN                                    3.14E-10     33.00      1.00  20
+ 7070 OXH          GRAIN        OXH(gr)      GRAIN                                    3.14E-10     33.00      1.00  20
  7071 O2H(gr)      TEMP         O2H                                                   2.52E+03     33.00  1.50E+15  21
- 7072 OXHg         TEMP         OXH                                                   2.52E+03     33.00  1.50E+15  21
+ 7072 OXH(gr)      TEMP         OXH                                                   2.52E+03     33.00  1.50E+15  21
  7073 O2H(gr)      C-RAY        O2H                                                   2.52E+03     33.00  1.50E+15  22
- 7074 OXHg         C-RAY        OXH                                                   2.52E+03     33.00  1.50E+15  22
+ 7074 OXH(gr)      C-RAY        OXH                                                   2.52E+03     33.00  1.50E+15  22
  7075 O2H(gr)      PHOTON       O2H                                                   3.14E-10      0.00      0.00 -23
- 7076 OXHg         PHOTON       OXH                                                   3.14E-10      0.00      0.00 -23
+ 7076 OXH(gr)      PHOTON       OXH                                                   3.14E-10      0.00      0.00 -23
  7077 OCN          GRAIN        OCN(gr)      GRAIN                                    3.14E-10     42.00      1.00  20
- 7078 XCN          GRAIN        XCNg         GRAIN                                    3.14E-10     42.00      1.00  20
+ 7078 XCN          GRAIN        XCN(gr)      GRAIN                                    3.14E-10     42.00      1.00  20
  7079 OCN(gr)      TEMP         OCN                                                   3.36E+03     42.00  1.50E+15  21
- 7080 XCNg         TEMP         XCN                                                   3.36E+03     42.00  1.50E+15  21
+ 7080 XCN(gr)      TEMP         XCN                                                   3.36E+03     42.00  1.50E+15  21
  7081 OCN(gr)      C-RAY        OCN                                                   3.36E+03     42.00  1.50E+15  22
- 7082 XCNg         C-RAY        XCN                                                   3.36E+03     42.00  1.50E+15  22
+ 7082 XCN(gr)      C-RAY        XCN                                                   3.36E+03     42.00  1.50E+15  22
  7083 OCN(gr)      PHOTON       OCN                                                   3.14E-10      0.00      0.00 -23
- 7084 XCNg         PHOTON       XCN                                                   3.14E-10      0.00      0.00 -23
+ 7084 XCN(gr)      PHOTON       XCN                                                   3.14E-10      0.00      0.00 -23
  7085 OCS          GRAIN        OCS(gr)      GRAIN                                    3.14E-10     60.00      1.00  20
- 7086 XCS          GRAIN        XCSg         GRAIN                                    3.14E-10     60.00      1.00  20
+ 7086 XCS          GRAIN        XCS(gr)      GRAIN                                    3.14E-10     60.00      1.00  20
  7087 OCS(gr)      TEMP         OCS                                                   5.27E+03     60.00  1.50E+15  21
- 7088 XCSg         TEMP         XCS                                                   5.27E+03     60.00  1.50E+15  21
+ 7088 XCS(gr)      TEMP         XCS                                                   5.27E+03     60.00  1.50E+15  21
  7089 OCS(gr)      C-RAY        OCS                                                   5.27E+03     60.00  1.50E+15  22
- 7090 XCSg         C-RAY        XCS                                                   5.27E+03     60.00  1.50E+15  22
+ 7090 XCS(gr)      C-RAY        XCS                                                   5.27E+03     60.00  1.50E+15  22
  7091 OCS(gr)      PHOTON       OCS                                                   3.14E-10      0.00      0.00 -23
- 7092 XCSg         PHOTON       XCS                                                   3.14E-10      0.00      0.00 -23
+ 7092 XCS(gr)      PHOTON       XCS                                                   3.14E-10      0.00      0.00 -23
  7093 PH2          GRAIN        PH2(gr)      GRAIN                                    3.14E-10     17.00      1.00  20
  7094 PH2(gr)      TEMP         PH2                                                   5.77E+03     17.00  1.50E+15  21
  7095 PH2(gr)      C-RAY        PH2                                                   5.77E+03     17.00  1.50E+15  22
@@ -7108,21 +7108,21 @@
  7107 SiNC(gr)     C-RAY        SiNC                                                  1.01E+03     54.00  1.50E+15  22
  7108 SiNC(gr)     PHOTON       SiNC                                                  3.14E-10      0.00      0.00 -23
  7109 SiO2         GRAIN        SiO2(gr)     GRAIN                                    3.14E-10     60.00      1.00  20
- 7110 SiOX         GRAIN        SiOXg        GRAIN                                    3.14E-10     60.00      1.00  20
+ 7110 SiOX         GRAIN        SiOX(gr)     GRAIN                                    3.14E-10     60.00      1.00  20
  7111 SiO2(gr)     TEMP         SiO2                                                  1.01E+03     60.00  1.50E+15  21
- 7112 SiOXg        TEMP         SiOX                                                  1.01E+03     60.00  1.50E+15  21
+ 7112 SiOX(gr)     TEMP         SiOX                                                  1.01E+03     60.00  1.50E+15  21
  7113 SiO2(gr)     C-RAY        SiO2                                                  1.01E+03     60.00  1.50E+15  22
- 7114 SiOXg        C-RAY        SiOX                                                  1.01E+03     60.00  1.50E+15  22
+ 7114 SiOX(gr)     C-RAY        SiOX                                                  1.01E+03     60.00  1.50E+15  22
  7115 SiO2(gr)     PHOTON       SiO2                                                  3.14E-10      0.00      0.00 -23
- 7116 SiOXg        PHOTON       SiOX                                                  3.14E-10      0.00      0.00 -23
+ 7116 SiOX(gr)     PHOTON       SiOX                                                  3.14E-10      0.00      0.00 -23
  7117 SO2          GRAIN        SO2(gr)      GRAIN                                    3.14E-10     64.00      1.00  20
- 7118 SOX          GRAIN        SOXg         GRAIN                                    3.14E-10     64.00      1.00  20
+ 7118 SOX          GRAIN        SOX(gr)      GRAIN                                    3.14E-10     64.00      1.00  20
  7119 SO2(gr)      TEMP         SO2                                                   4.32E+03     64.00  1.50E+15  21
- 7120 SOXg         TEMP         SOX                                                   4.32E+03     64.00  1.50E+15  21
+ 7120 SOX(gr)      TEMP         SOX                                                   4.32E+03     64.00  1.50E+15  21
  7121 SO2(gr)      C-RAY        SO2                                                   4.32E+03     64.00  1.50E+15  22
- 7122 SOXg         C-RAY        SOX                                                   4.32E+03     64.00  1.50E+15  22
+ 7122 SOX(gr)      C-RAY        SOX                                                   4.32E+03     64.00  1.50E+15  22
  7123 SO2(gr)      PHOTON       SO2                                                   3.14E-10      0.00      0.00 -23
- 7124 SOXg         PHOTON       SOX                                                   3.14E-10      0.00      0.00 -23
+ 7124 SOX(gr)      PHOTON       SOX                                                   3.14E-10      0.00      0.00 -23
  7125 C2H2         GRAIN        C2H2(gr)     GRAIN                                    3.14E-10     26.00      1.00  20
  7126 C2H2(gr)     TEMP         C2H2                                                  1.57E+03     26.00  1.50E+15  21
  7127 C2H2(gr)     C-RAY        C2H2                                                  1.57E+03     26.00  1.50E+15  22
@@ -7136,13 +7136,13 @@
  7135 C3N(gr)      C-RAY        C3N                                                   4.55E+03     50.00  1.50E+15  22
  7136 C3N(gr)      PHOTON       C3N                                                   3.14E-10      0.00      0.00 -23
  7137 C3O          GRAIN        C3O(gr)      GRAIN                                    3.14E-10     52.00      1.00  20
- 7138 C3X          GRAIN        C3Xg         GRAIN                                    3.14E-10     52.00      1.00  20
+ 7138 C3X          GRAIN        C3X(gr)      GRAIN                                    3.14E-10     52.00      1.00  20
  7139 C3O(gr)      TEMP         C3O                                                   4.21E+03     52.00  1.50E+15  21
- 7140 C3Xg         TEMP         C3X                                                   4.21E+03     52.00  1.50E+15  21
+ 7140 C3X(gr)      TEMP         C3X                                                   4.21E+03     52.00  1.50E+15  21
  7141 C3O(gr)      C-RAY        C3O                                                   4.21E+03     52.00  1.50E+15  22
- 7142 C3Xg         C-RAY        C3X                                                   4.21E+03     52.00  1.50E+15  22
+ 7142 C3X(gr)      C-RAY        C3X                                                   4.21E+03     52.00  1.50E+15  22
  7143 C3O(gr)      PHOTON       C3O                                                   3.14E-10      0.00      0.00 -23
- 7144 C3Xg         PHOTON       C3X                                                   3.14E-10      0.00      0.00 -23
+ 7144 C3X(gr)      PHOTON       C3X                                                   3.14E-10      0.00      0.00 -23
  7145 C3P          GRAIN        C3P(gr)      GRAIN                                    3.14E-10     51.00      1.00  20
  7146 C3P(gr)      TEMP         C3P                                                   7.88E+03     51.00  1.50E+15  21
  7147 C3P(gr)      C-RAY        C3P                                                   7.88E+03     51.00  1.50E+15  22
@@ -7164,37 +7164,37 @@
  7163 H2CN(gr)     C-RAY        H2CN                                                  2.69E+03     28.00  1.50E+15  22
  7164 H2CN(gr)     PHOTON       H2CN                                                  3.14E-10      0.00      0.00 -23
  7165 H2CO         GRAIN        H2CO(gr)     GRAIN                                    3.14E-10     30.00      1.00  20
- 7166 H2CX         GRAIN        H2CXg        GRAIN                                    3.14E-10     30.00      1.00  20
+ 7166 H2CX         GRAIN        H2CX(gr)     GRAIN                                    3.14E-10     30.00      1.00  20
  7167 H2CO(gr)     TEMP         H2CO                                                  1.76E+03     30.00  1.50E+15  21
- 7168 H2CXg        TEMP         H2CX                                                  1.76E+03     30.00  1.50E+15  21
+ 7168 H2CX(gr)     TEMP         H2CX                                                  1.76E+03     30.00  1.50E+15  21
  7169 H2CO(gr)     C-RAY        H2CO                                                  1.76E+03     30.00  1.50E+15  22
- 7170 H2CXg        C-RAY        H2CX                                                  1.76E+03     30.00  1.50E+15  22
+ 7170 H2CX(gr)     C-RAY        H2CX                                                  1.76E+03     30.00  1.50E+15  22
  7171 H2CO(gr)     PHOTON       H2CO                                                  3.14E-10      0.00      0.00 -23
- 7172 H2CXg        PHOTON       H2CX                                                  3.14E-10      0.00      0.00 -23
+ 7172 H2CX(gr)     PHOTON       H2CX                                                  3.14E-10      0.00      0.00 -23
  7173 H2CS         GRAIN        H2CS(gr)     GRAIN                                    3.14E-10     46.00      1.00  20
  7174 H2CS(gr)     TEMP         H2CS                                                  3.77E+03     46.00  1.50E+15  21
  7175 H2CS(gr)     C-RAY        H2CS                                                  3.77E+03     46.00  1.50E+15  22
  7176 H2CS(gr)     PHOTON       H2CS                                                  3.14E-10      0.00      0.00 -23
  7177 H2O2         GRAIN        H2O2(gr)     GRAIN                                    3.14E-10     34.00      1.00  20
- 7178 H2OX         GRAIN        H2OXg        GRAIN                                    3.14E-10     34.00      1.00  20
+ 7178 H2OX         GRAIN        H2OX(gr)     GRAIN                                    3.14E-10     34.00      1.00  20
  7179 H2O2(gr)     TEMP         H2O2                                                  4.21E+03     34.00  1.50E+15  21
- 7180 H2OXg        TEMP         H2OX                                                  4.21E+03     34.00  1.50E+15  21
+ 7180 H2OX(gr)     TEMP         H2OX                                                  4.21E+03     34.00  1.50E+15  21
  7181 H2O2(gr)     C-RAY        H2O2                                                  4.21E+03     34.00  1.50E+15  22
- 7182 H2OXg        C-RAY        H2OX                                                  4.21E+03     34.00  1.50E+15  22
+ 7182 H2OX(gr)     C-RAY        H2OX                                                  4.21E+03     34.00  1.50E+15  22
  7183 H2O2(gr)     PHOTON       H2O2                                                  3.14E-10      0.00      0.00 -23
- 7184 H2OXg        PHOTON       H2OX                                                  3.14E-10      0.00      0.00 -23
+ 7184 H2OX(gr)     PHOTON       H2OX                                                  3.14E-10      0.00      0.00 -23
  7185 H2S2         GRAIN        H2S2(gr)     GRAIN                                    3.14E-10     66.00      1.00  20
  7186 H2S2(gr)     TEMP         H2S2                                                  4.09E+03     66.00  1.50E+15  21
  7187 H2S2(gr)     C-RAY        H2S2                                                  4.09E+03     66.00  1.50E+15  22
  7188 H2S2(gr)     PHOTON       H2S2                                                  3.14E-10      0.00      0.00 -23
  7189 H2SiO        GRAIN        H2SiO(gr)    GRAIN                                    3.14E-10     46.00      1.00  20
- 7190 H2SiX        GRAIN        H2SiXg       GRAIN                                    3.14E-10     46.00      1.00  20
+ 7190 H2SiX        GRAIN        H2SiX(gr)    GRAIN                                    3.14E-10     46.00      1.00  20
  7191 H2SiO(gr)    TEMP         H2SiO                                                 1.01E+03     46.00  1.50E+15  21
- 7192 H2SiXg       TEMP         H2SiX                                                 1.01E+03     46.00  1.50E+15  21
+ 7192 H2SiX(gr)    TEMP         H2SiX                                                 1.01E+03     46.00  1.50E+15  21
  7193 H2SiO(gr)    C-RAY        H2SiO                                                 1.01E+03     46.00  1.50E+15  22
- 7194 H2SiXg       C-RAY        H2SiX                                                 1.01E+03     46.00  1.50E+15  22
+ 7194 H2SiX(gr)    C-RAY        H2SiX                                                 1.01E+03     46.00  1.50E+15  22
  7195 H2SiO(gr)    PHOTON       H2SiO                                                 3.14E-10      0.00      0.00 -23
- 7196 H2SiXg       PHOTON       H2SiX                                                 3.14E-10      0.00      0.00 -23
+ 7196 H2SiX(gr)    PHOTON       H2SiX                                                 3.14E-10      0.00      0.00 -23
  7197 HCCP         GRAIN        HCCP(gr)     GRAIN                                    3.14E-10     40.00      1.00  20
  7198 HCCP(gr)     TEMP         HCCP                                                  7.37E+03     40.00  1.50E+15  21
  7199 HCCP(gr)     C-RAY        HCCP                                                  7.37E+03     40.00  1.50E+15  22
@@ -7224,13 +7224,13 @@
  7223 C2H2N(gr)    C-RAY        C2H2N                                                 1.01E+03     40.00  1.50E+15  22
  7224 C2H2N(gr)    PHOTON       C2H2N                                                 3.14E-10      0.00      0.00 -23
  7225 C2H2O        GRAIN        C2H2O(gr)    GRAIN                                    3.14E-10     42.00      1.00  20
- 7226 C2H2X        GRAIN        C2H2Xg       GRAIN                                    3.14E-10     42.00      1.00  20
+ 7226 C2H2X        GRAIN        C2H2X(gr)    GRAIN                                    3.14E-10     42.00      1.00  20
  7227 C2H2O(gr)    TEMP         C2H2O                                                 1.01E+03     42.00  1.50E+15  21
- 7228 C2H2Xg       TEMP         C2H2X                                                 1.01E+03     42.00  1.50E+15  21
+ 7228 C2H2X(gr)    TEMP         C2H2X                                                 1.01E+03     42.00  1.50E+15  21
  7229 C2H2O(gr)    C-RAY        C2H2O                                                 1.01E+03     42.00  1.50E+15  22
- 7230 C2H2Xg       C-RAY        C2H2X                                                 1.01E+03     42.00  1.50E+15  22
+ 7230 C2H2X(gr)    C-RAY        C2H2X                                                 1.01E+03     42.00  1.50E+15  22
  7231 C2H2O(gr)    PHOTON       C2H2O                                                 3.14E-10      0.00      0.00 -23
- 7232 C2H2Xg       PHOTON       C2H2X                                                 3.14E-10      0.00      0.00 -23
+ 7232 C2H2X(gr)    PHOTON       C2H2X                                                 3.14E-10      0.00      0.00 -23
  7233 C2H3         GRAIN        C2H3(gr)     GRAIN                                    3.14E-10     27.00      1.00  20
  7234 C2H3(gr)     TEMP         C2H3                                                  2.95E+03     27.00  1.50E+15  21
  7235 C2H3(gr)     C-RAY        C2H3                                                  2.95E+03     27.00  1.50E+15  22
@@ -7276,13 +7276,13 @@
  7275 C5(gr)       C-RAY        C5                                                    5.39E+03     60.00  1.50E+15  22
  7276 C5(gr)       PHOTON       C5                                                    3.14E-10      0.00      0.00 -23
  7277 CH2O2        GRAIN        CH2O2(gr)    GRAIN                                    3.14E-10     46.00      1.00  20
- 7278 CH2OX        GRAIN        CH2OXg       GRAIN                                    3.14E-10     46.00      1.00  20
+ 7278 CH2OX        GRAIN        CH2OX(gr)    GRAIN                                    3.14E-10     46.00      1.00  20
  7279 CH2O2(gr)    TEMP         CH2O2                                                 1.01E+03     46.00  1.50E+15  21
- 7280 CH2OXg       TEMP         CH2OX                                                 1.01E+03     46.00  1.50E+15  21
+ 7280 CH2OX(gr)    TEMP         CH2OX                                                 1.01E+03     46.00  1.50E+15  21
  7281 CH2O2(gr)    C-RAY        CH2O2                                                 1.01E+03     46.00  1.50E+15  22
- 7282 CH2OXg       C-RAY        CH2OX                                                 1.01E+03     46.00  1.50E+15  22
+ 7282 CH2OX(gr)    C-RAY        CH2OX                                                 1.01E+03     46.00  1.50E+15  22
  7283 CH2O2(gr)    PHOTON       CH2O2                                                 3.14E-10      0.00      0.00 -23
- 7284 CH2OXg       PHOTON       CH2OX                                                 3.14E-10      0.00      0.00 -23
+ 7284 CH2OX(gr)    PHOTON       CH2OX                                                 3.14E-10      0.00      0.00 -23
  7285 CH2PH        GRAIN        CH2PH(gr)    GRAIN                                    3.14E-10     30.00      1.00  20
  7286 CH2PH(gr)    TEMP         CH2PH                                                 6.95E+03     30.00  1.50E+15  21
  7287 CH2PH(gr)    C-RAY        CH2PH                                                 6.95E+03     30.00  1.50E+15  22
@@ -7388,29 +7388,29 @@
  7387 C6(gr)       C-RAY        C6                                                    6.06E+03     72.00  1.50E+15  22
  7388 C6(gr)       PHOTON       C6                                                    3.14E-10      0.00      0.00 -23
  7389 CH4O         GRAIN        CH4O(gr)     GRAIN                                    3.14E-10     32.00      1.00  20
- 7390 CH4X         GRAIN        CH4Xg        GRAIN                                    3.14E-10     32.00      1.00  20
+ 7390 CH4X         GRAIN        CH4X(gr)     GRAIN                                    3.14E-10     32.00      1.00  20
  7391 CH4O(gr)     TEMP         CH4O                                                  1.01E+03     32.00  1.50E+15  21
- 7392 CH4Xg        TEMP         CH4X                                                  1.01E+03     32.00  1.50E+15  21
+ 7392 CH4X(gr)     TEMP         CH4X                                                  1.01E+03     32.00  1.50E+15  21
  7393 CH4O(gr)     C-RAY        CH4O                                                  1.01E+03     32.00  1.50E+15  22
- 7394 CH4Xg        C-RAY        CH4X                                                  1.01E+03     32.00  1.50E+15  22
+ 7394 CH4X(gr)     C-RAY        CH4X                                                  1.01E+03     32.00  1.50E+15  22
  7395 CH4O(gr)     PHOTON       CH4O                                                  3.14E-10      0.00      0.00 -23
- 7396 CH4Xg        PHOTON       CH4X                                                  3.14E-10      0.00      0.00 -23
+ 7396 CH4X(gr)     PHOTON       CH4X                                                  3.14E-10      0.00      0.00 -23
  7397 NH2CHO       GRAIN        NH2CHO(gr)   GRAIN                                    3.14E-10     45.00      1.00  20
- 7398 NH2CHX       GRAIN        NH2CHXg      GRAIN                                    3.14E-10     45.00      1.00  20
+ 7398 NH2CHX       GRAIN        NH2CHX(gr)   GRAIN                                    3.14E-10     45.00      1.00  20
  7399 NH2CHO(gr)   TEMP         NH2CHO                                                1.01E+03     45.00  1.50E+15  21
- 7400 NH2CHXg      TEMP         NH2CHX                                                1.01E+03     45.00  1.50E+15  21
+ 7400 NH2CHX(gr)   TEMP         NH2CHX                                                1.01E+03     45.00  1.50E+15  21
  7401 NH2CHO(gr)   C-RAY        NH2CHO                                                1.01E+03     45.00  1.50E+15  22
- 7402 NH2CHXg      C-RAY        NH2CHX                                                1.01E+03     45.00  1.50E+15  22
+ 7402 NH2CHX(gr)   C-RAY        NH2CHX                                                1.01E+03     45.00  1.50E+15  22
  7403 NH2CHO(gr)   PHOTON       NH2CHO                                                3.14E-10      0.00      0.00 -23
- 7404 NH2CHXg      PHOTON       NH2CHX                                                3.14E-10      0.00      0.00 -23
+ 7404 NH2CHX(gr)   PHOTON       NH2CHX                                                3.14E-10      0.00      0.00 -23
  7405 C2H4O        GRAIN        C2H4O(gr)    GRAIN                                    3.14E-10     44.00      1.00  20
- 7406 C2H4X        GRAIN        C2H4Xg       GRAIN                                    3.14E-10     44.00      1.00  20
+ 7406 C2H4X        GRAIN        C2H4X(gr)    GRAIN                                    3.14E-10     44.00      1.00  20
  7407 C2H4O(gr)    TEMP         C2H4O                                                 1.01E+03     44.00  1.50E+15  21
- 7408 C2H4Xg       TEMP         C2H4X                                                 1.01E+03     44.00  1.50E+15  21
+ 7408 C2H4X(gr)    TEMP         C2H4X                                                 1.01E+03     44.00  1.50E+15  21
  7409 C2H4O(gr)    C-RAY        C2H4O                                                 1.01E+03     44.00  1.50E+15  22
- 7410 C2H4Xg       C-RAY        C2H4X                                                 1.01E+03     44.00  1.50E+15  22
+ 7410 C2H4X(gr)    C-RAY        C2H4X                                                 1.01E+03     44.00  1.50E+15  22
  7411 C2H4O(gr)    PHOTON       C2H4O                                                 3.14E-10      0.00      0.00 -23
- 7412 C2H4Xg       PHOTON       C2H4X                                                 3.14E-10      0.00      0.00 -23
+ 7412 C2H4X(gr)    PHOTON       C2H4X                                                 3.14E-10      0.00      0.00 -23
  7413 C2H5         GRAIN        C2H5(gr)     GRAIN                                    3.14E-10     29.00      1.00  20
  7414 C2H5(gr)     TEMP         C2H5                                                  3.53E+03     29.00  1.50E+15  21
  7415 C2H5(gr)     C-RAY        C2H5                                                  3.53E+03     29.00  1.50E+15  22
@@ -7464,33 +7464,33 @@
  7463 CH3C3N(gr)   C-RAY        CH3C3N                                                1.01E+03     65.00  1.50E+15  22
  7464 CH3C3N(gr)   PHOTON       CH3C3N                                                3.14E-10      0.00      0.00 -23
  7465 HCOOCH3      GRAIN        HCOOCH3(gr)  GRAIN                                    3.14E-10     60.00      1.00  20
- 7466 HCXOCH3      GRAIN        HCXOCH3g     GRAIN                                    1.57E-10     60.00      1.00  20
- 7467 HCXOCH3      GRAIN        HCOXCH3g     GRAIN                                    1.57E-10     60.00      1.00  20
- 7468 HCOXCH3      GRAIN        HCXOCH3g     GRAIN                                    1.57E-10     60.00      1.00  20
- 7469 HCOXCH3      GRAIN        HCOXCH3g     GRAIN                                    1.57E-10     60.00      1.00  20
+ 7466 HCXOCH3      GRAIN        HCXOCH3(gr)  GRAIN                                    1.57E-10     60.00      1.00  20
+ 7467 HCXOCH3      GRAIN        HCOXCH3(gr)  GRAIN                                    1.57E-10     60.00      1.00  20
+ 7468 HCOXCH3      GRAIN        HCXOCH3(gr)  GRAIN                                    1.57E-10     60.00      1.00  20
+ 7469 HCOXCH3      GRAIN        HCOXCH3(gr)  GRAIN                                    1.57E-10     60.00      1.00  20
  7470 HCOOCH3(gr)  TEMP         HCOOCH3                                               6.53E+03     60.00  1.50E+15  21
- 7471 HCXOCH3g     TEMP         HCXOCH3                                               3.26E+03     60.00  1.50E+15  21
- 7472 HCXOCH3g     TEMP         HCOXCH3                                               3.26E+03     60.00  1.50E+15  21
- 7473 HCOXCH3g     TEMP         HCXOCH3                                               3.26E+03     60.00  1.50E+15  21
- 7474 HCOXCH3g     TEMP         HCOXCH3                                               3.26E+03     60.00  1.50E+15  21
+ 7471 HCXOCH3(gr)  TEMP         HCXOCH3                                               3.26E+03     60.00  1.50E+15  21
+ 7472 HCXOCH3(gr)  TEMP         HCOXCH3                                               3.26E+03     60.00  1.50E+15  21
+ 7473 HCOXCH3(gr)  TEMP         HCXOCH3                                               3.26E+03     60.00  1.50E+15  21
+ 7474 HCOXCH3(gr)  TEMP         HCOXCH3                                               3.26E+03     60.00  1.50E+15  21
  7475 HCOOCH3(gr)  C-RAY        HCOOCH3                                               6.53E+03     60.00  1.50E+15  22
- 7476 HCXOCH3g     C-RAY        HCXOCH3                                               3.26E+03     60.00  1.50E+15  22
- 7477 HCXOCH3g     C-RAY        HCOXCH3                                               3.26E+03     60.00  1.50E+15  22
- 7478 HCOXCH3g     C-RAY        HCXOCH3                                               3.26E+03     60.00  1.50E+15  22
- 7479 HCOXCH3g     C-RAY        HCOXCH3                                               3.26E+03     60.00  1.50E+15  22
+ 7476 HCXOCH3(gr)  C-RAY        HCXOCH3                                               3.26E+03     60.00  1.50E+15  22
+ 7477 HCXOCH3(gr)  C-RAY        HCOXCH3                                               3.26E+03     60.00  1.50E+15  22
+ 7478 HCOXCH3(gr)  C-RAY        HCXOCH3                                               3.26E+03     60.00  1.50E+15  22
+ 7479 HCOXCH3(gr)  C-RAY        HCOXCH3                                               3.26E+03     60.00  1.50E+15  22
  7480 HCOOCH3(gr)  PHOTON       HCOOCH3                                               3.14E-10      0.00      0.00 -23
- 7481 HCXOCH3g     PHOTON       HCXOCH3                                               1.57E-10      0.00      0.00 -23
- 7482 HCXOCH3g     PHOTON       HCOXCH3                                               1.57E-10      0.00      0.00 -23
- 7483 HCOXCH3g     PHOTON       HCXOCH3                                               1.57E-10      0.00      0.00 -23
- 7484 HCOXCH3g     PHOTON       HCOXCH3                                               1.57E-10      0.00      0.00 -23
+ 7481 HCXOCH3(gr)  PHOTON       HCXOCH3                                               1.57E-10      0.00      0.00 -23
+ 7482 HCXOCH3(gr)  PHOTON       HCOXCH3                                               1.57E-10      0.00      0.00 -23
+ 7483 HCOXCH3(gr)  PHOTON       HCXOCH3                                               1.57E-10      0.00      0.00 -23
+ 7484 HCOXCH3(gr)  PHOTON       HCOXCH3                                               1.57E-10      0.00      0.00 -23
  7485 C2H5OH       GRAIN        C2H5OH(gr)   GRAIN                                    3.14E-10     46.00      1.00  20
- 7486 C2H5XH       GRAIN        C2H5XHg      GRAIN                                    3.14E-10     46.00      1.00  20
+ 7486 C2H5XH       GRAIN        C2H5XH(gr)   GRAIN                                    3.14E-10     46.00      1.00  20
  7487 C2H5OH(gr)   TEMP         C2H5OH                                                5.80E+03     46.00  1.50E+15  21
- 7488 C2H5XHg      TEMP         C2H5XH                                                5.80E+03     46.00  1.50E+15  21
+ 7488 C2H5XH(gr)   TEMP         C2H5XH                                                5.80E+03     46.00  1.50E+15  21
  7489 C2H5OH(gr)   C-RAY        C2H5OH                                                5.80E+03     46.00  1.50E+15  22
- 7490 C2H5XHg      C-RAY        C2H5XH                                                5.80E+03     46.00  1.50E+15  22
+ 7490 C2H5XH(gr)   C-RAY        C2H5XH                                                5.80E+03     46.00  1.50E+15  22
  7491 C2H5OH(gr)   PHOTON       C2H5OH                                                3.14E-10      0.00      0.00 -23
- 7492 C2H5XHg      PHOTON       C2H5XH                                                3.14E-10      0.00      0.00 -23
+ 7492 C2H5XH(gr)   PHOTON       C2H5XH                                                3.14E-10      0.00      0.00 -23
  7493 C7H2         GRAIN        C7H2(gr)     GRAIN                                    3.14E-10     86.00      1.00  20
  7494 C7H2(gr)     TEMP         C7H2                                                  8.24E+03     86.00  1.50E+15  21
  7495 C7H2(gr)     C-RAY        C7H2                                                  8.24E+03     86.00  1.50E+15  22
@@ -7508,13 +7508,13 @@
  7507 CH3C4H(gr)   C-RAY        CH3C4H                                                1.01E+03     64.00  1.50E+15  22
  7508 CH3C4H(gr)   PHOTON       CH3C4H                                                3.14E-10      0.00      0.00 -23
  7509 CH3OCH3      GRAIN        CH3OCH3(gr)  GRAIN                                    3.14E-10     46.00      1.00  20
- 7510 CH3XCH3      GRAIN        CH3XCH3g     GRAIN                                    3.14E-10     46.00      1.00  20
+ 7510 CH3XCH3      GRAIN        CH3XCH3(gr)  GRAIN                                    3.14E-10     46.00      1.00  20
  7511 CH3OCH3(gr)  TEMP         CH3OCH3                                               4.72E+03     46.00  1.50E+15  21
- 7512 CH3XCH3g     TEMP         CH3XCH3                                               4.72E+03     46.00  1.50E+15  21
+ 7512 CH3XCH3(gr)  TEMP         CH3XCH3                                               4.72E+03     46.00  1.50E+15  21
  7513 CH3OCH3(gr)  C-RAY        CH3OCH3                                               4.72E+03     46.00  1.50E+15  22
- 7514 CH3XCH3g     C-RAY        CH3XCH3                                               4.72E+03     46.00  1.50E+15  22
+ 7514 CH3XCH3(gr)  C-RAY        CH3XCH3                                               4.72E+03     46.00  1.50E+15  22
  7515 CH3OCH3(gr)  PHOTON       CH3OCH3                                               3.14E-10      0.00      0.00 -23
- 7516 CH3XCH3g     PHOTON       CH3XCH3                                               3.14E-10      0.00      0.00 -23
+ 7516 CH3XCH3(gr)  PHOTON       CH3XCH3                                               3.14E-10      0.00      0.00 -23
  7517 HC4N         GRAIN        HC4N(gr)     GRAIN                                    3.14E-10     63.00      1.00  20
  7518 HC4N(gr)     TEMP         HC4N                                                  1.01E+03     63.00  1.50E+15  21
  7519 HC4N(gr)     C-RAY        HC4N                                                  1.01E+03     63.00  1.50E+15  22
@@ -7548,13 +7548,13 @@
  7547 HC13N(gr)    C-RAY        HC13N                                                 1.01E+03     27.00  1.50E+15  22
  7548 HC13N(gr)    PHOTON       HC13N                                                 3.14E-10      0.00      0.00 -23
  7549 C2H6CO       GRAIN        C2H6CO(gr)   GRAIN                                    3.14E-10     58.00      1.00  20
- 7550 C2H6CX       GRAIN        C2H6CXg      GRAIN                                    3.14E-10     58.00      1.00  20
+ 7550 C2H6CX       GRAIN        C2H6CX(gr)   GRAIN                                    3.14E-10     58.00      1.00  20
  7551 C2H6CO(gr)   TEMP         C2H6CO                                                5.89E+03     58.00  1.50E+15  21
- 7552 C2H6CXg      TEMP         C2H6CX                                                5.89E+03     58.00  1.50E+15  21
+ 7552 C2H6CX(gr)   TEMP         C2H6CX                                                5.89E+03     58.00  1.50E+15  21
  7553 C2H6CO(gr)   C-RAY        C2H6CO                                                5.89E+03     58.00  1.50E+15  22
- 7554 C2H6CXg      C-RAY        C2H6CX                                                5.89E+03     58.00  1.50E+15  22
+ 7554 C2H6CX(gr)   C-RAY        C2H6CX                                                5.89E+03     58.00  1.50E+15  22
  7555 C2H6CO(gr)   PHOTON       C2H6CO                                                3.14E-10      0.00      0.00 -23
- 7556 C2H6CXg      PHOTON       C2H6CX                                                3.14E-10      0.00      0.00 -23
+ 7556 C2H6CX(gr)   PHOTON       C2H6CX                                                3.14E-10      0.00      0.00 -23
  7557 C8H2         GRAIN        C8H2(gr)     GRAIN                                    3.14E-10     98.00      1.00  20
  7558 C8H2(gr)     TEMP         C8H2                                                  8.93E+03     98.00  1.50E+15  21
  7559 C8H2(gr)     C-RAY        C8H2                                                  8.93E+03     98.00  1.50E+15  22
@@ -7620,30 +7620,30 @@
  7619 C2H2(gr)     LYAPHOTON    C2H2                                                  3.14E-10      0.01      0.00 -24
  7620 C4H2(gr)     LYAPHOTON    C4H2                                                  3.14E-10      0.01      0.00 -24
  7621 OH(gr)       LYAPHOTON    OH                                                    3.14E-10      0.00      0.00 -24
- 7622 XHg          LYAPHOTON    XH                                                    3.14E-10      0.00      0.00 -24
+ 7622 XH(gr)       LYAPHOTON    XH                                                    3.14E-10      0.00      0.00 -24
  7623 H2O(gr)      LYAPHOTON    H2O                                                   0.00E+00      0.00      0.00 -24
- 7624 H2Xg         LYAPHOTON    H2X                                                   0.00E+00      0.00      0.00 -24
+ 7624 H2X(gr)      LYAPHOTON    H2X                                                   0.00E+00      0.00      0.00 -24
  7625 H2O(gr)      LYAPHOTON    OH           H                                        0.00E+00      0.00      0.00 -24
- 7626 H2Xg         LYAPHOTON    XH           H                                        0.00E+00      0.00      0.00 -24
+ 7626 H2X(gr)      LYAPHOTON    XH           H                                        0.00E+00      0.00      0.00 -24
  7627 O2(gr)       LYAPHOTON    O2                                                    3.14E-10      0.00      0.00 -24
- 7628 OXg          LYAPHOTON    OX                                                    3.14E-10      0.00      0.00 -24
+ 7628 OX(gr)       LYAPHOTON    OX                                                    3.14E-10      0.00      0.00 -24
  7629 CO2(gr)      LYAPHOTON    CO2                                                   3.14E-10      0.00      0.00 -24
- 7630 COXg         LYAPHOTON    COX                                                   3.14E-10      0.00      0.00 -24
+ 7630 COX(gr)      LYAPHOTON    COX                                                   3.14E-10      0.00      0.00 -24
  7631 H2CO(gr)     LYAPHOTON    H2CO                                                  3.14E-10      0.00      0.00 -24
- 7632 H2CXg        LYAPHOTON    H2CX                                                  3.14E-10      0.00      0.00 -24
+ 7632 H2CX(gr)     LYAPHOTON    H2CX                                                  3.14E-10      0.00      0.00 -24
  7633 NH(gr)       LYAPHOTON    NH                                                    3.14E-10      0.00      0.00 -24
  7634 NH3(gr)      LYAPHOTON    NH3                                                   3.14E-10      0.00      0.00 -24
  7635 HCN(gr)      LYAPHOTON    HCN                                                   3.14E-10      0.01      0.00 -24
  7636 HC3N(gr)     LYAPHOTON    HC3N                                                  3.14E-10      0.00      0.00 -24
  7637 NO(gr)       LYAPHOTON    NO                                                    3.14E-10      0.00      0.00 -24
- 7638 NXg          LYAPHOTON    NX                                                    3.14E-10      0.00      0.00 -24
+ 7638 NX(gr)       LYAPHOTON    NX                                                    3.14E-10      0.00      0.00 -24
  7639 H2S(gr)      LYAPHOTON    H2S                                                   3.14E-10      0.01      0.00 -24
  7640 SO(gr)       LYAPHOTON    SO                                                    3.14E-10      0.02      0.00 -24
- 7641 SXg          LYAPHOTON    SX                                                    3.14E-10      0.02      0.00 -24
+ 7641 SX(gr)       LYAPHOTON    SX                                                    3.14E-10      0.02      0.00 -24
  7642 SO2(gr)      LYAPHOTON    SO2                                                   3.14E-10      0.01      0.00 -24
- 7643 SOXg         LYAPHOTON    SOX                                                   3.14E-10      0.01      0.00 -24
+ 7643 SOX(gr)      LYAPHOTON    SOX                                                   3.14E-10      0.01      0.00 -24
  7644 OCS(gr)      LYAPHOTON    OCS                                                   3.14E-10      0.00      0.00 -24
- 7645 XCSg         LYAPHOTON    XCS                                                   3.14E-10      0.00      0.00 -24
+ 7645 XCS(gr)      LYAPHOTON    XCS                                                   3.14E-10      0.00      0.00 -24
  7646 Cl+          GRAIN-       Cl           GRAIN0                                   3.14E-10     17.00      1.00  23
  7647 C2+          GRAIN-       C            C            GRAIN0                      3.14E-10     24.00      1.00  23
  7648 CCl+         GRAIN-       C            Cl           GRAIN0                      3.14E-10     29.00      1.00  23
@@ -8372,13 +8372,13 @@
  8371 OH-          PHOTON       OH           E                                        1.57E-08      0.00      0.90  13
  8372 XH-          PHOTON       XH           E                                        1.57E-08      0.00      0.90  13
  8373 O(gr)        H            OH(gr)                                                3.14E-10      1.00      1.00  -3
- 8374 Xg           H            XHg                                                   3.14E-10      1.00      1.00  -3
+ 8374 X(gr)        H            XH(gr)                                                3.14E-10      1.00      1.00  -3
  8375 OH(gr)       H            H2O(gr)                                               3.14E-10      1.00      1.00  -3
- 8376 XHg          H            H2Xg                                                  3.14E-10      1.00      1.00  -3
+ 8376 XH(gr)       H            H2X(gr)                                               3.14E-10      1.00      1.00  -3
  8377 OH           H(gr)        H2O(gr)                                               3.14E-10     17.00      1.00  -3
- 8378 XH           Hg           H2Xg                                                  3.14E-10     17.00      1.00  -3
+ 8378 XH           H(gr)        H2X(gr)                                               3.14E-10     17.00      1.00  -3
  8379 H(gr)        O            OH(gr)                                                3.14E-10     16.00      1.00  -3
- 8380 Hg           X            XHg                                                   3.14E-10     16.00      1.00  -3
+ 8380 H(gr)        X            XH(gr)                                                3.14E-10     16.00      1.00  -3
  8381 CO           PHOTON       C            O                                        1.20E+01      0.00      0.00  -1
  8382 CX           PHOTON       C            X                                        1.20E+01      0.00      0.00  -1
  8383 H2           PHOTON       H            H                                        0.00E+00      0.00      0.00  -2

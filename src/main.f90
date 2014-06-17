@@ -114,6 +114,11 @@
         end if
         nameElements(idxNew) = adjustl(elementNew)
       end if
+      if (whichFormat .eq. 'Herbst') then
+        nameElements(4) = '(gr)'
+      else
+        nameElements(4) = 'g'
+      end if
 
 ! Import all the reactions
 

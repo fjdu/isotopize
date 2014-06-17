@@ -47,7 +47,9 @@
       type (EleGroup) HydrGroup
       type (EleGroup), dimension(nMaxGrp) :: vecDeutGroup
       integer nDeutGroup
+      !
       character(len=128) fDeuterated
+      !
       character(len=160) :: fmtHeaderHerbst = &
         '#23456123456789ABCD123456789ABCD123456789A&
         &BCD123456789ABCD123456789ABCD123456789ABCD&

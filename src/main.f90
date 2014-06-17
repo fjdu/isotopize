@@ -114,11 +114,9 @@
         end if
         nameElements(idxNew) = adjustl(elementNew)
       end if
-      if (whichFormat .eq. 'Herbst') then
-        nameElements(4) = '(gr)'
-      else
-        nameElements(4) = 'g'
-      end if
+      !
+      nameElements(4) = inputGrainEleName
+      nameElements(5) = inputGrainName
 
 ! Import all the reactions
 
@@ -226,11 +224,16 @@
           if (IsEquiv(SpeciesEleAll(i), SpeciesEleAll(j))) then
             write (*,*) nameSpecies(i), ' and ', nameSpecies(j), &
               'might be equivalent.'
+            !write (*, '(48I3)') SpeciesEleAll(i)%vecIdEle, SpeciesEleAll(i)%vecCtEle
+            !write (*, '(48I3)') SpeciesEleAll(j)%vecIdEle, SpeciesEleAll(j)%vecCtEle
           end if
         end do
       end do
 
       write (*,*) 'Working on the reactions...'
+      !
+      nameElements(4) = outputGrainEleName
+      !
       fDeuterated = &
         trim(getFilePreName(fReactions))//'_isotopized.dat'
       if (.NOT. getFileUnit(fU)) then
@@ -239,7 +242,7 @@
       end if
       CALL openFileSequentialWrite &
         (fU, trim(path)//trim(fDeuterated), 9999)
-      if (whichFormat .eq. 'Herbst') then
+      if (outputFormat .eq. 'Herbst') then
         write (fU, '(A)') trim(fmtHeaderHerbst)
       else
         write (fU, '(A)') trim(fmtHeaderMine)
@@ -333,7 +336,7 @@
           end if
         end do
         !
-        if (whichFormat .eq. 'Herbst') then
+        if (outputFormat .eq. 'Herbst') then
           !
           ! Format back.
           do j=1, nReactants
@@ -426,7 +429,9 @@
         nSpecies_Est, nIteration, timeUnit, sto_threshold, &
         rateThreshold, nOrderLim, nDeutDegree, &
         nOtherDeutMax, noDMaxMetal, noDEleAbundance, &
-        elementOld, elementNew
+        elementOld, elementNew, &
+        inputGrainEleName, inputGrainName, &
+        outputFormat, outputGrainEleName
         !idxNew, idxOld
 
       namelist /Paths/ &

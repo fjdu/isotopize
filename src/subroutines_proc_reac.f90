@@ -20,7 +20,10 @@ integer nOtherDeutMax, noDMaxMetal
 integer nDeutDegree
 double precision noDEleAbundance
 
-character(len=16) :: whichFormat = 'Herbst'
+character(len=16) :: outputFormat = 'Herbst'
+character(len=8) :: outputGrainEleName = '(gr)'
+character(len=8) :: inputGrainEleName = '(gr)'
+character(len=constLenNameSpecies) :: inputGrainName = 'Grain'
 
 integer nReacCounter
 
@@ -464,7 +467,7 @@ subroutine DeutReac (iReac, nDeut, fU)
           end if
         end do
         !
-        if (whichFormat .eq. 'Herbst') then
+        if (outputFormat .eq. 'Herbst') then
           do k=1, nReactants
             call formatBack(StrSplittedLeft(k))
           end do

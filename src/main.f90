@@ -333,8 +333,6 @@
           end if
         end do
         !
-        call double2str(strtmp2, dblABC(3, i), 9, 2)
-        !
         if (whichFormat .eq. 'Herbst') then
           !
           ! Format back.
@@ -345,16 +343,17 @@
             call formatBack(strProducts(j, i))
           end do
           !
-          write (fU, '(I5, X, 6(A12,X), X, ES9.2, X, F9.2, X, A9, X, I3)') &
+          write (fU, '(I5, X, 6(A12,X), X, ES9.2, X, ES9.2, X, ES9.2, X, I3)') &
             nReacCounter, strReactants(1:2, i), strProducts(1:4, i), &
             dblABC(1:2, i), &
-            strtmp2, typeReac(i)
+            dblABC(3, i), &
+            typeReac(i)
           nReacCounter = nReacCounter + 1
         else
-          write (fU, '(7A12, ES9.2, F9.2, A9, 2I6, I3, X,A1,X,A2,X,A1)') &
+          write (fU, '(7A12, ES9.2, ES9.2, ES9.2, 2I6, I3, X,A1,X,A2,X,A1)') &
             strReactants(:, i), strProducts(:, i), &
             dblABC(1:2, i), &
-            strtmp2, &
+            dblABC(3, i), &
             int(T_min(i)), int(T_max(i)), typeReac(i), &
             cquality(i), ctype(i), stype(i)
         end if

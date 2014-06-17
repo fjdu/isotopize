@@ -437,6 +437,21 @@ subroutine DeutReac (iReac, nDeut, fU)
             WeightsRight(j1) = 0
           end if
         end do
+        !
+        do k=1, nReactants
+          if ((strReactants(k, iReac)(1:5) .eq. 'Grain') .or. &
+              (strReactants(k, iReac)(1:5) .eq. 'GRAIN')) then
+            StrSplittedLeft(k) = strReactants(k, iReac)
+          end if
+        end do
+        do k=1, nProducts
+          if ((strProducts(k, iReac)(1:5) .eq. 'Grain') .or. &
+              (strProducts(k, iReac)(1:5) .eq. 'GRAIN')) then
+            StrSplittedRight(k) = strProducts(k, iReac)
+          end if
+        end do
+        !
+        ! Add back the unused names.
         do k=nRealReactants(iReac)+1, nReactants
           if (len_trim(strReactants(k, iReac)) .gt. 0) then
             StrSplittedLeft(k) = strReactants(k, iReac)
@@ -447,7 +462,9 @@ subroutine DeutReac (iReac, nDeut, fU)
             StrSplittedRight(k) = strProducts(k, iReac)
           end if
         end do
+        !
         call double2str(strtmp, dblABC(3, iReac), 9, 2)
+        !
         if (whichFormat .eq. 'Herbst') then
           do k=1, nReactants
             call formatBack(StrSplittedLeft(k))

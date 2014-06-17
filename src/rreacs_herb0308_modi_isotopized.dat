@@ -10,14 +10,14 @@
     9 N+           GRAIN-       N            GRAIN0                                   3.14E-10     14.00      0.50  23
    10 Na+          GRAIN-       Na           GRAIN0                                   3.14E-10     23.00      0.50  23
    11 O+           GRAIN-       O            GRAIN0                                   3.14E-10     16.00      0.50  23
-   12 X+           GRAIN-       X                                                     3.14E-10     16.00      0.50  23
+   12 X+           GRAIN-       X            GRAIN0                                   3.14E-10     16.00      0.50  23
    13 S+           GRAIN-       S            GRAIN0                                   3.14E-10     32.10      0.50  23
    14 P+           GRAIN-       P            GRAIN0                                   3.14E-10     31.00      0.50  23
    15 F+           GRAIN-       F            GRAIN0                                   3.14E-10     19.00      0.50  23
    16 Si+          GRAIN-       Si           GRAIN0                                   3.14E-10     28.10      0.50  23
    17 H3+          GRAIN-       H2           H            GRAIN0                      3.14E-10      3.02      0.50  23
    18 HCO+         GRAIN-       H            CO           GRAIN0                      3.14E-10     29.00      0.50  23
-   19 HCX+         GRAIN-       H            CX                                       3.14E-10     29.00      0.50  23
+   19 HCX+         GRAIN-       H            CX           GRAIN0                      3.14E-10     29.00      0.50  23
    20 C            CRP          C+           E                                        1.33E-14      0.00      0.00   1
    21 Cl           CRP          Cl+          E                                        3.90E-14      0.00      0.00   1
    22 Fe           CRP          Fe+          E                                        1.95E-14      0.00      0.00   1
@@ -7650,10 +7650,10 @@
  7649 CF+          GRAIN-       C            F            GRAIN0                      3.14E-10     31.00      1.00  23
  7650 CH+          GRAIN-       C            H            GRAIN0                      3.14E-10     13.00      1.00  23
  7651 ClO+         GRAIN-       Cl           O            GRAIN0                      3.14E-10     33.00      1.00  23
- 7652 ClX+         GRAIN-       Cl           X                                        3.14E-10     33.00      1.00  23
+ 7652 ClX+         GRAIN-       Cl           X            GRAIN0                      3.14E-10     33.00      1.00  23
  7653 CN+          GRAIN-       C            N            GRAIN0                      3.14E-10     26.00      1.00  23
  7654 CO+          GRAIN-       O            C            GRAIN0                      3.14E-10     28.00      1.00  23
- 7655 CX+          GRAIN-       X            C                                        3.14E-10     28.00      1.00  23
+ 7655 CX+          GRAIN-       X            C            GRAIN0                      3.14E-10     28.00      1.00  23
  7656 CP+          GRAIN-       P            C            GRAIN0                      3.14E-10     27.00      1.00  23
  7657 CS+          GRAIN-       C            S            GRAIN0                      3.14E-10     44.00      1.00  23
  7658 H2+          GRAIN-       H            H            GRAIN0                      3.14E-10      2.00      0.46  23
@@ -7664,33 +7664,33 @@
  7663 N2+          GRAIN-       N            N            GRAIN0                      3.14E-10     28.00      1.00  23
  7664 NH+          GRAIN-       N            H            GRAIN0                      3.14E-10     15.00      1.00  23
  7665 NO+          GRAIN-       N            O            GRAIN0                      3.14E-10     30.00      1.00  23
- 7666 NX+          GRAIN-       N            X                                        3.14E-10     30.00      1.00  23
+ 7666 NX+          GRAIN-       N            X            GRAIN0                      3.14E-10     30.00      1.00  23
  7667 NS+          GRAIN-       N            S            GRAIN0                      3.14E-10     46.00      1.00  23
  7668 O2+          GRAIN-       O            O            GRAIN0                      3.14E-10     32.00      1.00  23
- 7669 OX+          GRAIN-       X            O                                        3.14E-10     32.00      1.00  23
+ 7669 OX+          GRAIN-       X            O            GRAIN0                      3.14E-10     32.00      1.00  23
  7670 OH+          GRAIN-       O            H            GRAIN0                      3.14E-10     17.00      1.00  23
- 7671 XH+          GRAIN-       X            H                                        3.14E-10     17.00      1.00  23
+ 7671 XH+          GRAIN-       X            H            GRAIN0                      3.14E-10     17.00      1.00  23
  7672 PH+          GRAIN-       P            H            GRAIN0                      3.14E-10     16.00      1.00  23
  7673 PN+          GRAIN-       P            N            GRAIN0                      3.14E-10     29.00      1.00  23
  7674 PO+          GRAIN-       P            O            GRAIN0                      3.14E-10     31.00      1.00  23
- 7675 PX+          GRAIN-       P            X                                        3.14E-10     31.00      1.00  23
+ 7675 PX+          GRAIN-       P            X            GRAIN0                      3.14E-10     31.00      1.00  23
  7676 S2+          GRAIN-       S            S            GRAIN0                      3.14E-10     64.00      1.00  23
  7677 SiC+         GRAIN-       Si           C            GRAIN0                      3.14E-10     40.00      1.00  23
  7678 SiH+         GRAIN-       Si           H            GRAIN0                      3.14E-10     29.00      1.00  23
  7679 SiN+         GRAIN-       Si           N            GRAIN0                      3.14E-10     42.00      1.00  23
  7680 SiO+         GRAIN-       Si           O            GRAIN0                      3.14E-10     44.00      1.00  23
- 7681 SiX+         GRAIN-       Si           X                                        3.14E-10     44.00      1.00  23
+ 7681 SiX+         GRAIN-       Si           X            GRAIN0                      3.14E-10     44.00      1.00  23
  7682 SiS+         GRAIN-       Si           S            GRAIN0                      3.14E-10     60.00      1.00  23
  7683 SiF+         GRAIN-       Si           F            GRAIN0                      3.14E-10     47.00      1.00  23
  7684 SO+          GRAIN-       O            S            GRAIN0                      3.14E-10     48.00      1.00  23
- 7685 SX+          GRAIN-       X            S                                        3.14E-10     48.00      1.00  23
+ 7685 SX+          GRAIN-       X            S            GRAIN0                      3.14E-10     48.00      1.00  23
  7686 C2H+         GRAIN-       C2           H            GRAIN0                      3.14E-10     25.00      0.43  23
  7687 C2H+         GRAIN-       CH           C            GRAIN0                      3.14E-10     25.00      0.39  23
  7688 C2H+         GRAIN-       C            C            H            GRAIN0         3.14E-10     25.00      0.18  23
  7689 C2N+         GRAIN-       C            CN           GRAIN0                      3.14E-10     38.00      0.50  23
  7690 C2N+         GRAIN-       C2           N            GRAIN0                      3.14E-10     38.00      0.50  23
  7691 C2O+         GRAIN-       CO           C            GRAIN0                      3.14E-10     40.00      1.00  23
- 7692 C2X+         GRAIN-       CX           C                                        3.14E-10     40.00      1.00  23
+ 7692 C2X+         GRAIN-       CX           C            GRAIN0                      3.14E-10     40.00      1.00  23
  7693 C2S+         GRAIN-       C2           S            GRAIN0                      3.14E-10     56.00      0.50  23
  7694 C2S+         GRAIN-       CS           C            GRAIN0                      3.14E-10     56.00      0.50  23
  7695 C3+          GRAIN-       C2           C            GRAIN0                      3.14E-10     36.00      1.00  23
@@ -7703,70 +7703,70 @@
  7702 CHSi+        GRAIN-       SiC          H            GRAIN0                      3.14E-10     41.00      0.50  23
  7703 CNC+         GRAIN-       CN           C            GRAIN0                      3.14E-10     38.00      1.00  23
  7704 CO2+         GRAIN-       O            CO           GRAIN0                      3.14E-10     44.00      1.00  23
- 7705 COX+         GRAIN-       X            CO                                       1.57E-10     44.00      1.00  23
- 7706 COX+         GRAIN-       O            CX                                       1.57E-10     44.00      1.00  23
+ 7705 COX+         GRAIN-       X            CO           GRAIN0                      1.57E-10     44.00      1.00  23
+ 7706 COX+         GRAIN-       O            CX           GRAIN0                      1.57E-10     44.00      1.00  23
  7707 H2Cl+        GRAIN-       Cl           H            H            GRAIN0         3.14E-10     19.00      0.90  23
  7708 H2Cl+        GRAIN-       HCl          H            GRAIN0                      3.14E-10     19.00      0.10  23
  7709 H2F+         GRAIN-       F            H            H            GRAIN0         3.14E-10     21.00      0.50  23
  7710 H2F+         GRAIN-       HF           H            GRAIN0                      3.14E-10     21.00      0.50  23
  7711 H2O+         GRAIN-       O            H2           GRAIN0                      3.14E-10     18.00      0.09  23
- 7712 H2X+         GRAIN-       X            H2                                       3.14E-10     18.00      0.09  23
+ 7712 H2X+         GRAIN-       X            H2           GRAIN0                      3.14E-10     18.00      0.09  23
  7713 H2O+         GRAIN-       OH           H            GRAIN0                      3.14E-10     18.00      0.20  23
- 7714 H2X+         GRAIN-       XH           H                                        3.14E-10     18.00      0.20  23
+ 7714 H2X+         GRAIN-       XH           H            GRAIN0                      3.14E-10     18.00      0.20  23
  7715 H2O+         GRAIN-       O            H            H            GRAIN0         3.14E-10     18.00      0.71  23
- 7716 H2X+         GRAIN-       X            H            H                           3.14E-10     18.00      0.71  23
+ 7716 H2X+         GRAIN-       X            H            H            GRAIN0         3.14E-10     18.00      0.71  23
  7717 H2S+         GRAIN-       S            H            H            GRAIN0         3.14E-10     34.00      0.44  23
  7718 H2S+         GRAIN-       HS           H            GRAIN0                      3.14E-10     34.00      0.44  23
  7719 HCN+         GRAIN-       CN           H            GRAIN0                      3.14E-10     27.00      1.00  23
  7720 HCO+         GRAIN-       OH           C            GRAIN0                      3.14E-10     29.00      0.04  23
- 7721 HCX+         GRAIN-       XH           C                                        3.14E-10     29.00      0.04  23
+ 7721 HCX+         GRAIN-       XH           C            GRAIN0                      3.14E-10     29.00      0.04  23
  7722 HCO+         GRAIN-       CH           O            GRAIN0                      3.14E-10     29.00      0.04  23
- 7723 HCX+         GRAIN-       CH           X                                        3.14E-10     29.00      0.04  23
+ 7723 HCX+         GRAIN-       CH           X            GRAIN0                      3.14E-10     29.00      0.04  23
  7724 HCP+         GRAIN-       P            CH           GRAIN0                      3.14E-10     28.00      0.50  23
  7725 HCP+         GRAIN-       CP           H            GRAIN0                      3.14E-10     28.00      0.50  23
  7726 HCS+         GRAIN-       CS           H            GRAIN0                      3.14E-10     45.00      0.19  23
  7727 HCS+         GRAIN-       CH           S            GRAIN0                      3.14E-10     45.00      0.81  23
  7728 HNC+         GRAIN-       CN           H            GRAIN0                      3.14E-10     27.00      1.00  23
  7729 HNO+         GRAIN-       NO           H            GRAIN0                      3.14E-10     31.00      1.00  23
- 7730 HNX+         GRAIN-       NX           H                                        3.14E-10     31.00      1.00  23
+ 7730 HNX+         GRAIN-       NX           H            GRAIN0                      3.14E-10     31.00      1.00  23
  7731 HNS+         GRAIN-       NS           H            GRAIN0                      3.14E-10     47.00      1.00  23
  7732 HNSi+        GRAIN-       NH           Si           GRAIN0                      3.14E-10     43.00      0.50  23
  7733 HNSi+        GRAIN-       SiN          H            GRAIN0                      3.14E-10     43.00      0.50  23
  7734 HOC+         GRAIN-       CO           H            GRAIN0                      3.14E-10     29.00      1.00  23
- 7735 HXC+         GRAIN-       CX           H                                        3.14E-10     29.00      1.00  23
+ 7735 HXC+         GRAIN-       CX           H            GRAIN0                      3.14E-10     29.00      1.00  23
  7736 HPN+         GRAIN-       PH           N            GRAIN0                      3.14E-10     30.00      0.50  23
  7737 HPN+         GRAIN-       PN           H            GRAIN0                      3.14E-10     30.00      0.50  23
  7738 HPO+         GRAIN-       PH           O            GRAIN0                      3.14E-10     32.00      0.50  23
- 7739 HPX+         GRAIN-       PH           X                                        3.14E-10     32.00      0.50  23
+ 7739 HPX+         GRAIN-       PH           X            GRAIN0                      3.14E-10     32.00      0.50  23
  7740 HPO+         GRAIN-       PO           H            GRAIN0                      3.14E-10     32.00      0.50  23
- 7741 HPX+         GRAIN-       PX           H                                        3.14E-10     32.00      0.50  23
+ 7741 HPX+         GRAIN-       PX           H            GRAIN0                      3.14E-10     32.00      0.50  23
  7742 HSiO+        GRAIN-       Si           OH           GRAIN0                      3.14E-10     45.00      0.50  23
- 7743 HSiX+        GRAIN-       Si           XH                                       3.14E-10     45.00      0.50  23
+ 7743 HSiX+        GRAIN-       Si           XH           GRAIN0                      3.14E-10     45.00      0.50  23
  7744 HSiO+        GRAIN-       SiO          H            GRAIN0                      3.14E-10     45.00      0.50  23
- 7745 HSiX+        GRAIN-       SiX          H                                        3.14E-10     45.00      0.50  23
+ 7745 HSiX+        GRAIN-       SiX          H            GRAIN0                      3.14E-10     45.00      0.50  23
  7746 HSiS+        GRAIN-       Si           HS           GRAIN0                      3.14E-10     61.00      0.50  23
  7747 HSiS+        GRAIN-       SiS          H            GRAIN0                      3.14E-10     61.00      0.50  23
  7748 HSO+         GRAIN-       SO           H            GRAIN0                      3.14E-10     49.00      1.00  23
- 7749 HSX+         GRAIN-       SX           H                                        3.14E-10     49.00      1.00  23
+ 7749 HSX+         GRAIN-       SX           H            GRAIN0                      3.14E-10     49.00      1.00  23
  7750 N2H+         GRAIN-       N2           H            GRAIN0                      3.14E-10     29.00      0.36  23
  7751 N2H+         GRAIN-       NH           N            GRAIN0                      3.14E-10     29.00      0.64  23
  7752 NaH2+        GRAIN-       Na           H2           GRAIN0                      3.14E-10     25.00      0.50  23
  7753 NaH2+        GRAIN-       NaH          H            GRAIN0                      3.14E-10     25.00      0.50  23
  7754 NCO+         GRAIN-       CO           N            GRAIN0                      3.14E-10     42.00      1.00  23
- 7755 NCX+         GRAIN-       CX           N                                        3.14E-10     42.00      1.00  23
+ 7755 NCX+         GRAIN-       CX           N            GRAIN0                      3.14E-10     42.00      1.00  23
  7756 NH2+         GRAIN-       N            H            H            GRAIN0         3.14E-10     16.00      0.67  23
  7757 NH2+         GRAIN-       NH           H            GRAIN0                      3.14E-10     16.00      0.33  23
  7758 NO2+         GRAIN-       O            NO           GRAIN0                      3.14E-10     46.00      1.00  23
- 7759 NOX+         GRAIN-       X            NO                                       1.57E-10     46.00      1.00  23
- 7760 NOX+         GRAIN-       O            NX                                       1.57E-10     46.00      1.00  23
+ 7759 NOX+         GRAIN-       X            NO           GRAIN0                      1.57E-10     46.00      1.00  23
+ 7760 NOX+         GRAIN-       O            NX           GRAIN0                      1.57E-10     46.00      1.00  23
  7761 O2H+         GRAIN-       O2           H            GRAIN0                      3.14E-10     33.00      1.00  23
- 7762 OXH+         GRAIN-       OX           H                                        3.14E-10     33.00      1.00  23
+ 7762 OXH+         GRAIN-       OX           H            GRAIN0                      3.14E-10     33.00      1.00  23
  7763 OCS+         GRAIN-       CO           S            GRAIN0                      3.14E-10     60.00      0.83  23
- 7764 XCS+         GRAIN-       CX           S                                        3.14E-10     60.00      0.83  23
+ 7764 XCS+         GRAIN-       CX           S            GRAIN0                      3.14E-10     60.00      0.83  23
  7765 OCS+         GRAIN-       CS           O            GRAIN0                      3.14E-10     60.00      0.14  23
- 7766 XCS+         GRAIN-       CS           X                                        3.14E-10     60.00      0.14  23
+ 7766 XCS+         GRAIN-       CS           X            GRAIN0                      3.14E-10     60.00      0.14  23
  7767 OCS+         GRAIN-       C            SO           GRAIN0                      3.14E-10     60.00      0.03  23
- 7768 XCS+         GRAIN-       C            SX                                       3.14E-10     60.00      0.03  23
+ 7768 XCS+         GRAIN-       C            SX           GRAIN0                      3.14E-10     60.00      0.03  23
  7769 PH2+         GRAIN-       P            H2           GRAIN0                      3.14E-10     17.00      0.50  23
  7770 PH2+         GRAIN-       PH           H            GRAIN0                      3.14E-10     17.00      0.50  23
  7771 S2H+         GRAIN-       HS           S            GRAIN0                      3.14E-10     65.00      0.50  23
@@ -7778,21 +7778,21 @@
  7777 SiH2+        GRAIN-       SiH          H            GRAIN0                      3.14E-10     30.00      0.36  23
  7778 SiNC+        GRAIN-       Si           CN           GRAIN0                      3.14E-10     54.00      1.00  23
  7779 SO2+         GRAIN-       SO           O            GRAIN0                      3.14E-10     64.00      1.00  23
- 7780 SOX+         GRAIN-       SX           O                                        1.57E-10     64.00      1.00  23
- 7781 SOX+         GRAIN-       SO           X                                        1.57E-10     64.00      1.00  23
+ 7780 SOX+         GRAIN-       SX           O            GRAIN0                      1.57E-10     64.00      1.00  23
+ 7781 SOX+         GRAIN-       SO           X            GRAIN0                      1.57E-10     64.00      1.00  23
  7782 C2H2+        GRAIN-       C2H          H            GRAIN0                      3.14E-10     26.00      0.50  23
  7783 C2H2+        GRAIN-       C2           H            H            GRAIN0         3.14E-10     26.00      0.29  23
  7784 C2H2+        GRAIN-       CH           CH           GRAIN0                      3.14E-10     26.00      0.13  23
  7785 C2H2+        GRAIN-       CH2          C            GRAIN0                      3.14E-10     26.00      0.05  23
  7786 C2H2+        GRAIN-       C2           H2           GRAIN0                      3.14E-10     26.00      0.02  23
  7787 C2HO+        GRAIN-       CO           C            H            GRAIN0         3.14E-10     41.00      0.30  23
- 7788 C2HX+        GRAIN-       CX           C            H                           3.14E-10     41.00      0.30  23
+ 7788 C2HX+        GRAIN-       CX           C            H            GRAIN0         3.14E-10     41.00      0.30  23
  7789 C2HO+        GRAIN-       CO           CH           GRAIN0                      3.14E-10     41.00      0.20  23
- 7790 C2HX+        GRAIN-       CX           CH                                       3.14E-10     41.00      0.20  23
+ 7790 C2HX+        GRAIN-       CX           CH           GRAIN0                      3.14E-10     41.00      0.20  23
  7791 C2HO+        GRAIN-       C2H          O            GRAIN0                      3.14E-10     41.00      0.30  23
- 7792 C2HX+        GRAIN-       C2H          X                                        3.14E-10     41.00      0.30  23
+ 7792 C2HX+        GRAIN-       C2H          X            GRAIN0                      3.14E-10     41.00      0.30  23
  7793 C2HO+        GRAIN-       CCO          H            GRAIN0                      3.14E-10     41.00      0.20  23
- 7794 C2HX+        GRAIN-       CCX          H                                        3.14E-10     41.00      0.20  23
+ 7794 C2HX+        GRAIN-       CCX          H            GRAIN0                      3.14E-10     41.00      0.20  23
  7795 C2N2+        GRAIN-       CN           CN           GRAIN0                      3.14E-10     52.00      0.50  23
  7796 C2N2+        GRAIN-       C2N          N            GRAIN0                      3.14E-10     52.00      0.50  23
  7797 C2NH+        GRAIN-       CH           CN           GRAIN0                      3.14E-10     39.00      0.50  23
@@ -7801,7 +7801,7 @@
  7800 C3H+         GRAIN-       C3           H            GRAIN0                      3.14E-10     37.00      0.50  23
  7801 C3N+         GRAIN-       C2           CN           GRAIN0                      3.14E-10     50.00      1.00  23
  7802 C3O+         GRAIN-       C2           CO           GRAIN0                      3.14E-10     52.00      1.00  23
- 7803 C3X+         GRAIN-       C2           CX                                       3.14E-10     52.00      1.00  23
+ 7803 C3X+         GRAIN-       C2           CX           GRAIN0                      3.14E-10     52.00      1.00  23
  7804 C3S+         GRAIN-       C2           CS           GRAIN0                      3.14E-10     68.00      0.33  23
  7805 C3S+         GRAIN-       C2S          C            GRAIN0                      3.14E-10     68.00      0.33  23
  7806 C3S+         GRAIN-       C3           S            GRAIN0                      3.14E-10     68.00      0.33  23
@@ -7819,70 +7819,70 @@
  7818 HCNH+        GRAIN-       HCN          H            GRAIN0                      3.14E-10     28.00      0.40  23
  7819 HCNH+        GRAIN-       HNC          H            GRAIN0                      3.14E-10     28.00      0.40  23
  7820 H2CO+        GRAIN-       CO           H            H            GRAIN0         3.14E-10     30.00      0.56  23
- 7821 H2CX+        GRAIN-       CX           H            H                           3.14E-10     30.00      0.56  23
+ 7821 H2CX+        GRAIN-       CX           H            H            GRAIN0         3.14E-10     30.00      0.56  23
  7822 H2CO+        GRAIN-       HCO          H            GRAIN0                      3.14E-10     30.00      0.11  23
- 7823 H2CX+        GRAIN-       HCX          H                                        3.14E-10     30.00      0.11  23
+ 7823 H2CX+        GRAIN-       HCX          H            GRAIN0                      3.14E-10     30.00      0.11  23
  7824 H2CS+        GRAIN-       CS           H            H            GRAIN0         3.14E-10     46.00      0.48  23
  7825 H2CS+        GRAIN-       HCS          H            GRAIN0                      3.14E-10     46.00      0.48  23
  7826 H2NC+        GRAIN-       CN           H2           GRAIN0                      3.14E-10     28.00      0.09  23
  7827 H2NC+        GRAIN-       HNC          H            GRAIN0                      3.14E-10     28.00      0.91  23
  7828 H2NO+        GRAIN-       NO           H2           GRAIN0                      3.14E-10     32.00      0.50  23
- 7829 H2NX+        GRAIN-       NX           H2                                       3.14E-10     32.00      0.50  23
+ 7829 H2NX+        GRAIN-       NX           H2           GRAIN0                      3.14E-10     32.00      0.50  23
  7830 H2NO+        GRAIN-       HNO          H            GRAIN0                      3.14E-10     32.00      0.50  23
- 7831 H2NX+        GRAIN-       HNX          H                                        3.14E-10     32.00      0.50  23
+ 7831 H2NX+        GRAIN-       HNX          H            GRAIN0                      3.14E-10     32.00      0.50  23
  7832 H2PO+        GRAIN-       PH           OH           GRAIN0                      3.14E-10     33.00      0.50  23
- 7833 H2PX+        GRAIN-       PH           XH                                       3.14E-10     33.00      0.50  23
+ 7833 H2PX+        GRAIN-       PH           XH           GRAIN0                      3.14E-10     33.00      0.50  23
  7834 H2PO+        GRAIN-       HPO          H            GRAIN0                      3.14E-10     33.00      0.50  23
- 7835 H2PX+        GRAIN-       HPX          H                                        3.14E-10     33.00      0.50  23
+ 7835 H2PX+        GRAIN-       HPX          H            GRAIN0                      3.14E-10     33.00      0.50  23
  7836 H2S2+        GRAIN-       HS           HS           GRAIN0                      3.14E-10     66.00      0.50  23
  7837 H2S2+        GRAIN-       HS2          H            GRAIN0                      3.14E-10     66.00      0.50  23
  7838 H2SiO+       GRAIN-       SiH          OH           GRAIN0                      3.14E-10     46.00      0.50  23
- 7839 H2SiX+       GRAIN-       SiH          XH                                       3.14E-10     46.00      0.50  23
+ 7839 H2SiX+       GRAIN-       SiH          XH           GRAIN0                      3.14E-10     46.00      0.50  23
  7840 H2SiO+       GRAIN-       SiO          H2           GRAIN0                      3.14E-10     46.00      0.50  23
- 7841 H2SiX+       GRAIN-       SiX          H2                                       3.14E-10     46.00      0.50  23
+ 7841 H2SiX+       GRAIN-       SiX          H2           GRAIN0                      3.14E-10     46.00      0.50  23
  7842 H3O+         GRAIN-       OH           H            H            GRAIN0         3.14E-10     19.00      0.60  23
- 7843 H3X+         GRAIN-       XH           H            H                           3.14E-10     19.00      0.60  23
+ 7843 H3X+         GRAIN-       XH           H            H            GRAIN0         3.14E-10     19.00      0.60  23
  7844 H3O+         GRAIN-       H2O          H            GRAIN0                      3.14E-10     19.00      0.25  23
- 7845 H3X+         GRAIN-       H2X          H                                        3.14E-10     19.00      0.25  23
+ 7845 H3X+         GRAIN-       H2X          H            GRAIN0                      3.14E-10     19.00      0.25  23
  7846 H3O+         GRAIN-       OH           H2           GRAIN0                      3.14E-10     19.00      0.14  23
- 7847 H3X+         GRAIN-       XH           H2                                       3.14E-10     19.00      0.14  23
+ 7847 H3X+         GRAIN-       XH           H2           GRAIN0                      3.14E-10     19.00      0.14  23
  7848 H3O+         GRAIN-       H2           H            O            GRAIN0         3.14E-10     19.00      0.01  23
- 7849 H3X+         GRAIN-       H2           H            X                           3.14E-10     19.00      0.01  23
+ 7849 H3X+         GRAIN-       H2           H            X            GRAIN0         3.14E-10     19.00      0.01  23
  7850 H3S+         GRAIN-       HS           H            H            GRAIN0         3.14E-10     35.00      0.25  23
  7851 H3S+         GRAIN-       H2S          H            GRAIN0                      3.14E-10     35.00      0.75  23
  7852 HC2S+        GRAIN-       CS           CH           GRAIN0                      3.14E-10     57.00      0.50  23
  7853 HC2S+        GRAIN-       C2S          H            GRAIN0                      3.14E-10     57.00      0.50  23
  7854 HCO2+        GRAIN-       CO           H            O            GRAIN0         3.14E-10     45.00      0.68  23
- 7855 HCOX+        GRAIN-       CX           H            O                           1.57E-10     45.00      0.68  23
- 7856 HCOX+        GRAIN-       CO           H            X                           1.57E-10     45.00      0.68  23
+ 7855 HCOX+        GRAIN-       CX           H            O            GRAIN0         1.57E-10     45.00      0.68  23
+ 7856 HCOX+        GRAIN-       CO           H            X            GRAIN0         1.57E-10     45.00      0.68  23
  7857 HCO2+        GRAIN-       OH           CO           GRAIN0                      3.14E-10     45.00      0.27  23
- 7858 HCOX+        GRAIN-       XH           CO                                       1.57E-10     45.00      0.27  23
- 7859 HCOX+        GRAIN-       OH           CX                                       1.57E-10     45.00      0.27  23
+ 7858 HCOX+        GRAIN-       XH           CO           GRAIN0                      1.57E-10     45.00      0.27  23
+ 7859 HCOX+        GRAIN-       OH           CX           GRAIN0                      1.57E-10     45.00      0.27  23
  7860 HCO2+        GRAIN-       CO2          H            GRAIN0                      3.14E-10     45.00      0.05  23
- 7861 HCOX+        GRAIN-       COX          H                                        3.14E-10     45.00      0.05  23
+ 7861 HCOX+        GRAIN-       COX          H            GRAIN0                      3.14E-10     45.00      0.05  23
  7862 HNCO+        GRAIN-       CO           NH           GRAIN0                      3.14E-10     43.00      1.00  23
- 7863 HNCX+        GRAIN-       CX           NH                                       3.14E-10     43.00      1.00  23
+ 7863 HNCX+        GRAIN-       CX           NH           GRAIN0                      3.14E-10     43.00      1.00  23
  7864 HOCS+        GRAIN-       OH           CS           GRAIN0                      3.14E-10     61.00      0.50  23
- 7865 HXCS+        GRAIN-       XH           CS                                       3.14E-10     61.00      0.50  23
+ 7865 HXCS+        GRAIN-       XH           CS           GRAIN0                      3.14E-10     61.00      0.50  23
  7866 HOCS+        GRAIN-       OCS          H            GRAIN0                      3.14E-10     61.00      0.50  23
- 7867 HXCS+        GRAIN-       XCS          H                                        3.14E-10     61.00      0.50  23
+ 7867 HXCS+        GRAIN-       XCS          H            GRAIN0                      3.14E-10     61.00      0.50  23
  7868 HSiO2+       GRAIN-       SiO          OH           GRAIN0                      3.14E-10     61.00      0.50  23
- 7869 HSiOX+       GRAIN-       SiX          OH                                       1.57E-10     61.00      0.50  23
- 7870 HSiOX+       GRAIN-       SiO          XH                                       1.57E-10     61.00      0.50  23
+ 7869 HSiOX+       GRAIN-       SiX          OH           GRAIN0                      1.57E-10     61.00      0.50  23
+ 7870 HSiOX+       GRAIN-       SiO          XH           GRAIN0                      1.57E-10     61.00      0.50  23
  7871 HSiO2+       GRAIN-       SiO2         H            GRAIN0                      3.14E-10     61.00      0.50  23
- 7872 HSiOX+       GRAIN-       SiOX         H                                        3.14E-10     61.00      0.50  23
+ 7872 HSiOX+       GRAIN-       SiOX         H            GRAIN0                      3.14E-10     61.00      0.50  23
  7873 HSO2+        GRAIN-       SO           H            O            GRAIN0         3.14E-10     65.00      0.25  23
- 7874 HSOX+        GRAIN-       SX           H            O                           1.57E-10     65.00      0.25  23
- 7875 HSOX+        GRAIN-       SO           H            X                           1.57E-10     65.00      0.25  23
+ 7874 HSOX+        GRAIN-       SX           H            O            GRAIN0         1.57E-10     65.00      0.25  23
+ 7875 HSOX+        GRAIN-       SO           H            X            GRAIN0         1.57E-10     65.00      0.25  23
  7876 HSO2+        GRAIN-       SO           OH           GRAIN0                      3.14E-10     65.00      0.25  23
- 7877 HSOX+        GRAIN-       SX           OH                                       1.57E-10     65.00      0.25  23
- 7878 HSOX+        GRAIN-       SO           XH                                       1.57E-10     65.00      0.25  23
+ 7877 HSOX+        GRAIN-       SX           OH           GRAIN0                      1.57E-10     65.00      0.25  23
+ 7878 HSOX+        GRAIN-       SO           XH           GRAIN0                      1.57E-10     65.00      0.25  23
  7879 HSO2+        GRAIN-       SO2          H            GRAIN0                      3.14E-10     65.00      0.50  23
- 7880 HSOX+        GRAIN-       SOX          H                                        3.14E-10     65.00      0.50  23
+ 7880 HSOX+        GRAIN-       SOX          H            GRAIN0                      3.14E-10     65.00      0.50  23
  7881 NaH2O+       GRAIN-       Na           H2O          GRAIN0                      3.14E-10     41.00      0.50  23
- 7882 NaH2X+       GRAIN-       Na           H2X                                      3.14E-10     41.00      0.50  23
+ 7882 NaH2X+       GRAIN-       Na           H2X          GRAIN0                      3.14E-10     41.00      0.50  23
  7883 NaH2O+       GRAIN-       NaOH         H            GRAIN0                      3.14E-10     41.00      0.50  23
- 7884 NaH2X+       GRAIN-       NaXH         H                                        3.14E-10     41.00      0.50  23
+ 7884 NaH2X+       GRAIN-       NaXH         H            GRAIN0                      3.14E-10     41.00      0.50  23
  7885 NH3+         GRAIN-       NH           H            H            GRAIN0         3.14E-10     17.00      0.50  23
  7886 NH3+         GRAIN-       NH2          H            GRAIN0                      3.14E-10     17.00      0.50  23
  7887 PC2H+        GRAIN-       CP           CH           GRAIN0                      3.14E-10     40.00      0.50  23
@@ -7906,11 +7906,11 @@
  7905 C2H2N+       GRAIN-       CN           CH2          GRAIN0                      3.14E-10     40.00      0.33  23
  7906 C2H2N+       GRAIN-       C2N          H2           GRAIN0                      3.14E-10     40.00      0.33  23
  7907 C2H2O+       GRAIN-       C2           H2O          GRAIN0                      3.14E-10     42.00      0.33  23
- 7908 C2H2X+       GRAIN-       C2           H2X                                      3.14E-10     42.00      0.33  23
+ 7908 C2H2X+       GRAIN-       C2           H2X          GRAIN0                      3.14E-10     42.00      0.33  23
  7909 C2H2O+       GRAIN-       CH2          CO           GRAIN0                      3.14E-10     42.00      0.33  23
- 7910 C2H2X+       GRAIN-       CH2          CX                                       3.14E-10     42.00      0.33  23
+ 7910 C2H2X+       GRAIN-       CH2          CX           GRAIN0                      3.14E-10     42.00      0.33  23
  7911 C2H2O+       GRAIN-       C2H2         O            GRAIN0                      3.14E-10     42.00      0.33  23
- 7912 C2H2X+       GRAIN-       C2H2         X                                        3.14E-10     42.00      0.33  23
+ 7912 C2H2X+       GRAIN-       C2H2         X            GRAIN0                      3.14E-10     42.00      0.33  23
  7913 C2H3+        GRAIN-       C2H          H            H            GRAIN0         3.14E-10     27.00      0.59  23
  7914 C2H3+        GRAIN-       C2H          H2           GRAIN0                      3.14E-10     27.00      0.06  23
  7915 C2H3+        GRAIN-       C2H2         H            GRAIN0                      3.14E-10     27.00      0.29  23
@@ -7937,36 +7937,36 @@
  7936 C5+          GRAIN-       C3           C2           GRAIN0                      3.14E-10     60.00      0.50  23
  7937 C5+          GRAIN-       C4           C            GRAIN0                      3.14E-10     60.00      0.50  23
  7938 CH2O2+       GRAIN-       CO2          H            H            GRAIN0         3.14E-10     46.00      1.00  23
- 7939 CH2OX+       GRAIN-       COX          H            H                           3.14E-10     46.00      1.00  23
+ 7939 CH2OX+       GRAIN-       COX          H            H            GRAIN0         3.14E-10     46.00      1.00  23
  7940 CH4+         GRAIN-       CH2          H            H            GRAIN0         3.14E-10     16.00      0.50  23
  7941 CH4+         GRAIN-       CH3          H            GRAIN0                      3.14E-10     16.00      0.50  23
  7942 H3CO+        GRAIN-       CO           H            H2           GRAIN0         3.14E-10     31.00      0.33  23
- 7943 H3CX+        GRAIN-       CX           H            H2                          3.14E-10     31.00      0.33  23
+ 7943 H3CX+        GRAIN-       CX           H            H2           GRAIN0         3.14E-10     31.00      0.33  23
  7944 H3CO+        GRAIN-       HCO          H            H            GRAIN0         3.14E-10     31.00      0.33  23
- 7945 H3CX+        GRAIN-       HCX          H            H                           3.14E-10     31.00      0.33  23
+ 7945 H3CX+        GRAIN-       HCX          H            H            GRAIN0         3.14E-10     31.00      0.33  23
  7946 H3CO+        GRAIN-       H2CO         H            GRAIN0                      3.14E-10     31.00      0.33  23
- 7947 H3CX+        GRAIN-       H2CX         H                                        3.14E-10     31.00      0.33  23
+ 7947 H3CX+        GRAIN-       H2CX         H            GRAIN0                      3.14E-10     31.00      0.33  23
  7948 H3CS+        GRAIN-       CS           H            H2           GRAIN0         3.14E-10     47.00      0.50  23
  7949 H3CS+        GRAIN-       H2CS         H            GRAIN0                      3.14E-10     47.00      0.50  23
  7950 H3S2+        GRAIN-       HS2          H2           GRAIN0                      3.14E-10     67.00      0.50  23
  7951 H3S2+        GRAIN-       H2S2         H            GRAIN0                      3.14E-10     67.00      0.50  23
  7952 H3SiO+       GRAIN-       SiO          H2           H            GRAIN0         3.14E-10     47.00      0.50  23
- 7953 H3SiX+       GRAIN-       SiX          H2           H                           3.14E-10     47.00      0.50  23
+ 7953 H3SiX+       GRAIN-       SiX          H2           H            GRAIN0         3.14E-10     47.00      0.50  23
  7954 H3SiO+       GRAIN-       H2SiO        H            GRAIN0                      3.14E-10     47.00      0.50  23
- 7955 H3SiX+       GRAIN-       H2SiX        H                                        3.14E-10     47.00      0.50  23
+ 7955 H3SiX+       GRAIN-       H2SiX        H            GRAIN0                      3.14E-10     47.00      0.50  23
  7956 HC3O+        GRAIN-       C3H          O            GRAIN0                      3.14E-10     53.00      0.33  23
- 7957 HC3X+        GRAIN-       C3H          X                                        3.14E-10     53.00      0.33  23
+ 7957 HC3X+        GRAIN-       C3H          X            GRAIN0                      3.14E-10     53.00      0.33  23
  7958 HC3O+        GRAIN-       HC3          O            GRAIN0                      3.14E-10     53.00      0.33  23
- 7959 HC3X+        GRAIN-       HC3          X                                        3.14E-10     53.00      0.33  23
+ 7959 HC3X+        GRAIN-       HC3          X            GRAIN0                      3.14E-10     53.00      0.33  23
  7960 HC3O+        GRAIN-       C3O          H            GRAIN0                      3.14E-10     53.00      0.33  23
- 7961 HC3X+        GRAIN-       C3X          H                                        3.14E-10     53.00      0.33  23
+ 7961 HC3X+        GRAIN-       C3X          H            GRAIN0                      3.14E-10     53.00      0.33  23
  7962 HC3S+        GRAIN-       C2S          CH           GRAIN0                      3.14E-10     69.00      0.50  23
  7963 HC3S+        GRAIN-       C3S          H            GRAIN0                      3.14E-10     69.00      0.50  23
  7964 NH4+         GRAIN-       NH2          H            H            GRAIN0         3.14E-10     18.00      0.21  23
  7965 NH4+         GRAIN-       NH2          H2           GRAIN0                      3.14E-10     18.00      0.10  23
  7966 NH4+         GRAIN-       NH3          H            GRAIN0                      3.14E-10     18.00      0.69  23
  7967 OCS+H2       GRAIN-       OCS          H2           GRAIN0                      3.14E-10     62.00      1.00  23
- 7968 XCS+H2       GRAIN-       XCS          H2                                       3.14E-10     62.00      1.00  23
+ 7968 XCS+H2       GRAIN-       XCS          H2           GRAIN0                      3.14E-10     62.00      1.00  23
  7969 PC2H2+       GRAIN-       P            C2H2         GRAIN0                      3.14E-10     41.00      0.33  23
  7970 PC2H2+       GRAIN-       CCP          H2           GRAIN0                      3.14E-10     41.00      0.33  23
  7971 PC2H2+       GRAIN-       HCCP         H            GRAIN0                      3.14E-10     41.00      0.33  23
@@ -7993,9 +7993,9 @@
  7992 C2H3N+       GRAIN-       CH3          CN           GRAIN0                      3.14E-10     41.00      0.22  23
  7993 C2H3N+       GRAIN-       C2H2N        H            GRAIN0                      3.14E-10     41.00      0.22  23
  7994 C2H3O+       GRAIN-       CH3          CO           GRAIN0                      3.14E-10     43.00      0.50  23
- 7995 C2H3X+       GRAIN-       CH3          CX                                       3.14E-10     43.00      0.50  23
+ 7995 C2H3X+       GRAIN-       CH3          CX           GRAIN0                      3.14E-10     43.00      0.50  23
  7996 C2H3O+       GRAIN-       C2H2O        H            GRAIN0                      3.14E-10     43.00      0.50  23
- 7997 C2H3X+       GRAIN-       C2H2X        H                                        3.14E-10     43.00      0.50  23
+ 7997 C2H3X+       GRAIN-       C2H2X        H            GRAIN0                      3.14E-10     43.00      0.50  23
  7998 C2H4+        GRAIN-       C2H2         H            H            GRAIN0         3.14E-10     28.00      0.66  23
  7999 C2H4+        GRAIN-       C2H2         H2           GRAIN0                      3.14E-10     28.00      0.06  23
  8000 C2H4+        GRAIN-       C2H3         H            GRAIN0                      3.14E-10     28.00      0.11  23
@@ -8018,32 +8018,32 @@
  8017 C6+          GRAIN-       C4           C2           GRAIN0                      3.14E-10     72.00      0.50  23
  8018 C6+          GRAIN-       C5           C            GRAIN0                      3.14E-10     72.00      0.50  23
  8019 CH3O2+       GRAIN-       CO2          H2           H            GRAIN0         3.14E-10     47.00      0.50  23
- 8020 CH3OX+       GRAIN-       COX          H2           H                           3.14E-10     47.00      0.50  23
+ 8020 CH3OX+       GRAIN-       COX          H2           H            GRAIN0         3.14E-10     47.00      0.50  23
  8021 CH3O2+       GRAIN-       CH2O2        H            GRAIN0                      3.14E-10     47.00      0.50  23
- 8022 CH3OX+       GRAIN-       CH2OX        H                                        3.14E-10     47.00      0.50  23
+ 8022 CH3OX+       GRAIN-       CH2OX        H            GRAIN0                      3.14E-10     47.00      0.50  23
  8023 CH4N+        GRAIN-       CN           H2           H2           GRAIN0         3.14E-10     30.00      0.05  23
  8024 CH4N+        GRAIN-       CH2          NH2          GRAIN0                      3.14E-10     30.00      0.24  23
  8025 CH4N+        GRAIN-       HCN          H            H2           GRAIN0         3.14E-10     30.00      0.48  23
  8026 CH4N+        GRAIN-       CH3N         H            GRAIN0                      3.14E-10     30.00      0.24  23
  8027 CH4O+        GRAIN-       CH3          OH           GRAIN0                      3.14E-10     32.00      0.50  23
- 8028 CH4X+        GRAIN-       CH3          XH                                       3.14E-10     32.00      0.50  23
+ 8028 CH4X+        GRAIN-       CH3          XH           GRAIN0                      3.14E-10     32.00      0.50  23
  8029 CH4O+        GRAIN-       H2CO         H2           GRAIN0                      3.14E-10     32.00      0.50  23
- 8030 CH4X+        GRAIN-       H2CX         H2                                       3.14E-10     32.00      0.50  23
+ 8030 CH4X+        GRAIN-       H2CX         H2           GRAIN0                      3.14E-10     32.00      0.50  23
  8031 CH5+         GRAIN-       CH3          H2           GRAIN0                      3.14E-10     17.00      0.05  23
  8032 CH5+         GRAIN-       CH4          H            GRAIN0                      3.14E-10     17.00      0.05  23
  8033 CH5+         GRAIN-       CH3          H            H            GRAIN0         3.14E-10     17.00      0.71  23
  8034 CH5+         GRAIN-       CH2          H2           H            GRAIN0         3.14E-10     17.00      0.17  23
  8035 CH5+         GRAIN-       CH           H2           H2           GRAIN0         3.14E-10     17.00      0.01  23
  8036 H2C3O+       GRAIN-       C2H2         CO           GRAIN0                      3.14E-10     54.00      0.20  23
- 8037 H2C3X+       GRAIN-       C2H2         CX                                       3.14E-10     54.00      0.20  23
+ 8037 H2C3X+       GRAIN-       C2H2         CX           GRAIN0                      3.14E-10     54.00      0.20  23
  8038 H2C3O+       GRAIN-       C3H          OH           GRAIN0                      3.14E-10     54.00      0.20  23
- 8039 H2C3X+       GRAIN-       C3H          XH                                       3.14E-10     54.00      0.20  23
+ 8039 H2C3X+       GRAIN-       C3H          XH           GRAIN0                      3.14E-10     54.00      0.20  23
  8040 H2C3O+       GRAIN-       HC3          OH           GRAIN0                      3.14E-10     54.00      0.20  23
- 8041 H2C3X+       GRAIN-       HC3          XH                                       3.14E-10     54.00      0.20  23
+ 8041 H2C3X+       GRAIN-       HC3          XH           GRAIN0                      3.14E-10     54.00      0.20  23
  8042 H2C3O+       GRAIN-       C3O          H            H            GRAIN0         3.14E-10     54.00      0.20  23
- 8043 H2C3X+       GRAIN-       C3X          H            H                           3.14E-10     54.00      0.20  23
+ 8043 H2C3X+       GRAIN-       C3X          H            H            GRAIN0         3.14E-10     54.00      0.20  23
  8044 H2C3O+       GRAIN-       C3O          H2           GRAIN0                      3.14E-10     54.00      0.20  23
- 8045 H2C3X+       GRAIN-       C3X          H2                                       3.14E-10     54.00      0.20  23
+ 8045 H2C3X+       GRAIN-       C3X          H2           GRAIN0                      3.14E-10     54.00      0.20  23
  8046 HC2NCH+      GRAIN-       C2H          HCN          GRAIN0                      3.14E-10     52.00      0.38  23
  8047 HC2NCH+      GRAIN-       C2H2         CN           GRAIN0                      3.14E-10     52.00      0.38  23
  8048 HC2NCH+      GRAIN-       HCNC2        H            GRAIN0                      3.14E-10     52.00      0.10  23
@@ -8052,11 +8052,11 @@
  8051 HC2NCH+      GRAIN-       HNC3         H            GRAIN0                      3.14E-10     52.00      0.02  23
  8052 HC4N+        GRAIN-       C3N          CH           GRAIN0                      3.14E-10     63.00      1.00  23
  8053 HC4O+        GRAIN-       C3H          CO           GRAIN0                      3.14E-10     65.00      0.33  23
- 8054 HC4X+        GRAIN-       C3H          CX                                       3.14E-10     65.00      0.33  23
+ 8054 HC4X+        GRAIN-       C3H          CX           GRAIN0                      3.14E-10     65.00      0.33  23
  8055 HC4O+        GRAIN-       HC3          CO           GRAIN0                      3.14E-10     65.00      0.33  23
- 8056 HC4X+        GRAIN-       HC3          CX                                       3.14E-10     65.00      0.33  23
+ 8056 HC4X+        GRAIN-       HC3          CX           GRAIN0                      3.14E-10     65.00      0.33  23
  8057 HC4O+        GRAIN-       C3O          CH           GRAIN0                      3.14E-10     65.00      0.33  23
- 8058 HC4X+        GRAIN-       C3X          CH                                       3.14E-10     65.00      0.33  23
+ 8058 HC4X+        GRAIN-       C3X          CH           GRAIN0                      3.14E-10     65.00      0.33  23
  8059 HC4S+        GRAIN-       C2S          C2H          GRAIN0                      3.14E-10     81.00      0.33  23
  8060 HC4S+        GRAIN-       C3S          CH           GRAIN0                      3.14E-10     81.00      0.33  23
  8061 HC4S+        GRAIN-       C4S          H            GRAIN0                      3.14E-10     81.00      0.33  23
@@ -8086,11 +8086,11 @@
  8085 C2H4N+       GRAIN-       C2H2N        H            H            GRAIN0         3.14E-10     42.00      0.50  23
  8086 C2H4N+       GRAIN-       C2H3N        H            GRAIN0                      3.14E-10     42.00      0.50  23
  8087 C2H4O+       GRAIN-       CH3          HCO          GRAIN0                      3.14E-10     44.00      0.33  23
- 8088 C2H4X+       GRAIN-       CH3          HCX                                      3.14E-10     44.00      0.33  23
+ 8088 C2H4X+       GRAIN-       CH3          HCX          GRAIN0                      3.14E-10     44.00      0.33  23
  8089 C2H4O+       GRAIN-       C2H2O        H            H            GRAIN0         3.14E-10     44.00      0.33  23
- 8090 C2H4X+       GRAIN-       C2H2X        H            H                           3.14E-10     44.00      0.33  23
+ 8090 C2H4X+       GRAIN-       C2H2X        H            H            GRAIN0         3.14E-10     44.00      0.33  23
  8091 C2H4O+       GRAIN-       C2H2O        H2           GRAIN0                      3.14E-10     44.00      0.33  23
- 8092 C2H4X+       GRAIN-       C2H2X        H2                                       3.14E-10     44.00      0.33  23
+ 8092 C2H4X+       GRAIN-       C2H2X        H2           GRAIN0                      3.14E-10     44.00      0.33  23
  8093 C2H5+        GRAIN-       C2H          H2           H2           GRAIN0         3.14E-10     29.00      0.20  23
  8094 C2H5+        GRAIN-       C2H2         H2           H            GRAIN0         3.14E-10     29.00      0.40  23
  8095 C2H5+        GRAIN-       C2H3         H2           GRAIN0                      3.14E-10     29.00      0.20  23
@@ -8120,45 +8120,45 @@
  8119 CH5N+        GRAIN-       CH3          NH2          GRAIN0                      3.14E-10     31.00      0.50  23
  8120 CH5N+        GRAIN-       CH3N         H2           GRAIN0                      3.14E-10     31.00      0.50  23
  8121 CH5O+        GRAIN-       H2CO         H2           H            GRAIN0         3.14E-10     33.00      0.11  23
- 8122 CH5X+        GRAIN-       H2CX         H2           H                           3.14E-10     33.00      0.11  23
+ 8122 CH5X+        GRAIN-       H2CX         H2           H            GRAIN0         3.14E-10     33.00      0.11  23
  8123 CH5O+        GRAIN-       CH3          H2O          GRAIN0                      3.14E-10     33.00      0.10  23
- 8124 CH5X+        GRAIN-       CH3          H2X                                      3.14E-10     33.00      0.10  23
+ 8124 CH5X+        GRAIN-       CH3          H2X          GRAIN0                      3.14E-10     33.00      0.10  23
  8125 CH5O+        GRAIN-       CH3          OH           H            GRAIN0         3.14E-10     33.00      0.54  23
- 8126 CH5X+        GRAIN-       CH3          XH           H                           3.14E-10     33.00      0.54  23
+ 8126 CH5X+        GRAIN-       CH3          XH           H            GRAIN0         3.14E-10     33.00      0.54  23
  8127 CH5O+        GRAIN-       CH2          H2O          H            GRAIN0         3.14E-10     33.00      0.22  23
- 8128 CH5X+        GRAIN-       CH2          H2X          H                           3.14E-10     33.00      0.22  23
+ 8128 CH5X+        GRAIN-       CH2          H2X          H            GRAIN0         3.14E-10     33.00      0.22  23
  8129 CH5O+        GRAIN-       CH4O         H            GRAIN0                      3.14E-10     33.00      0.03  23
- 8130 CH5X+        GRAIN-       CH4X         H                                        3.14E-10     33.00      0.03  23
+ 8130 CH5X+        GRAIN-       CH4X         H            GRAIN0                      3.14E-10     33.00      0.03  23
  8131 H2C4N+       GRAIN-       HC3N         CH           GRAIN0                      3.14E-10     64.00      1.00  23
  8132 H3C3O+       GRAIN-       C3H          H2O          GRAIN0                      3.14E-10     55.00      0.33  23
- 8133 H3C3X+       GRAIN-       C3H          H2X                                      3.14E-10     55.00      0.33  23
+ 8133 H3C3X+       GRAIN-       C3H          H2X          GRAIN0                      3.14E-10     55.00      0.33  23
  8134 H3C3O+       GRAIN-       HC3          H2O          GRAIN0                      3.14E-10     55.00      0.33  23
- 8135 H3C3X+       GRAIN-       HC3          H2X                                      3.14E-10     55.00      0.33  23
+ 8135 H3C3X+       GRAIN-       HC3          H2X          GRAIN0                      3.14E-10     55.00      0.33  23
  8136 H3C3O+       GRAIN-       C3O          H2           H            GRAIN0         3.14E-10     55.00      0.33  23
- 8137 H3C3X+       GRAIN-       C3X          H2           H                           3.14E-10     55.00      0.33  23
+ 8137 H3C3X+       GRAIN-       C3X          H2           H            GRAIN0         3.14E-10     55.00      0.33  23
  8138 NH2CH2O+     GRAIN-       NH2CHO       H            GRAIN0                      3.14E-10     46.00      0.20  23
- 8139 NH2CH2X+     GRAIN-       NH2CHX       H                                        3.14E-10     46.00      0.20  23
+ 8139 NH2CH2X+     GRAIN-       NH2CHX       H            GRAIN0                      3.14E-10     46.00      0.20  23
  8140 NH2CH2O+     GRAIN-       NH3          CO           H            GRAIN0         3.14E-10     46.00      0.20  23
- 8141 NH2CH2X+     GRAIN-       NH3          CX           H                           3.14E-10     46.00      0.20  23
+ 8141 NH2CH2X+     GRAIN-       NH3          CX           H            GRAIN0         3.14E-10     46.00      0.20  23
  8142 NH2CH2O+     GRAIN-       H2CN         H2O          GRAIN0                      3.14E-10     46.00      0.20  23
- 8143 NH2CH2X+     GRAIN-       H2CN         H2X                                      3.14E-10     46.00      0.20  23
+ 8143 NH2CH2X+     GRAIN-       H2CN         H2X          GRAIN0                      3.14E-10     46.00      0.20  23
  8144 NH2CH2O+     GRAIN-       OCN          H2           H2           GRAIN0         3.14E-10     46.00      0.20  23
- 8145 NH2CH2X+     GRAIN-       XCN          H2           H2                          3.14E-10     46.00      0.20  23
+ 8145 NH2CH2X+     GRAIN-       XCN          H2           H2           GRAIN0         3.14E-10     46.00      0.20  23
  8146 NH2CH2O+     GRAIN-       NH2          H2CO         GRAIN0                      3.14E-10     46.00      0.20  23
- 8147 NH2CH2X+     GRAIN-       NH2          H2CX                                     3.14E-10     46.00      0.20  23
+ 8147 NH2CH2X+     GRAIN-       NH2          H2CX         GRAIN0                      3.14E-10     46.00      0.20  23
  8148 PC2H4+       GRAIN-       P            C2H4         GRAIN0                      3.14E-10     43.00      0.33  23
  8149 PC2H4+       GRAIN-       CCP          H2           H2           GRAIN0         3.14E-10     43.00      0.33  23
  8150 PC2H4+       GRAIN-       HCCP         H2           H            GRAIN0         3.14E-10     43.00      0.33  23
  8151 PC4H2+       GRAIN-       CCP          C2H2         GRAIN0                      3.14E-10     65.00      0.50  23
  8152 PC4H2+       GRAIN-       C4P          H2           GRAIN0                      3.14E-10     65.00      0.50  23
  8153 C2H5O+       GRAIN-       H2CO         CH3          GRAIN0                      3.14E-10     45.00      0.20  23
- 8154 C2H5X+       GRAIN-       H2CX         CH3                                      3.14E-10     45.00      0.20  23
+ 8154 C2H5X+       GRAIN-       H2CX         CH3          GRAIN0                      3.14E-10     45.00      0.20  23
  8155 C2H5O+       GRAIN-       C2H2O        H2           H            GRAIN0         3.14E-10     45.00      0.20  23
- 8156 C2H5X+       GRAIN-       C2H2X        H2           H                           3.14E-10     45.00      0.20  23
+ 8156 C2H5X+       GRAIN-       C2H2X        H2           H            GRAIN0         3.14E-10     45.00      0.20  23
  8157 C2H5O+       GRAIN-       CH4          CO           H            GRAIN0         3.14E-10     45.00      0.40  23
- 8158 C2H5X+       GRAIN-       CH4          CX           H                           3.14E-10     45.00      0.40  23
+ 8158 C2H5X+       GRAIN-       CH4          CX           H            GRAIN0         3.14E-10     45.00      0.40  23
  8159 C2H5O+       GRAIN-       C2H4O        H            GRAIN0                      3.14E-10     45.00      0.20  23
- 8160 C2H5X+       GRAIN-       C2H4X        H                                        3.14E-10     45.00      0.20  23
+ 8160 C2H5X+       GRAIN-       C2H4X        H            GRAIN0                      3.14E-10     45.00      0.20  23
  8161 C2H6+        GRAIN-       C2H4         H2           GRAIN0                      3.14E-10     30.00      0.50  23
  8162 C2H6+        GRAIN-       C2H5         H            GRAIN0                      3.14E-10     30.00      0.50  23
  8163 C3H4N+       GRAIN-       C3N          H2           H2           GRAIN0         3.14E-10     54.00      0.07  23
@@ -8184,22 +8184,22 @@
  8183 CH6N+        GRAIN-       CH3N         H2           H            GRAIN0         3.14E-10     32.00      0.50  23
  8184 CH6N+        GRAIN-       CH5N         H            GRAIN0                      3.14E-10     32.00      0.50  23
  8185 COOCH4+      GRAIN-       CH3          CO2          H            GRAIN0         3.14E-10     60.00      0.50  23
- 8186 CXOCH4+      GRAIN-       CH3          COX          H                           3.14E-10     60.00      0.50  23
- 8187 COXCH4+      GRAIN-       CH3          COX          H                           3.14E-10     60.00      0.50  23
+ 8186 CXOCH4+      GRAIN-       CH3          COX          H            GRAIN0         3.14E-10     60.00      0.50  23
+ 8187 COXCH4+      GRAIN-       CH3          COX          H            GRAIN0         3.14E-10     60.00      0.50  23
  8188 COOCH4+      GRAIN-       CH4O         CO           GRAIN0                      3.14E-10     60.00      0.50  23
- 8189 CXOCH4+      GRAIN-       CH4X         CO                                       1.57E-10     60.00      0.50  23
- 8190 CXOCH4+      GRAIN-       CH4O         CX                                       1.57E-10     60.00      0.50  23
- 8191 COXCH4+      GRAIN-       CH4X         CO                                       1.57E-10     60.00      0.50  23
- 8192 COXCH4+      GRAIN-       CH4O         CX                                       1.57E-10     60.00      0.50  23
+ 8189 CXOCH4+      GRAIN-       CH4X         CO           GRAIN0                      1.57E-10     60.00      0.50  23
+ 8190 CXOCH4+      GRAIN-       CH4O         CX           GRAIN0                      1.57E-10     60.00      0.50  23
+ 8191 COXCH4+      GRAIN-       CH4X         CO           GRAIN0                      1.57E-10     60.00      0.50  23
+ 8192 COXCH4+      GRAIN-       CH4O         CX           GRAIN0                      1.57E-10     60.00      0.50  23
  8193 H3C4N+       GRAIN-       HC3N         CH2          GRAIN0                      3.14E-10     65.00      1.00  23
  8194 C2H5OH+      GRAIN-       C2H2O        H2           H2           GRAIN0         3.14E-10     46.00      0.25  23
- 8195 C2H5XH+      GRAIN-       C2H2X        H2           H2                          3.14E-10     46.00      0.25  23
+ 8195 C2H5XH+      GRAIN-       C2H2X        H2           H2           GRAIN0         3.14E-10     46.00      0.25  23
  8196 C2H5OH+      GRAIN-       CH4          H2CO         GRAIN0                      3.14E-10     46.00      0.25  23
- 8197 C2H5XH+      GRAIN-       CH4          H2CX                                     3.14E-10     46.00      0.25  23
+ 8197 C2H5XH+      GRAIN-       CH4          H2CX         GRAIN0                      3.14E-10     46.00      0.25  23
  8198 C2H5OH+      GRAIN-       C2H4O        H2           GRAIN0                      3.14E-10     46.00      0.25  23
- 8199 C2H5XH+      GRAIN-       C2H4X        H2                                       3.14E-10     46.00      0.25  23
+ 8199 C2H5XH+      GRAIN-       C2H4X        H2           GRAIN0                      3.14E-10     46.00      0.25  23
  8200 C2H5OH+      GRAIN-       C2H5         OH           GRAIN0                      3.14E-10     46.00      0.25  23
- 8201 C2H5XH+      GRAIN-       C2H5         XH                                       3.14E-10     46.00      0.25  23
+ 8201 C2H5XH+      GRAIN-       C2H5         XH           GRAIN0                      3.14E-10     46.00      0.25  23
  8202 C4H4N+       GRAIN-       CH3          HC3N         GRAIN0                      3.14E-10     66.00      0.50  23
  8203 C4H4N+       GRAIN-       CH3C3N       H            GRAIN0                      3.14E-10     66.00      0.50  23
  8204 C4H5+        GRAIN-       C4H          H2           H2           GRAIN0         3.14E-10     53.00      0.23  23
@@ -8223,29 +8223,29 @@
  8222 C9+          GRAIN-       C7           C2           GRAIN0                      3.14E-10    108.00      0.50  23
  8223 C9+          GRAIN-       C8           C            GRAIN0                      3.14E-10    108.00      0.50  23
  8224 CH3OCH3+     GRAIN-       CH3          CH3          O            GRAIN0         3.14E-10     46.00      0.25  23
- 8225 CH3XCH3+     GRAIN-       CH3          CH3          X                           3.14E-10     46.00      0.25  23
+ 8225 CH3XCH3+     GRAIN-       CH3          CH3          X            GRAIN0         3.14E-10     46.00      0.25  23
  8226 CH3OCH3+     GRAIN-       H2CO         CH4          GRAIN0                      3.14E-10     46.00      0.50  23
- 8227 CH3XCH3+     GRAIN-       H2CX         CH4                                      3.14E-10     46.00      0.50  23
+ 8227 CH3XCH3+     GRAIN-       H2CX         CH4          GRAIN0                      3.14E-10     46.00      0.50  23
  8228 CH3OCH3+     GRAIN-       CH4O         CH2          GRAIN0                      3.14E-10     46.00      0.25  23
- 8229 CH3XCH3+     GRAIN-       CH4X         CH2                                      3.14E-10     46.00      0.25  23
+ 8229 CH3XCH3+     GRAIN-       CH4X         CH2          GRAIN0                      3.14E-10     46.00      0.25  23
  8230 H5C2O2+      GRAIN-       CH4O         HCO          GRAIN0                      3.14E-10     61.00      0.50  23
- 8231 H5C2OX+      GRAIN-       CH4X         HCO                                      1.57E-10     61.00      0.50  23
- 8232 H5C2OX+      GRAIN-       CH4O         HCX                                      1.57E-10     61.00      0.50  23
+ 8231 H5C2OX+      GRAIN-       CH4X         HCO          GRAIN0                      1.57E-10     61.00      0.50  23
+ 8232 H5C2OX+      GRAIN-       CH4O         HCX          GRAIN0                      1.57E-10     61.00      0.50  23
  8233 H5C2O2+      GRAIN-       HCOOCH3      H            GRAIN0                      3.14E-10     61.00      0.50  23
- 8234 H5C2OX+      GRAIN-       HCXOCH3      H                                        1.57E-10     61.00      0.50  23
- 8235 H5C2OX+      GRAIN-       HCOXCH3      H                                        1.57E-10     61.00      0.50  23
+ 8234 H5C2OX+      GRAIN-       HCXOCH3      H            GRAIN0                      1.57E-10     61.00      0.50  23
+ 8235 H5C2OX+      GRAIN-       HCOXCH3      H            GRAIN0                      1.57E-10     61.00      0.50  23
  8236 C10+         GRAIN-       C8           C2           GRAIN0                      3.14E-10     12.00      0.50  23
  8237 C10+         GRAIN-       C9           C            GRAIN0                      3.14E-10     12.00      0.50  23
  8238 C2H5OH2+     GRAIN-       C2H4         H2O          H            GRAIN0         3.14E-10     47.00      0.33  23
- 8239 C2H5XH2+     GRAIN-       C2H4         H2X          H                           3.14E-10     47.00      0.33  23
+ 8239 C2H5XH2+     GRAIN-       C2H4         H2X          H            GRAIN0         3.14E-10     47.00      0.33  23
  8240 C2H5OH2+     GRAIN-       C2H4O        H2           H            GRAIN0         3.14E-10     47.00      0.33  23
- 8241 C2H5XH2+     GRAIN-       C2H4X        H2           H                           3.14E-10     47.00      0.33  23
+ 8241 C2H5XH2+     GRAIN-       C2H4X        H2           H            GRAIN0         3.14E-10     47.00      0.33  23
  8242 C2H5OH2+     GRAIN-       C2H5OH       H            GRAIN0                      3.14E-10     47.00      0.33  23
- 8243 C2H5XH2+     GRAIN-       C2H5XH       H                                        3.14E-10     47.00      0.33  23
+ 8243 C2H5XH2+     GRAIN-       C2H5XH       H            GRAIN0                      3.14E-10     47.00      0.33  23
  8244 C2H6CO+      GRAIN-       CH3          CH3          CO           GRAIN0         3.14E-10     58.00      0.50  23
- 8245 C2H6CX+      GRAIN-       CH3          CH3          CX                          3.14E-10     58.00      0.50  23
+ 8245 C2H6CX+      GRAIN-       CH3          CH3          CX           GRAIN0         3.14E-10     58.00      0.50  23
  8246 C2H6CO+      GRAIN-       C2H4O        CH2          GRAIN0                      3.14E-10     58.00      0.50  23
- 8247 C2H6CX+      GRAIN-       C2H4X        CH2                                      3.14E-10     58.00      0.50  23
+ 8247 C2H6CX+      GRAIN-       C2H4X        CH2          GRAIN0                      3.14E-10     58.00      0.50  23
  8248 C5H4N+       GRAIN-       C5N          H2           H2           GRAIN0         3.14E-10     78.00      0.50  23
  8249 C5H4N+       GRAIN-       HC5N         H2           H            GRAIN0         3.14E-10     78.00      0.50  23
  8250 C5H5+        GRAIN-       C5H2         H2           H            GRAIN0         3.14E-10     65.00      0.50  23
@@ -8262,15 +8262,15 @@
  8261 C9H+         GRAIN-       C9           H            GRAIN0                      3.14E-10    109.00      0.50  23
  8262 C9N+         GRAIN-       C2           C7N          GRAIN0                      3.14E-10    122.00      1.00  23
  8263 CH3OCH4+     GRAIN-       CH3          CH4          O            GRAIN0         3.14E-10     47.00      0.33  23
- 8264 CH3XCH4+     GRAIN-       CH3          CH4          X                           3.14E-10     47.00      0.33  23
+ 8264 CH3XCH4+     GRAIN-       CH3          CH4          X            GRAIN0         3.14E-10     47.00      0.33  23
  8265 CH3OCH4+     GRAIN-       CH4O         CH3          GRAIN0                      3.14E-10     47.00      0.33  23
- 8266 CH3XCH4+     GRAIN-       CH4X         CH3                                      3.14E-10     47.00      0.33  23
+ 8266 CH3XCH4+     GRAIN-       CH4X         CH3          GRAIN0                      3.14E-10     47.00      0.33  23
  8267 CH3OCH4+     GRAIN-       CH3OCH3      H            GRAIN0                      3.14E-10     47.00      0.33  23
- 8268 CH3XCH4+     GRAIN-       CH3XCH3      H                                        3.14E-10     47.00      0.33  23
+ 8268 CH3XCH4+     GRAIN-       CH3XCH3      H            GRAIN0                      3.14E-10     47.00      0.33  23
  8269 C3H6OH+      GRAIN-       C2H4O        CH3          GRAIN0                      3.14E-10     59.00      0.50  23
- 8270 C3H6XH+      GRAIN-       C2H4X        CH3                                      3.14E-10     59.00      0.50  23
+ 8270 C3H6XH+      GRAIN-       C2H4X        CH3          GRAIN0                      3.14E-10     59.00      0.50  23
  8271 C3H6OH+      GRAIN-       C2H6CO       H            GRAIN0                      3.14E-10     59.00      0.50  23
- 8272 C3H6XH+      GRAIN-       C2H6CX       H                                        3.14E-10     59.00      0.50  23
+ 8272 C3H6XH+      GRAIN-       C2H6CX       H            GRAIN0                      3.14E-10     59.00      0.50  23
  8273 C4H7+        GRAIN-       C3H3         CH4          GRAIN0                      3.14E-10     55.00      0.65  23
  8274 C4H7+        GRAIN-       C2H3         C2H4         GRAIN0                      3.14E-10     55.00      0.07  23
  8275 C4H7+        GRAIN-       C2H2         C2H5         GRAIN0                      3.14E-10     55.00      0.07  23

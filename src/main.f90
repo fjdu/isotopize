@@ -48,6 +48,14 @@
       type (EleGroup), dimension(nMaxGrp) :: vecDeutGroup
       integer nDeutGroup
       character(len=128) fDeuterated
+      character(len=160) :: fmtHeaderHerbst = &
+        '#23456123456789ABCD123456789ABCD123456789A&
+        &BCD123456789ABCD123456789ABCD123456789ABCD&
+        E123456789A123456789A1234567891234'
+      character(len=160) :: fmtHeaderMine = &
+        '!23456789ABC123456789ABC123456789ABC123456789ABC&
+        &123456789ABC123456789ABC123456789ABC123456789123456789&
+        &12345678912345612345612312123      w  j  i  t'
 
       CALL CPU_TIME(ProgStartTime)
       call date_and_time(DATE=strTMP, TIME=strTMP1)
@@ -163,6 +171,9 @@
         stop
       end if
       nGrSpecies = 0
+      !
+      nReacCounter = 1
+      !
       do i=1, nSpecies
         !CALL getElements(nameSpecies(i), nameElements, nElement, &
         !  SpeciesElements(:, i))
@@ -221,10 +232,11 @@
       end if
       CALL openFileSequentialWrite &
         (fU, trim(path)//trim(fDeuterated), 9999)
-      write (fU, '(A)') &
-        '!23456789ABC123456789ABC123456789ABC123456789ABC&
-        &123456789ABC123456789ABC123456789ABC123456789123456789&
-        &123456789123456123456123412123      w  j  i  t'
+      if (whichFormat .eq. 'Herbst') then
+        write (fU, '(A)') trim(fmtHeaderHerbst)
+      else
+        write (fU, '(A)') trim(fmtHeaderMine)
+      end if
       nGrReactions = 0
       nReac_AsReactants = 0
       nReac_AsProducts = 0
@@ -316,12 +328,29 @@
         !
         call double2str(strtmp2, dblABC(3, i), 9, 2)
         !
-        write (fU, '(7A12, ES9.2, F9.2, A9, 2I6, X,I3, X,A1,X,A2,X,A1)') &
-          strReactants(:, i), strProducts(:, i), &
-          dblABC(1:2, i), &
-          strtmp2, &
-          int(T_min(i)), int(T_max(i)), typeReac(i), &
-          cquality(i), ctype(i), stype(i)
+        if (whichFormat .eq. 'Herbst') then
+          !
+          ! Format back.
+          do j=1, nReactants
+            call formatBack(strReactants(j, i))
+          end do
+          do j=1, nProducts
+            call formatBack(strProducts(j, i))
+          end do
+          !
+          write (fU, '(I5, X, 6(A12,X), X, ES9.2, X, F9.2, X, A9, X, I3)') &
+            nReacCounter, strReactants(1:2, i), strProducts(1:4, i), &
+            dblABC(1:2, i), &
+            strtmp2, typeReac(i)
+          nReacCounter = nReacCounter + 1
+        else
+          write (fU, '(7A12, ES9.2, F9.2, A9, 2I6, I3, X,A1,X,A2,X,A1)') &
+            strReactants(:, i), strProducts(:, i), &
+            dblABC(1:2, i), &
+            strtmp2, &
+            int(T_min(i)), int(T_max(i)), typeReac(i), &
+            cquality(i), ctype(i), stype(i)
+        end if
         !if (sum(nElementReac(idxNew+1:nElement)) .GE. noDMaxMetal) cycle
         !flag = .FALSE.
         !do j=idxNew+1, nElement
@@ -338,12 +367,16 @@
         !else
         !  call DeutReac (i, 1, fU)
         !end if
+        !
         call DeutReac (i, nDeutDegree, fU)
+        !
       end do
       close (UNIT=fU, IOSTAT=ios, ERR=999, STATUS='KEEP')
+      !
       CALL openFileSequentialRead &
         (fU, trim(path)//trim(fDeuterated), 9999)
       CALL GetNLineF (fU, nLineAll, nLineData, commentChar)
+      !
       close (UNIT=fU, IOSTAT=ios, ERR=999, STATUS='KEEP')
       write (*, FMT='(7(/, A32, I16))') &
         'Number of species: ', nSpecies, &

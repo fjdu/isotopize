@@ -20,6 +20,10 @@ integer nOtherDeutMax, noDMaxMetal
 integer nDeutDegree
 double precision noDEleAbundance
 
+character(len=16) :: whichFormat = 'Herbst'
+
+integer nReacCounter
+
 TYPE :: EleSpecies
   integer nItem
   integer, dimension(nItemInASpecies) :: vecIdEle, vecCtEle
@@ -444,15 +448,30 @@ subroutine DeutReac (iReac, nDeut, fU)
           end if
         end do
         call double2str(strtmp, dblABC(3, iReac), 9, 2)
-        write (fU, &
-          '(7A12, ES9.2, F9.2, A9, 2I6, X,I3, X,A1,X,A2,X,A1, " !", 4I3)') &
-          StrSplittedLeft, StrSplittedRight, &
-          dblABC(1, iReac) * dble(WeightsRight(j))/dble(TotalWeight), &
-          dblABC(2, iReac), &
-          strtmp, &
-          int(T_min(iReac)), int(T_max(iReac)), typeReac(iReac), &
-          cquality(iReac), ctype(iReac), stype(iReac), &
-          WeightsRight(j), j, i, nDeutThis
+        if (whichFormat .eq. 'Herbst') then
+          do k=1, nReactants
+            call formatBack(StrSplittedLeft(k))
+          end do
+          do k=1, nProducts
+            call formatBack(StrSplittedRight(k))
+          end do
+          write (fU, '(I5, X, 6(A12,X), X, ES9.2, X, F9.2, X, A9, X, I3)') &
+            nReacCounter, StrSplittedLeft(1:2), StrSplittedRight(1:4), &
+            dblABC(1, iReac) * dble(WeightsRight(j))/dble(TotalWeight), &
+            dblABC(2, iReac), &
+            strtmp, typeReac(iReac)
+          nReacCounter = nReacCounter + 1
+        else
+          write (fU, &
+            '(7A12, ES9.2, F9.2, A9, 2I6, I3, X,A1,X,A2,X,A1, " !", 4I3)') &
+            StrSplittedLeft, StrSplittedRight, &
+            dblABC(1, iReac) * dble(WeightsRight(j))/dble(TotalWeight), &
+            dblABC(2, iReac), &
+            strtmp, &
+            int(T_min(iReac)), int(T_max(iReac)), typeReac(iReac), &
+            cquality(iReac), ctype(iReac), stype(iReac), &
+            WeightsRight(j), j, i, nDeutThis
+        end if
       end do
     end do
   end do
@@ -837,5 +856,18 @@ pure subroutine double2str(str, x, nW, nP)
     write(str, fmtstr) x
   end if
 end subroutine double2str
+
+
+pure subroutine formatBack(str)
+  ! Format back to Kamber's format.
+  character(len=*), intent(inout) :: str
+  if (str(1:5) .eq. 'Grain') then
+    str(1:5) = 'GRAIN'
+  end if
+  if (str(1:2) .eq. 'E-') then
+    str(1:2) = 'E '
+  end if
+end subroutine formatBack
+
 
 END MODULE

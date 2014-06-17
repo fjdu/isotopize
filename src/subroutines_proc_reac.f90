@@ -445,7 +445,7 @@ subroutine DeutReac (iReac, nDeut, fU)
         end do
         call double2str(strtmp, dblABC(3, iReac), 9, 2)
         write (fU, &
-          '(7A12, ES9.2, F9.2, A9, 2I6, I3, X,A1,X,A2,X,A1, " !", 4I3)') &
+          '(7A12, ES9.2, F9.2, A9, 2I6, X,I3, X,A1,X,A2,X,A1, " !", 4I3)') &
           StrSplittedLeft, StrSplittedRight, &
           dblABC(1, iReac) * dble(WeightsRight(j))/dble(TotalWeight), &
           dblABC(2, iReac), &

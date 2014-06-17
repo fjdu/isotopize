@@ -224,7 +224,7 @@
       write (fU, '(A)') &
         '!23456789ABC123456789ABC123456789ABC123456789ABC&
         &123456789ABC123456789ABC123456789ABC123456789123456789&
-        &12345678912345612345612312123      w  j  i  t'
+        &123456789123456123456123412123      w  j  i  t'
       nGrReactions = 0
       nReac_AsReactants = 0
       nReac_AsProducts = 0
@@ -316,7 +316,7 @@
         !
         call double2str(strtmp2, dblABC(3, i), 9, 2)
         !
-        write (fU, '(7A12, ES9.2, F9.2, A9, 2I6, I3, X,A1,X,A2,X,A1)') &
+        write (fU, '(7A12, ES9.2, F9.2, A9, 2I6, X,I3, X,A1,X,A2,X,A1)') &
           strReactants(:, i), strProducts(:, i), &
           dblABC(1:2, i), &
           strtmp2, &

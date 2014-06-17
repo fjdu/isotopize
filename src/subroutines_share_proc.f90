@@ -165,38 +165,66 @@
 
 
 
-      subroutine ReadReactions (fU, nLineAll, commentChar)
+      subroutine ReadReactions (fU, nLineAll, commentChar, inputFormat)
       ! Read the reaction file.
       use CMDT
       implicit none
       integer i, j, k, fU, ios, nLineAll
       character(LEN=256) strtmp
       character(LEN=64) FMTstring
-      character commentChar
-
+      character, intent(in) :: commentChar
+      character(len=*), intent(in), optional :: inputFormat
+      character(len=16) inputF
+      !
+      if (present(inputFormat)) then
+        inputF = inputFormat
+      else
+        inputF = 'nonHerbst'
+      end if
+      !
       nRealReactants = 0
       nRealProducts = 0
-
-      write (FMTstring, FMT=&
-        '("(", I1, "A", I2, ", ", I1, "F", I1, ".", I1, ",", I1, "F", I1, ".0", &
-        & ",I", I1, ",X,A", I1, ",X,A", I1, ",X,A", I1")")') &
-        nParticipants, constLenNameSpecies, 3, 9, 0, 2, 6, 3, 1, 2, 1
+      !
+      if (inputF .eq. 'Herbst') then
+        FMTstring = '(6X, 6(A12,X), X, 3(F9.0, X), I3)'
+      else
+        FMTstring = '(7A12, 3F9.0, 2F6.0, I3, X,A1, X,A2, X,A1)'
+      end if
+      !
       write(*,*) 'Reading with format: ', FMTstring
-
+      !
       rewind (UNIT=fU, IOSTAT=ios)
-
+      !
       i = 1
-
+      !
       do
         read (UNIT=fU, FMT='(A256)', IOSTAT=ios) strtmp
         if (ios .LT. 0) exit
-        ! Commented or empty lines are treated the same.
-        if ((strtmp(1:1) .EQ. commentChar) .OR. &
-            (strtmp(1:1) .EQ. ' ')) &
-          cycle
-        read (UNIT=strtmp, FMT=FMTstring, IOSTAT=ios) &
-          strReactants(:,i), strProducts(:,i), dblABC(:,i), &
-          T_min(i), T_max(i), typeReac(i), cquality(i), ctype(i), stype(i)
+        !
+        if (inputF .eq. 'Herbst') then
+          ! Commented or empty lines are treated not the same.
+          if (strtmp(1:1) .EQ. commentChar) then
+            cycle
+          end if
+          read (UNIT=strtmp, FMT=FMTstring, IOSTAT=ios) &
+            strReactants(:,i), strProducts(:,i), dblABC(:,i), &
+            typeReac(i)
+           T_min(i)=0D0; T_max(i)=0D0; cquality(i)=''; ctype(i)=''; stype(i)=''
+          !write (*, FMTstring, IOSTAT=ios) &
+          !  strReactants(:,i), strProducts(:,i), dblABC(:,i), &
+          !  typeReac(i)
+          !write(*,'(7A12)') strReactants(:,i), ' -> ', strProducts(:,i)
+        else
+          ! Commented or empty lines are treated the same.
+          if ((strtmp(1:1) .EQ. commentChar) .OR. &
+              (strtmp(1:1) .EQ. ' ')) then
+            cycle
+          end if
+          read (UNIT=strtmp, FMT=FMTstring, IOSTAT=ios) &
+            strReactants(:,i), strProducts(:,i), dblABC(:,i), &
+            T_min(i), T_max(i), typeReac(i), cquality(i), ctype(i), stype(i)
+        end if
+        !
         do j=1, nReactants
           do k=1, constLenNameSpecies
             if (strReactants(j, i)(k:k) .NE. ' ') then
@@ -204,6 +232,11 @@
               exit
             end if
           end do
+          if (inputF .eq. 'Herbst') then
+            if (trim(strReactants(j, i)) .EQ. 'E') then
+              strReactants(j, i) = 'E-'
+            end if
+          end if
           if (trim(strReactants(j, i)) .EQ. 'PHOTON') then
             nRealReactants(i) = nRealReactants(i) - 1
           end if
@@ -233,6 +266,11 @@
               exit
             end if
           end do
+          if (inputF .eq. 'Herbst') then
+            if (trim(strProducts(j, i)) .EQ. 'E') then
+              strProducts(j, i) = 'E-'
+            end if
+          end if
           if (trim(strProducts(j, i)) .EQ. 'PHOTON') then
             nRealProducts(i) = nRealProducts(i) - 1
           end if

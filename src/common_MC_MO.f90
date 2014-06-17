@@ -46,7 +46,7 @@
 
 
       integer, parameter :: constLenNameSpecies = 12, &
-        nReactants = 3, nProducts = 4
+        nReactants = 2, nProducts = 4
       integer, parameter :: nParticipants = nReactants + nProducts
 
       double precision Temperature, n_H, &

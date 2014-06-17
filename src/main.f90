@@ -1,13 +1,13 @@
       program makedeut
       use CMDT
-      use CMTP
       use CMReac
       implicit none
 
       external f, jac, getPhyPar
 
-      integer fU, fUOutLog, fUyHistory_ascii, fUyHistory_bin, fUPhyPar
-      character, parameter :: commentChar = '!'
+      integer fU, fUyHistory_ascii, fUyHistory_bin, fUPhyPar
+      !
+      !
       integer ios, statALLOC
       integer nLineAll, nLineData
       character strTMP*128, strTMP1*128
@@ -73,25 +73,6 @@
       write (*, '(/A)') 'Initializing...'
       CALL initialize (strTMP)
 
-      ! Find a file unit for message output.
-      if (IsWordChar(fOutLog(1:1))) then
-        if (.NOT. getFileUnit(fUOutLog)) then
-          write (*,*) 'Cannot allocate an output file unit!'
-          stop
-        end if
-        CALL openFileSequentialWrite &
-          (fUOutLog, trim(path)//trim(fOutLog), 9999999)
-      else
-        do i=16, 2, -1
-          if (ISATTY(unit=i)) then
-            INQUIRE(UNIT=i, action=strTMP)
-            if (trim(strTMP) .EQ. 'WRITE') then
-              fUOutLog = i; exit
-            end if
-          end if
-        end do
-      end if
-
       idxOld = -1
       idxNew = -1
       do i=1, nElement
@@ -128,7 +109,8 @@
       end if
       CALL openFileSequentialRead &
         (fU, trim(path)//trim(fReactions), 999)
-      CALL GetNLineF (fU, nLineAll, nLineData, commentChar)
+      CALL GetNLineF_alt (fU, nLineAll, nLineData, commentChar)
+      write(*,*) nLineData, nLineAll
 
       nReactions = nLineData
 
@@ -151,9 +133,9 @@
          cquality(nReactions), &
          rates(nReactions), STAT=statALLOC)
 
-      CALL ReadReactions (fU, nLineAll, commentChar)
+      CALL ReadReactions (fU, nLineAll, commentChar, inputFormat)
       close (UNIT=fU, IOSTAT=ios, ERR=999, STATUS='KEEP')
-
+      !
       CALL MakeReactions
 
       allocate &
@@ -165,9 +147,7 @@
          nReac_AsProducts(nSpecies), &
          idxReac_AsReactants(nReactions, nSpecies), &
          idxReac_AsProducts(nReactions, nSpecies), &
-         idxGrSpecies(nSpecies), &
          idxGrReactions(nReactions), &
-         IsGas(nSpecies), &
          SpeciesEleAll(nSpecies), &
          SpeciesEleD(nSpecies), STAT=statALLOC)
 
@@ -175,51 +155,16 @@
         write (*,'(/A32/)') "Error in allocating!"
         stop
       end if
-      nGrSpecies = 0
       !
       nReacCounter = 1
       !
       do i=1, nSpecies
-        !CALL getElements(nameSpecies(i), nameElements, nElement, &
-        !  SpeciesElements(:, i))
-        !write (*,'(I4, ":  ", A12)') i, nameSpecies(i)
+        !
         call Name2Ele (nameSpecies(i), SpeciesEleAll(i))
         call Ele2Elements(SpeciesEleAll(i), SpeciesElements(:, i))
-        !HydrGroup%nItem = getHAprCt(SpeciesEleAll(i))
-        !HydrGroup%nEle = 1
-        !if (allocated(HydrGroup%EleList)) deallocate(HydrGroup%EleList)
-        !if (allocated(HydrGroup%ArrCt)) deallocate(HydrGroup%ArrCt)
-        !allocate(HydrGroup%EleList(1))
-        !allocate(HydrGroup%ArrCt(HydrGroup%nItem,1))
-        !do j=1, nMaxGrp
-        !  if (.NOT. allocated(vecDeutGroup(j)%EleList)) &
-        !    allocate(vecDeutGroup(j)%EleList(2))
-        !  if (allocated(vecDeutGroup(j)%ArrCt)) &
-        !    deallocate(vecDeutGroup(j)%ArrCt)
-        !  allocate(vecDeutGroup(j)%ArrCt(HydrGroup%nItem, 2))
-        !end do
-        !HydrGroup%EleList(1) = idxOld
-        !call getHGroup (SpeciesEleAll(i), HydrGroup)
-        !call DeutGroups (HydrGroup, 2, vecDeutGroup, nDeutGroup)
-        !do j=1, nDeutGroup
-        !  call DeutIns(vecDeutGroup(j), SpeciesEleAll(i), SpeciesEleD(i))
-        !  write (FMTstr, '("(8X, I6, ", A5, "I6, ", I3, "I6)")') &
-        !    '":",', HydrGroup%nItem
-        !  write (*, FMTstr) j, vecDeutGroup(j)%nWeight, &
-        !    vecDeutGroup(j)%ArrCt(:,2)
-        !  write (*,*) ele2str(SpeciesEleD(i))
-        !end do
-        !!write (*,*) '    ', SpeciesEleAll(i)%nItem
-        !!write (*,*) '    ', SpeciesEleAll(i)%vecIdEle
-        !!write (*,*) '    ', SpeciesEleAll(i)%vecCtEle
+        !
         massSpecies(i) = sum(SpeciesElements(:, i) * ElementMassNumber)
-        if (nameSpecies(i)(1:1) .EQ. 'g') then
-          nGrSpecies = nGrSpecies + 1
-          idxGrSpecies(nGrSpecies) = i
-          IsGas(i) = .FALSE.
-        else
-          IsGas(i) = .TRUE.
-        end if
+        !
         do j=1, i-1
           if (IsEquiv(SpeciesEleAll(i), SpeciesEleAll(j))) then
             write (*,*) nameSpecies(i), ' and ', nameSpecies(j), &
@@ -240,6 +185,7 @@
         write (*,*) 'Cannot allocate an output file unit!'
         stop
       end if
+      !
       CALL openFileSequentialWrite &
         (fU, trim(path)//trim(fDeuterated), 9999)
       if (outputFormat .eq. 'Herbst') then
@@ -247,24 +193,10 @@
       else
         write (fU, '(A)') trim(fmtHeaderMine)
       end if
-      nGrReactions = 0
       nReac_AsReactants = 0
       nReac_AsProducts = 0
       do i=1, nReactions
-        !if (nRealReactants(i) .EQ. 2) then ! Never exceed two.
-        !! Put the species in a reaction in order
-        !  if (reactions(1, i) .GT. reactions(2, i)) then
-        !    CALL SwapInt(reactions(1, i), reactions(2, i))
-        !  end if
-        !end if
-        !if (nRealProducts(i) .GE. 2) then
-        !  CALL SORT_Asc_idx_Int(nRealProducts(i), &
-        !    reactions(nReactants+1:nReactants+nRealProducts(i), i), &
-        !    intTmpvec(1:nRealProducts(i)))
-        !  reactions(nReactants+1:nReactants+nRealProducts(i), i) = &
-        !    reactions(nReactants+intTmpvec(1:nRealProducts(i)), i)
-        !end if
-
+        !
         do j=1, nRealReactants(i)
           flag = .TRUE.
           do k=1, j-1
@@ -280,7 +212,7 @@
               reactions(j, i)) = i
           end if
         end do
-
+        !
         do j=1+nReactants, nRealProducts(i)+nReactants
           flag = .TRUE.
           do k=1+nReactants, j-1
@@ -296,12 +228,7 @@
               reactions(j, i)) = i
           end if
         end do
-
-        if (typeReac(i) .GE. 60) then
-          nGrReactions = nGrReactions + 1
-          idxGrReactions(nGrReactions) = i
-        end if
-
+        !
         nElementReac = 0
         nElementProd = 0
         do j=1, nRealReactants(i)
@@ -321,12 +248,12 @@
             'Elements not conserved: ', &
             char(27)//'[41m', i, char(27)//'[0m', & !]]
             strReactants(1:nReactants, i), strProducts(1:nProducts, i)
+          write(*, '(24A3)') nameElements(1:24)
           write(*, '(24I3)') nElementReac(1:24)
           write(*, '(24I3)') nElementProd(1:24)
           write(*, '(A, 2I6)') 'nRealReac, nRealProd:', nRealReactants(i), nRealProducts(i)
-          !nRealReactants(i) = 0
-          !nRealProducts(i) = 0
         end if
+        !
         do j=1, i-1
           if ((sum(abs(reactions(:, j)-reactions(:, i))) .EQ. 0) &
               .AND. (typeReac(j) .EQ. typeReac(i))) then
@@ -351,7 +278,6 @@
             dblABC(1:2, i), &
             dblABC(3, i), &
             typeReac(i)
-          nReacCounter = nReacCounter + 1
         else
           write (fU, '(7A12, ES9.2, ES9.2, ES9.2, 2I6, I3, X,A1,X,A2,X,A1)') &
             strReactants(:, i), strProducts(:, i), &
@@ -360,6 +286,7 @@
             int(T_min(i)), int(T_max(i)), typeReac(i), &
             cquality(i), ctype(i), stype(i)
         end if
+        nReacCounter = nReacCounter + 1
         !if (sum(nElementReac(idxNew+1:nElement)) .GE. noDMaxMetal) cycle
         !flag = .FALSE.
         !do j=idxNew+1, nElement
@@ -382,19 +309,12 @@
       end do
       close (UNIT=fU, IOSTAT=ios, ERR=999, STATUS='KEEP')
       !
-      CALL openFileSequentialRead &
-        (fU, trim(path)//trim(fDeuterated), 9999)
-      CALL GetNLineF (fU, nLineAll, nLineData, commentChar)
-      !
-      close (UNIT=fU, IOSTAT=ios, ERR=999, STATUS='KEEP')
       write (*, FMT='(7(/, A32, I16))') &
         'Number of species: ', nSpecies, &
-        'Number of gas species: ', count(IsGas), &
         'Number of reactions: ', nReactions, &
-        'Number of surface reactions: ', nGrReactions, &
         'Max number of reactants: ', maxval(nRealReactants), &
         'Max number of products: ', maxval(nRealProducts), &
-        'Number of isotopized reactions: ', nLineData
+        'Number of isotopized reactions: ', nReacCounter
       deallocate (nElementReac, nElementProd, STAT=statALLOC)
 
 
@@ -406,9 +326,6 @@
         char(27)//'[47m'//char(27)//'[34m'//&
         'Program end'//char(27)//'[0m'
 
-      if (FileUnitOpened(fUOutLog)) then
-        close (UNIT=fUOutLog, IOSTAT=ios, ERR=999, STATUS='KEEP')
-      end if
       end program
 
 
@@ -431,7 +348,8 @@
         nOtherDeutMax, noDMaxMetal, noDEleAbundance, &
         elementOld, elementNew, &
         inputGrainEleName, inputGrainName, &
-        outputFormat, outputGrainEleName
+        outputFormat, outputGrainEleName, &
+        commentChar, inputFormat
         !idxNew, idxOld
 
       namelist /Paths/ &

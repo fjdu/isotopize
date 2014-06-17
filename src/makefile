@@ -10,7 +10,7 @@ lflags_debug = $(lflags_precise)
 lflags_fast = -O3
 lflags_profiling = $(lflags_fast) -pg
 
-OBJS = common_MC_MO.o common_MC_MO_TP.o subroutines_share_triv.o main.o \
+OBJS = common_MC_MO.o subroutines_share_triv.o main.o \
        subroutines_share_proc.o subroutines_proc_reac.o
 
 LIBS = -lm -lcfitsio
@@ -49,15 +49,12 @@ $(exe_alt):  $(OBJS)
 	$(cpl) $(lflags) -o $(exe_alt) $(OBJS) $(LIBS)
 	echo -e '\a'
 
-main.o: main.f90 common_MC_MO.o common_MC_MO_TP.o subroutines_share_triv.o \
+main.o: main.f90 common_MC_MO.o subroutines_share_triv.o \
        subroutines_share_proc.o subroutines_proc_reac.o
 	$(cpl) $(cflags) main.f90
 
 common_MC_MO.o: common_MC_MO.f90
 	$(cpl) $(cflags) common_MC_MO.f90
-
-common_MC_MO_TP.o: common_MC_MO_TP.f90
-	$(cpl) $(cflags) common_MC_MO_TP.f90
 
 subroutines_share_triv.o: subroutines_share_triv.f90
 	$(cpl) $(cflags) subroutines_share_triv.f90

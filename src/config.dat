@@ -5,10 +5,15 @@
   nOtherDeutMax = 20 ! Can be ignored as far as it is an integer not too small.
   noDMaxMetal = 20  ! ...
   noDEleAbundance = 0D0  ! Set to zero.
+  !
+  inputFormat = 'Herbst'
+  commentChar = '#'
+  inputGrainEleName = '(gr)'
+  inputGrainName = 'GRAIN'
   outputFormat = 'Herbst'
   outputGrainEleName = '(gr)'
 /
 &Paths
   path = "./"  ! Folder containing the input network.
-  fReactions = "rreacs_herb0308_modi_isotopized.dat"  ! Network file.
+  fReactions = "rreacs_herb0308_isotopized.dat"  ! Network file.
 /

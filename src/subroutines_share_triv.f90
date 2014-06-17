@@ -152,6 +152,29 @@
 
 
 
+!  Get the number of lines and data lines in a file.
+      subroutine GetNLineF_alt (fU, nLineAll, nLineData, commentChar)
+      implicit none
+      integer fU, ios, nLineAll, nLineData
+      character commentChar, strtmp
+      rewind (UNIT=fU, IOSTAT=ios)
+      nLineAll = 0
+      nLineData = 0
+      do
+        read (UNIT=fU, FMT='(A1)', IOSTAT=ios) strtmp
+        if (ios .LT. 0) exit
+        nLineAll = nLineAll + 1
+        ! Any lines beginning with the commentChar (a single letter)
+        ! or a blanck space are treated as commented.
+        ! DON'T use Tab; use space.
+        ! Added on 2010-04-05.
+        if (strtmp(1:1) .EQ. commentChar) cycle
+        nLineData = nLineData + 1
+      end do
+      end subroutine GetNLineF_alt
+
+
+
 !  Get the number of lines in a file.
       subroutine GetFileLen (fU, FileName, nFileLen)
       implicit none

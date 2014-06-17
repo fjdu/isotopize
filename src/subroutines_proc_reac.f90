@@ -24,6 +24,8 @@ character(len=16) :: outputFormat = 'Herbst'
 character(len=8) :: outputGrainEleName = '(gr)'
 character(len=8) :: inputGrainEleName = '(gr)'
 character(len=constLenNameSpecies) :: inputGrainName = 'Grain'
+character :: commentChar = '!'
+character(len=16) :: inputFormat = 'nonHerbst'
 
 integer nReacCounter
 
@@ -480,7 +482,6 @@ subroutine DeutReac (iReac, nDeut, fU)
             dblABC(2, iReac), &
             dblABC(3, iReac), &
             typeReac(iReac)
-          nReacCounter = nReacCounter + 1
         else
           write (fU, &
             '(7A12, ES9.2, ES9.2, ES9.2, 2I6, I3, X,A1,X,A2,X,A1, " !", 4I3)') &
@@ -492,6 +493,7 @@ subroutine DeutReac (iReac, nDeut, fU)
             cquality(iReac), ctype(iReac), stype(iReac), &
             WeightsRight(j), j, i, nDeutThis
         end if
+        nReacCounter = nReacCounter + 1
       end do
     end do
   end do

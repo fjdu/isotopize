@@ -396,14 +396,16 @@ subroutine DeutReac (iReac, nDeut, fU)
   character(len=lenStrSideMax), dimension(nDeutSideMax) :: &
     StrDeutedLeft, StrDeutedRight
   integer, dimension(nDeutSideMax) :: WeightsLeft, WeightsRight
-  character(len=constLenNameSpecies), dimension(nReactants) :: &
+  character(len=constLenNameSpecies), dimension(:), allocatable :: &
     StrSplittedLeft
-  character(len=constLenNameSpecies), dimension(nProducts) :: &
+  character(len=constLenNameSpecies), dimension(:), allocatable :: &
     StrSplittedRight
-  character(len=constLenNameSpecies), dimension(nProducts) :: &
+  character(len=constLenNameSpecies), dimension(:), allocatable :: &
     StrSplitted_tmp
   logical flag_same
   !
+  allocate(StrSplittedLeft(nReactants), &
+    StrSplittedRight(nProducts), StrSplitted_tmp(nProducts))
 
   do nDeutThis=1, nDeut
     call DeutSide(Reactions(1:nRealReactants(iReac), iReac), &

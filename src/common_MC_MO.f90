@@ -45,9 +45,8 @@
             0.0D0     , 0.0D0     , 0.0D0     , 0D0/)
 
 
-      integer, parameter :: constLenNameSpecies = 12, &
-        nReactants = 2, nProducts = 4
-      integer, parameter :: nParticipants = nReactants + nProducts
+      integer, parameter :: constLenNameSpecies = 12
+      integer :: nReactants = 3, nProducts = 4
 
       double precision Temperature, n_H, &
         rateCosIon, Av, omega_Albedo, &

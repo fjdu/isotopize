@@ -98,6 +98,13 @@
       !
       nameElements(4) = inputGrainEleName
       nameElements(5) = inputGrainName
+      !
+      if (inputFormat .eq. 'Herbst') then
+        nReactants = 2
+      else
+        nReactants = 3
+      end if
+      nProducts = 4
 
 ! Import all the reactions
 
@@ -115,7 +122,7 @@
       nReactions = nLineData
 
       if (nSpecies_Est .LE. 0) & ! This estimation would be surely
-        nSpecies_Est = nReactions * nParticipants ! enough.
+        nSpecies_Est = nReactions * (nReactants+nProducts) ! enough.
 
       allocate &
         (strReactants(nReactants, nReactions), &
@@ -123,7 +130,7 @@
          nameSpecies(nSpecies_Est), &
          nRealReactants(nReactions), &
          nRealProducts(nReactions), &
-         reactions(nParticipants, nReactions), &
+         reactions(nReactants+nProducts, nReactions), &
          dblABC(3, nReactions), &
          T_min(nReactions), &
          T_max(nReactions), &

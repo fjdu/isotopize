@@ -39,14 +39,14 @@ To convert the isotopized file back to the original format, follow the reverse o
 
 ```fortran
 # The "Herbst" format
-#   N           R1           R2           P1           P2           P3           P4          A         B         C   T
+#   N R1         | R2         | P1         | P2         | P3         | P4         |   A      | B       | C       |   T
 #23456123456789ABCD123456789ABCD123456789ABCD123456789ABCD123456789ABCD123456789ABCDE123456789A123456789A1234567891234
  6328 COOCH4+      GRAIN-       CH3          CO2          H            GRAIN0         3.14E-10  6.00E+01  5.00E-01  23
 ```
 
 ```fortran
 ! The "nonHerbst" format
-!         R1          R2          R3          P1          P2          P3          P4        A        B        C    T1    T2 iT q cT s
+!R1        |R2         |R3         |P1         |P2         |P3         |P4         |A       |B       |C       |T1   |T2   | iT q cT s
 !23456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789ABC123456789123456789123456789123456123456123121231212
 C5H4N+      Grain-                  C5N         H2          H2          Grain0       3.14e-10 7.80e+01 5.00e-01             23
 ```

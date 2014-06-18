@@ -21,7 +21,7 @@ the word "isotopized" attached to the original file name.
 
 ## File format conversion
 
-**This is not needed anymore because the code now has the option to read directly the "Herbst" format (so to call it).**
+_This is not needed anymore because the code now has the option to read directly the "Herbst" format (so to call it)._
 
 To convert the Herbst format to the format understandable by my code, I have to
 

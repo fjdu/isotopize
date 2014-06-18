@@ -5,7 +5,7 @@
 #lflags_profiling = $(lflags_fast) -profile-functions -profile-loops=all -profile-loops-report=2
 
 cpl	= gfortran
-lflags_precise = -g -Wall -fcheck=all -ffpe-trap=zero,invalid,overflow,underflow -pedantic-errors
+lflags_precise = -g -Wall -fcheck=all -ffpe-trap=zero,invalid,overflow,underflow -pedantic-errors -fbounds-check
 lflags_debug = $(lflags_precise)
 lflags_fast = -O3
 lflags_profiling = $(lflags_fast) -pg
@@ -13,7 +13,7 @@ lflags_profiling = $(lflags_fast) -pg
 OBJS = common_MC_MO.o subroutines_share_triv.o main.o \
        subroutines_share_proc.o subroutines_proc_reac.o
 
-LIBS = -lm -lcfitsio
+LIBS =  #-lm
 
 exe_name = isotopize
 debug_name = isotopize_debug

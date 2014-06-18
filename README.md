@@ -49,19 +49,19 @@ See also example .dat files in the ```src``` directory.
   elementOld = 'C' ! Element to be isotopized.
   elementNew = 'Y' ! Symbol to be used for the isotope.
   nDeutDegree = 1  ! Degree of isotopization.
-  nOtherDeutMax = 20 ! Can be ignored as far as it is an integer not too small.
-  noDMaxMetal = 20  ! ...
+  nOtherDeutMax = 2 ! If the number of metal atoms in a reaction is larger than this number, it will only be isotopized once.
+  noDMaxMetal = 5   ! If the number of metal atoms in a reaction is larger than this number, it will not be isotopized.
   noDEleAbundance = 0D0  ! Set to zero.
   !
   inputFormat = 'Herbst'
   commentChar = '#'
-  inputGrainEleName = '(gr)'  ! Symbol for grain surface species in your input file.
-  inputGrainName = 'GRAIN'  ! Symbol for grain itself as a species in your input file.
+  inputGrainEleName = '(gr)'
+  inputGrainName = 'GRAIN'
   outputFormat = 'Herbst'
   outputGrainEleName = '(gr)'
 /
 &Paths
   path = "./"  ! Folder containing the input network.
-  fReactions = "rreacs_herb0308_isotopized.dat"  ! Input network file.
+  fReactions = "rreacs_herb0308_isotopized.dat"  ! Network file.
 /
 ```

@@ -293,25 +293,30 @@
             int(T_min(i)), int(T_max(i)), typeReac(i), &
             cquality(i), ctype(i), stype(i)
         end if
-        nReacCounter = nReacCounter + 1
-        !if (sum(nElementReac(idxNew+1:nElement)) .GE. noDMaxMetal) cycle
-        !flag = .FALSE.
-        !do j=idxNew+1, nElement
-        !  if (nElementReac(j) .GT. 0) then
-        !    if (ElementTypicalAbundance(j) .LT. noDEleAbundance) then
-        !      flag = .TRUE.
-        !      exit
-        !    end if
-        !  end if
-        !end do
-        !if (flag) cycle
-        !if (sum(nElementReac(idxNew+1:nElement)) .LE. nOtherDeutMax) then
-        !  call DeutReac (i, nDeutDegree, fU)
-        !else
-        !  call DeutReac (i, 1, fU)
-        !end if
         !
-        call DeutReac (i, nDeutDegree, fU)
+        nReacCounter = nReacCounter + 1
+        !
+        if (sum(nElementReac(idxD+1:nElement)) .GE. noDMaxMetal) then
+          cycle
+        end if
+        !
+        flag = .FALSE.
+        do j=idxD+1, nElement
+          if (nElementReac(j) .GT. 0) then
+            if (ElementTypicalAbundance(j) .LT. noDEleAbundance) then
+              flag = .TRUE.
+              exit
+            end if
+          end if
+        end do
+        if (flag) cycle
+        !
+        if (sum(nElementReac(idxD+1:nElement)) .LE. nOtherDeutMax) then
+          call DeutReac(i, nDeutDegree, fU)
+        else
+          call DeutReac(i, 1, fU)
+        end if
+        !call DeutReac (i, nDeutDegree, fU)
         !
       end do
       close (UNIT=fU, IOSTAT=ios, ERR=999, STATUS='KEEP')

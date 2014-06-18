@@ -3,7 +3,7 @@
   elementNew = 'Y' ! Symbol to be used for the isotope.
   nDeutDegree = 1  ! Degree of isotopization.
   nOtherDeutMax = 2 ! If the number of metal atoms in a reaction is larger than this number, it will only be isotopized once.
-  noDMaxMetal = 5   ! If the number of metal atoms in a reaction is larger than this number, it will not be isotopized.
+  noDMaxMetal = 3   ! If the number of metal atoms in a reaction is larger than this number, it will not be isotopized.
   noDEleAbundance = 0D0  ! Set to zero.
   !
   inputFormat = 'Herbst'

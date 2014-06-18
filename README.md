@@ -16,12 +16,14 @@ create an executable named ```isotopize```, then run
 
 See below for the format of the file ```config.dat```.
 
-The converted file will be put in the same directory with "isotopized"
-attached to the original file name.
+The converted file will be put in the same directory as the input network with
+the word "isotopized" attached to the original file name.
 
 ## File format conversion
 
-To convert the herbst format to the format understandable by my code, I have to
+**This is not needed anymore because the code now has the option to read directly the "Herbst" format (so to call it).**
+
+To convert the Herbst format to the format understandable by my code, I have to
 
 1. Delete all the lines beginning with ```#```, or replace ```#``` with ```!```.  The won't appear in the output file anyway.
 1. Delete the leading row numbers (with no blank space left at the beginning of each row).

@@ -26,6 +26,7 @@ character(len=8) :: inputGrainEleName = '(gr)'
 character(len=constLenNameSpecies) :: inputGrainName = 'Grain'
 character :: commentChar = '!'
 character(len=16) :: inputFormat = 'nonHerbst'
+logical :: grain_special = .true.
 
 integer nReacCounter
 
@@ -143,6 +144,28 @@ function MatchStr(Str1, Str2, len2)
     MatchStr = .FALSE.
   end if
 end function MatchStr
+
+
+!function IsSubString(Str1, Str2, len2)
+!! Determine if Str2 is a substring of Str1.
+!  implicit none
+!  character(len=*) Str1, Str2
+!  integer len1, len2, i
+!  logical IsSubString
+!  len1 = len_trim(Str1)
+!  len2 = len_trim(Str2)
+!  IsSubString = .TRUE.
+!  if (len1 .GE. len2) then
+!    do i=1, len2
+!      if (Str1(i:i) .NE. Str2(i:i)) then
+!        IsSubString = .FALSE.
+!        exit
+!      end if
+!    end do
+!  else
+!    IsSubString = .FALSE.
+!  end if
+!end function IsSubString
 
 
 function IsDigit(ch)
@@ -367,6 +390,44 @@ end function IsEquivSide
 
 
 
+function not_really_a_reaction(iReac)
+  logical not_really_a_reaction
+  integer, intent(in) :: iReac
+  select case(typeReac(iReac))
+    case ( 20,  &  ! A     + GRAIN  -> A(gr) + GRAIN
+           21,  &  ! A(gr) + TEMP   -> A
+           22,  &  ! A(gr) + C-RAY  -> A
+          -23   &  ! A(gr) + PHOTON -> A
+          )
+      not_really_a_reaction = .true.
+    case default
+      not_really_a_reaction = .false.
+  end select
+end function not_really_a_reaction
+
+
+
+function IsEquivSide_Grain(S1, S2)
+  use CMDT
+  implicit none
+  logical IsEquivSide_Grain
+  character(len=constLenNameSpecies), intent(in) :: S1, S2
+  integer i0, L1, L2
+  !
+  L1 = len_trim(S1)
+  L2 = len_trim(S2)
+  if      (L1 .lt. L2) then
+    IsEquivSide_Grain = MatchStr(S2, S1, i0)
+  else if (L1 .gt. L2) then
+    IsEquivSide_Grain = MatchStr(S1, S2, i0)
+  else
+    IsEquivSide_Grain = S1 .eq. S2
+  end if
+  !
+end function IsEquivSide_Grain
+
+
+
 subroutine SortStrList(Str, Str_sorted, Len)
   use CMDT
   implicit none
@@ -395,7 +456,7 @@ subroutine DeutReac (iReac, nDeut, fU)
   integer TotalWeight, nSplittedLeft, nSplittedRight, nSplitted_tmp
   character(len=lenStrSideMax), dimension(nDeutSideMax) :: &
     StrDeutedLeft, StrDeutedRight
-  integer, dimension(nDeutSideMax) :: WeightsLeft, WeightsRight
+  integer, dimension(nDeutSideMax) :: WeightsLeft, WeightsRight, WeightsRightSave
   character(len=constLenNameSpecies), dimension(:), allocatable :: &
     StrSplittedLeft
   character(len=constLenNameSpecies), dimension(:), allocatable :: &
@@ -416,6 +477,8 @@ subroutine DeutReac (iReac, nDeut, fU)
            nRealProducts(iReac), nDeutThis, &
            StrDeutedRight, WeightsRight, nDeutedRight)
     TotalWeight = sum(WeightsRight(1:nDeutedRight))
+    WeightsRightSave = WeightsRight
+    !
     do i=1, nDeutedLeft
       StrSplittedLeft=""
       call SplitSideStr(StrDeutedLeft(i), StrSplittedLeft, nSplittedLeft)
@@ -429,22 +492,44 @@ subroutine DeutReac (iReac, nDeut, fU)
           exit
         end if
       end do
+      !
       if (flag_same) cycle
+      !
+      WeightsRight = WeightsRightSave
+      !
       do j=1, nDeutedRight
         !
         if (WeightsRight(j) .LE. 0) cycle
         !
         StrSplittedRight=""
         call SplitSideStr(StrDeutedRight(j), StrSplittedRight, nSplittedRight)
-        do j1=j+1, nDeutedRight
-          StrSplitted_tmp = ""
-          call SplitSideStr(StrDeutedRight(j1), StrSplitted_tmp, nSplitted_tmp)
-          if (IsEquivSide(StrSplittedRight, StrSplitted_tmp, &
-              nSplittedRight, nSplitted_tmp)) then
-            WeightsRight(j) = WeightsRight(j) + WeightsRight(j1)
-            WeightsRight(j1) = 0
+        !
+        if (grain_special .and. not_really_a_reaction(iReac)) then
+          if (IsEquivSide_Grain(StrSplittedLeft(1), StrSplittedRight(1))) then
+            !write(*,*) StrSplittedLeft(1), StrSplittedRight(1)
+            do j1=1, nDeutedRight
+              if (j1 .ne. j) then
+                WeightsRight(j) = WeightsRight(j) + WeightsRight(j1)
+                WeightsRight(j1) = 0
+              end if
+            end do
+          else
+            write(*,*) StrSplittedLeft(1), StrSplittedRight(1)
+            cycle
           end if
-        end do
+        !
+        else
+          do j1=j+1, nDeutedRight
+            StrSplitted_tmp = ""
+            call SplitSideStr(StrDeutedRight(j1), StrSplitted_tmp, nSplitted_tmp)
+            if (IsEquivSide(StrSplittedRight, StrSplitted_tmp, &
+                nSplittedRight, nSplitted_tmp)) then
+              WeightsRight(j) = WeightsRight(j) + WeightsRight(j1)
+              WeightsRight(j1) = 0
+              WeightsRightSave = WeightsRight
+            end if
+          end do
+        end if
         !
         do k=1, nReactants
           if ((strReactants(k, iReac)(1:5) .eq. 'Grain') .or. &

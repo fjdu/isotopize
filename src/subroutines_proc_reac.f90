@@ -504,19 +504,21 @@ subroutine DeutReac (iReac, nDeut, fU)
         StrSplittedRight=""
         call SplitSideStr(StrDeutedRight(j), StrSplittedRight, nSplittedRight)
         !
-        if (grain_special .and. not_really_a_reaction(iReac)) then
-          if (IsEquivSide_Grain(StrSplittedLeft(1), StrSplittedRight(1))) then
-            !write(*,*) StrSplittedLeft(1), StrSplittedRight(1)
-            do j1=1, nDeutedRight
-              if (j1 .ne. j) then
-                WeightsRight(j) = WeightsRight(j) + WeightsRight(j1)
-                WeightsRight(j1) = 0
-              end if
-            end do
-          else
-            write(*,*) StrSplittedLeft(1), StrSplittedRight(1)
-            cycle
-          end if
+        if (grain_special .and. not_really_a_reaction(iReac) .and. &
+            IsEquivSide_Grain(StrSplittedLeft(1), StrSplittedRight(1))) then
+          ! If grain-related reactions are to be treated in a special way, and
+          ! if the reaction is not breaking the molecule apart, then the
+          ! isotopized version will not scramble the element.
+          do j1=1, nDeutedRight
+            if (j1 .ne. j) then
+              WeightsRight(j) = WeightsRight(j) + WeightsRight(j1)
+              WeightsRight(j1) = 0
+            end if
+          end do
+          !else
+          !  write(*,*) 'XX:', StrSplittedLeft(1), StrSplittedRight(1)
+          !  cycle
+          !end if
         !
         else
           do j1=j+1, nDeutedRight

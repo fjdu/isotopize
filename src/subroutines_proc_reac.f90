@@ -27,6 +27,7 @@ character(len=constLenNameSpecies) :: inputGrainName = 'Grain'
 character :: commentChar = '!'
 character(len=16) :: inputFormat = 'nonHerbst'
 logical :: grain_special = .true.
+logical :: copy_rates = .false.
 
 integer nReacCounter
 
@@ -464,6 +465,7 @@ subroutine DeutReac (iReac, nDeut, fU)
   character(len=constLenNameSpecies), dimension(:), allocatable :: &
     StrSplitted_tmp
   logical flag_same
+  double precision factor_weight
   !
   allocate(StrSplittedLeft(nReactants), &
     StrSplittedRight(nProducts), StrSplitted_tmp(nProducts))
@@ -558,6 +560,11 @@ subroutine DeutReac (iReac, nDeut, fU)
           end if
         end do
         !
+        if (copy_rates) then
+            factor_weight = 1D0
+        else
+            factor_weight =  dble(WeightsRight(j))/dble(TotalWeight)
+        end if
         if (outputFormat .eq. 'Herbst') then
           do k=1, nReactants
             call formatBack(StrSplittedLeft(k))
@@ -567,7 +574,7 @@ subroutine DeutReac (iReac, nDeut, fU)
           end do
           write (fU, '(I5, X, 6(A12,X), X, ES9.2, X, ES9.2, X, ES9.2, X, I3)') &
             nReacCounter, StrSplittedLeft(1:2), StrSplittedRight(1:4), &
-            dblABC(1, iReac) * dble(WeightsRight(j))/dble(TotalWeight), &
+            dblABC(1, iReac) * factor_weight, &
             dblABC(2, iReac), &
             dblABC(3, iReac), &
             typeReac(iReac)
@@ -575,7 +582,7 @@ subroutine DeutReac (iReac, nDeut, fU)
           write (fU, &
             '(7A12, ES9.2, ES9.2, ES9.2, 2I6, I3, X,A1,X,A2,X,A1, " !", 4I3)') &
             StrSplittedLeft, StrSplittedRight, &
-            dblABC(1, iReac) * dble(WeightsRight(j))/dble(TotalWeight), &
+            dblABC(1, iReac) * factor_weight, &
             dblABC(2, iReac), &
             dblABC(3, iReac), &
             int(T_min(iReac)), int(T_max(iReac)), typeReac(iReac), &

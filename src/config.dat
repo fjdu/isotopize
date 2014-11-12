@@ -14,6 +14,7 @@
   outputGrainEleName = '(gr)'
   !
   grain_special = .true.
+  copy_rates = .true.
 /
 &Paths
   path = "./"  ! Folder containing the input network.

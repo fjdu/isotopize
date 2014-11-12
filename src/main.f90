@@ -361,7 +361,8 @@
         elementOld, elementNew, &
         inputGrainEleName, inputGrainName, &
         outputFormat, outputGrainEleName, &
-        commentChar, inputFormat, grain_special
+        commentChar, inputFormat, grain_special, &
+        copy_rates
         !idxNew, idxOld
 
       namelist /Paths/ &

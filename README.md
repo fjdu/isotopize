@@ -57,11 +57,11 @@ See also example .dat files in the ```src``` directory.
 
 ```fortran
 &PhysicalParameters
-  elementOld = 'C' ! Element to be isotopized.
-  elementNew = 'Y' ! Symbol to be used for the isotope.
-  nDeutDegree = 2  ! Degree of isotopization.
-  nOtherDeutMax = 4 ! If the number of metal atoms in a reaction is larger than this number, it will only be isotopized once.
-  noDMaxMetal = 4   ! If the number of metal atoms in a reaction is larger than this number, it will not be isotopized.
+  elementOld = 'O' ! Element to be isotopized.
+  elementNew = 'Z' ! Symbol to be used for the isotope.
+  nDeutDegree = 20 ! Degree of isotopization.
+  nOtherDeutMax = 99 ! If the number of metal atoms in a reaction is larger than this number, it will only be isotopized once.
+  noDMaxMetal = 99  ! If the number of metal atoms in a reaction is larger than this number, it will not be isotopized.
   noDEleAbundance = 0D0  ! Set to zero.
   !
   inputFormat = 'Herbst'
@@ -72,6 +72,7 @@ See also example .dat files in the ```src``` directory.
   outputGrainEleName = '(gr)'
   !
   grain_special = .true.
+  copy_rates = .true. ! Whether to simply copy the rate coefficients to the newly generated reactions
 /
 &Paths
   path = "./"  ! Folder containing the input network.

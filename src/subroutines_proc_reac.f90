@@ -9,7 +9,7 @@ implicit none
 integer, parameter :: nItemInASpecies = 32, nMaxGrp = 32, &
   nDeutSideMax = 32, lenStrSideMax = 64, &
   idxSep = 20, eleCountMax = 2, &
-  idxH=6, idxD=7
+  idxH=6, idxD=7, idxC=9
 
 character(len=constLenNameSpecies) elementOld, elementNew
 
@@ -398,6 +398,7 @@ function not_really_a_reaction(iReac)
     case ( 20,  &  ! A     + GRAIN  -> A(gr) + GRAIN
            21,  &  ! A(gr) + TEMP   -> A
            22,  &  ! A(gr) + C-RAY  -> A
+           47,  &  ! A(gr) + C-RAY  -> A
           -23   &  ! A(gr) + PHOTON -> A
           )
       not_really_a_reaction = .true.
@@ -460,15 +461,14 @@ subroutine DeutReac (iReac, nDeut, fU)
   integer, dimension(nDeutSideMax) :: WeightsLeft, WeightsRight, WeightsRightSave
   character(len=constLenNameSpecies), dimension(:), allocatable :: &
     StrSplittedLeft
-  character(len=constLenNameSpecies), dimension(:), allocatable :: &
+  character(len=constLenNameSpecies), dimension(:,:), allocatable :: &
     StrSplittedRight
   character(len=constLenNameSpecies), dimension(:), allocatable :: &
     StrSplitted_tmp
   logical flag_same
   double precision factor_weight
   !
-  allocate(StrSplittedLeft(nReactants), &
-    StrSplittedRight(nProducts), StrSplitted_tmp(nProducts))
+  allocate(StrSplittedLeft(nReactants), StrSplitted_tmp(nProducts))
 
   do nDeutThis=1, nDeut
     call DeutSide(Reactions(1:nRealReactants(iReac), iReac), &
@@ -499,15 +499,18 @@ subroutine DeutReac (iReac, nDeut, fU)
       !
       WeightsRight = WeightsRightSave
       !
+      if (allocated(StrSplittedRight)) then
+        deallocate(StrSplittedRight)
+      end if
+      allocate(StrSplittedRight(nDeutedRight, nProducts))
+      StrSplittedRight=""
+      !
       do j=1, nDeutedRight
         !
-        if (WeightsRight(j) .LE. 0) cycle
-        !
-        StrSplittedRight=""
-        call SplitSideStr(StrDeutedRight(j), StrSplittedRight, nSplittedRight)
+        call SplitSideStr(StrDeutedRight(j), StrSplittedRight(j, :), nSplittedRight)
         !
         if (grain_special .and. not_really_a_reaction(iReac) .and. &
-            IsEquivSide_Grain(StrSplittedLeft(1), StrSplittedRight(1))) then
+            IsEquivSide_Grain(StrSplittedLeft(1), StrSplittedRight(j, 1))) then
           ! If grain-related reactions are to be treated in a special way, and
           ! if the reaction is not breaking the molecule apart, then the
           ! isotopized version will not scramble the element.
@@ -526,7 +529,7 @@ subroutine DeutReac (iReac, nDeut, fU)
           do j1=j+1, nDeutedRight
             StrSplitted_tmp = ""
             call SplitSideStr(StrDeutedRight(j1), StrSplitted_tmp, nSplitted_tmp)
-            if (IsEquivSide(StrSplittedRight, StrSplitted_tmp, &
+            if (IsEquivSide(StrSplittedRight(j, :), StrSplitted_tmp, &
                 nSplittedRight, nSplitted_tmp)) then
               WeightsRight(j) = WeightsRight(j) + WeightsRight(j1)
               WeightsRight(j1) = 0
@@ -544,7 +547,7 @@ subroutine DeutReac (iReac, nDeut, fU)
         do k=1, nProducts
           if ((strProducts(k, iReac)(1:5) .eq. 'Grain') .or. &
               (strProducts(k, iReac)(1:5) .eq. 'GRAIN')) then
-            StrSplittedRight(k) = strProducts(k, iReac)
+            StrSplittedRight(j, k) = strProducts(k, iReac)
           end if
         end do
         !
@@ -556,9 +559,13 @@ subroutine DeutReac (iReac, nDeut, fU)
         end do
         do k=nRealProducts(iReac)+1, nProducts
           if (len_trim(strProducts(k, iReac)) .gt. 0) then
-            StrSplittedRight(k) = strProducts(k, iReac)
+            StrSplittedRight(j, k) = strProducts(k, iReac)
           end if
         end do
+      end do
+      !
+      do j=1, nDeutedRight
+        if (WeightsRight(j) .LE. 0) cycle
         !
         if (copy_rates) then
             factor_weight = 1D0
@@ -570,10 +577,10 @@ subroutine DeutReac (iReac, nDeut, fU)
             call formatBack(StrSplittedLeft(k))
           end do
           do k=1, nProducts
-            call formatBack(StrSplittedRight(k))
+            call formatBack(StrSplittedRight(j, k))
           end do
           write (fU, '(I5, X, 6(A12,X), X, ES9.2, X, ES9.2, X, ES9.2, X, I3)') &
-            nReacCounter, StrSplittedLeft(1:2), StrSplittedRight(1:4), &
+            nReacCounter, StrSplittedLeft(1:2), StrSplittedRight(j, 1:4), &
             dblABC(1, iReac) * factor_weight, &
             dblABC(2, iReac), &
             dblABC(3, iReac), &
@@ -581,7 +588,7 @@ subroutine DeutReac (iReac, nDeut, fU)
         else
           write (fU, &
             '(7A12, ES9.2, ES9.2, ES9.2, 2I6, I3, X,A1,X,A2,X,A1, " !", 4I3)') &
-            StrSplittedLeft, StrSplittedRight, &
+            StrSplittedLeft, StrSplittedRight(j, :), &
             dblABC(1, iReac) * factor_weight, &
             dblABC(2, iReac), &
             dblABC(3, iReac), &

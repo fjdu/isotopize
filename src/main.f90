@@ -296,12 +296,12 @@
         !
         nReacCounter = nReacCounter + 1
         !
-        if (sum(nElementReac(idxD+1:nElement)) .GE. noDMaxMetal) then
+        if (sum(nElementReac(idxC:nElement)) .GE. noDMaxMetal) then
           cycle
         end if
         !
         flag = .FALSE.
-        do j=idxD+1, nElement
+        do j=idxC, nElement
           if (nElementReac(j) .GT. 0) then
             if (ElementTypicalAbundance(j) .LT. noDEleAbundance) then
               flag = .TRUE.
@@ -311,7 +311,7 @@
         end do
         if (flag) cycle
         !
-        if (sum(nElementReac(idxD+1:nElement)) .LE. nOtherDeutMax) then
+        if (sum(nElementReac(idxC:nElement)) .LE. nOtherDeutMax) then
           call DeutReac(i, nDeutDegree, fU)
         else
           call DeutReac(i, 1, fU)
